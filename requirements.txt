@@ -1,0 +1,2 @@
+pypdf
+langchain_text_splitters
