@@ -1,6 +1,7 @@
 from pypdf import PdfReader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_ollama import OllamaEmbeddings
+import chromadb
 
 # LOAD PDF
 def load_file(filepath):
@@ -61,13 +62,13 @@ def chunk_pages(pages, chunk_size, overlap):
                 "text": chunked_text,
                 "source": page["source"],
                 "page": page["page"],
-                "chunk": i,
+                "chunk_index": i,
             })
 
     return chunks
 
 # EMBEDDING CHUNKS
-def embed_chunks(chunks):
+def embed_chunks(chunks, batch_size=64):
     """
     Step 3: Convert chunks' text into numerical vectors.
 
@@ -80,11 +81,72 @@ def embed_chunks(chunks):
     """
 
     embeddings = OllamaEmbeddings(model="nomic-embed-text")
-    texts = [chunk["text"] for chunk in chunks]
+    all_vectors = []
 
-    vectors = embeddings.embed_documents(texts)
+    for i in range(0, len(chunks), batch_size):
+        batch = chunks[i:i+batch_size]
+        texts = [chunk["text"] for chunk in batch]
+        vectors = embeddings.embed_documents(texts)
+        all_vectors.extend(vectors)
 
-    return vectors
+    return all_vectors
+
+# STORE EMBEDDINGS
+def store_embeddings(chunks, embeddings, db_path, collection_name):
+    """
+    Step 4: Store embeddings in ChromaDB
+
+    ChromaDB is used because: 
+    - It is lightweight and stores vectors alongside their
+    source text and schema/metadata.
+    - Provides fast cosine-similarity search when queried.
+    - Supports metadata filtering.
+
+    For each chunk, its id, embedding, document and metadata are stored.
+    """
+
+    client = chromadb.PersistentClient(path=db_path)
+
+    # delete any exisitng data to avoid duplicates on rerun
+    try:
+        client.delete_collection(collection_name)
+    except Exception:
+        pass
+
+    # create collection for current Allianz PDS document
+    collection = client.create_collection(
+        name=collection_name,
+        metadata={"description": "Allianz 2025 PDS chunks"}
+    )
+
+    # create schema for DB entries
+    import uuid 
+    ids = [uuid.uuid4() for c in chunks] # randomise UUID as ID value
+    documents = [c["text"] for c in chunks]
+    metadatas = []
+    for c in chunks:
+        metadatas.append(
+            {
+                "source": c["source"],
+                "page": c["page"],
+                "chunk_index": c["chunk_index"],
+            }
+        )
+
+    # populate DB
+    for i, c in enumerate(chunks):
+        collection.add(
+            ids=str(ids[i]),
+            embeddings=embeddings[i],
+            documents=documents[i],
+            metadatas=metadatas[i],
+        )
+
+    print(f"  Stored {len(ids)} chunks in collection '{collection_name}'")
+    print(f"  Vector DB location: {db_path}")
+
+    return collection
+
 
 
 
@@ -94,3 +156,8 @@ chunks = chunk_pages(pages, 500, 100)
 # print(chunks)
 embeddings = embed_chunks(chunks)
 # print(embeddings)
+# print(f"Chunks: {len(chunks)}\nEmbeddings: {len(embeddings)}")
+collection = store_embeddings(chunks, embeddings, "data/vector_db/", "Allianz_20251219")
+
+result = collection.get(include=["documents"])
+print(f"Total stored documents: {len(result["documents"])}")

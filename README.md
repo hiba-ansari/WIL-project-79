@@ -18,3 +18,7 @@
 3. Confirm installation: `ollama list`.
 
 4. Run the `setup.sh` script to start a virtual environment and install the required packages.
+
+## Documentation
+- [Add collections in ChromaDB](https://docs.trychroma.com/docs/collections/add-data)
+- [Querying ChromaDB](https://docs.trychroma.com/docs/querying-collections/query-and-get)
