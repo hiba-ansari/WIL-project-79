@@ -1,5 +1,6 @@
 from pypdf import PdfReader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_ollama import OllamaEmbeddings
 
 # LOAD PDF
 def load_file(filepath):
@@ -65,8 +66,31 @@ def chunk_pages(pages, chunk_size, overlap):
 
     return chunks
 
+# EMBEDDING CHUNKS
+def embed_chunks(chunks):
+    """
+    Step 3: Convert chunks' text into numerical vectors.
+
+    Uses the embedding model nomic-embed-text to map text to a 768-dimensional vector.
+    This allows semantically similar chunks to have similar vectors.
+    Eg: "Is jet skiing covered?" and "recreational water sports coverage" have close
+    vectors despite sharing no keywords. 
+
+    nomic-embed-text is used because it is free and runs locally via Ollama.
+    """
+
+    embeddings = OllamaEmbeddings(model="nomic-embed-text")
+    texts = [chunk["text"] for chunk in chunks]
+
+    vectors = embeddings.embed_documents(texts)
+
+    return vectors
+
+
 
 
 pages = load_file("data/raw_docs/ALLIANZ_20251219.pdf")
 chunks = chunk_pages(pages, 500, 100) 
 # print(chunks)
+embeddings = embed_chunks(chunks)
+# print(embeddings)
