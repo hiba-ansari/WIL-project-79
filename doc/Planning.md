@@ -1,0 +1,9 @@
+# Planning
+
+**Domain:** Travel / legal / entertainment 
+
+**Data:** Travel and airline policy PDF documents 
+
+**Goal**: To build a travel assistant chatbot that provides insurance guidance to travellers in specific situations and/or circumstances. 
+
+**Ingestion file naming convention**: COMPANY_NAME_YYYYMMDD.pdf (where date is the effective date of the policy)
