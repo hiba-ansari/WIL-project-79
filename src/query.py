@@ -193,8 +193,8 @@ def print_result(result: RAGResult):
 
 
 
-insurer = "1-COVER"
-question = "If I go to Bali, can i go scuba diving under 100 meters?"
+insurer = "BUDGET-DIRECT"
+question = "What is the per-item limit for a laptop on the Comprehensive plan?"
 db_path = "./data/vector_db/"
 collection_name = "Travel_Insurance"
 # retrieve(question, db_path, collection_name)
