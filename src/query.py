@@ -11,11 +11,12 @@ class RAGResult:
 
     question: str
     answer: str
+    insurer: str
     sources: list[dict]
     model: str
     top_k: int
 
-def retrieve(question, db_path, collection_name, top_k = 5):
+def retrieve(question, db_path, collection_name, insurer_filter, top_k = 5):
     """
     Step 1: Retrieve most relevant chunks for the query
 
@@ -34,9 +35,15 @@ def retrieve(question, db_path, collection_name, top_k = 5):
     # embed query using same embedding model used during ingestion
     query_vector = OllamaEmbeddings(model="nomic-embed-text").embed_query(question)
 
+    # filter by chosen insurer
+    where_clause = None
+    if insurer_filter:
+        where_clause = {"insurer": insurer_filter}
+
     # store most relevant chunks
     results = collection.query(query_embeddings=[query_vector], 
                                n_results=top_k,
+                               where=where_clause,
                                include=["documents", "metadatas", "distances"],)
 
     # flatten nested results and format into a clean list
@@ -48,6 +55,8 @@ def retrieve(question, db_path, collection_name, top_k = 5):
         sources.append({
             "text": doc,
             "source": meta["source"],
+            "insurer": meta["insurer"],
+            "doc_date": meta["doc_date"],
             "page": meta["page"],
             "chunk_index": meta["chunk_index"],
             "distance": dist,
@@ -111,7 +120,7 @@ def generate_response(messages, temperature=0.1):
 
     return response.content
 
-def ask(question, db_path, collection_name, top_k=5):
+def ask(question, db_path, collection_name, insurer, top_k=5):
     """
     Run full RAG query pipeline. All 3 methods are called here.
     """
@@ -129,8 +138,11 @@ def ask(question, db_path, collection_name, top_k=5):
     print(f"Top-K: {k} | Model: {llm_model} | Temperature: {temperature}")
 
     # call method 1: retrieve()
+    if insurer:
+        print(f"\nInsurer: {insurer}")
+
     print(f"\n[1/3] Retrieving relevant chunks...")
-    sources = retrieve(question, db_path, collection_name, k)
+    sources = retrieve(question, db_path, collection_name, insurer, k)
     distances = [f"{s['distance']:.3f}" for s in sources]
     print(f"  Found {len(sources)} chunks (distances: {distances}")
 
@@ -149,6 +161,7 @@ def ask(question, db_path, collection_name, top_k=5):
     return RAGResult(
         question=question,
         answer=answer,
+        insurer=insurer,
         sources=sources,
         model=llm_model,
         top_k=k
@@ -180,9 +193,10 @@ def print_result(result: RAGResult):
 
 
 
-question = "What is the standard excess amount deducted from a successful claim payout?"
+insurer = "1-COVER"
+question = "If I go to Bali, can i go scuba diving under 100 meters?"
 db_path = "./data/vector_db/"
-collection_name = "Allianz_20251219"
+collection_name = "Travel_Insurance"
 # retrieve(question, db_path, collection_name)
-result = ask(question, db_path, collection_name)
+result = ask(question, db_path, collection_name, insurer)
 print_result(result)

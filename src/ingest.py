@@ -2,9 +2,28 @@ from pypdf import PdfReader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_ollama import OllamaEmbeddings
 import chromadb
+import re
+from pathlib import Path
+
+
+# PARSE PDF FILENAMES
+pattern = re.compile(r"^([A-Z0-9]+(?:-[A-Z0-9]+)*)_(\d{8})\.pdf$") # COMPANY-NAME_YYYYMMDD.pdf 
+def parse_document_filename(filename):
+    """
+    Extract insurer name and document data from specified naming convention (in Planning.md).
+    """
+
+    match = pattern.match(filename)
+    if not match:
+        raise ValueError(f"Invalid filename: {filename}")
+
+    return {
+        "insurer": match.group(1),
+        "doc_date": match.group(2),
+    }
 
 # LOAD PDF
-def load_file(filepath):
+def load_pdfs(raw_docs_dir):
     """
     Step 1: Load PDF
 
@@ -12,21 +31,40 @@ def load_file(filepath):
     basic page schema: {text: str, source: str, page: int}.
     """
 
-    reader = PdfReader(filepath)
+    
     pages = []
+    pdf_dir = Path(raw_docs_dir) # store directory where all PDFs are uploaded
 
-    # extract text from all pages in specified PDF
-    for page_num, page in enumerate(reader.pages, start=1):
-        text = page.extract_text()
+    # check if directory exists
+    if not pdf_dir.exists():
+        raise FileNotFoundError(f"Directory not found: {raw_docs_dir}")
 
-        if text and text.strip():
-            pages.append({
-                "text": text,
-                "source": filepath,
-                "page": page_num,
-            })
+    # check if PDF files in stored directory exist
+    pdf_files = sorted(pdf_dir.glob("*.pdf"))
+    if not pdf_files:
+        raise FileNotFoundError(f"No PDF files found in: {raw_docs_dir}")
 
-    # print(pages)
+    # loop through each PDF file and extract their text
+    for pdf_path in pdf_files:
+        doc_meta = parse_document_filename(pdf_path.name)
+        print(f"  Loading {pdf_path.name} (insurer={doc_meta['insurer']}, date={doc_meta['doc_date']})")
+
+        # extract text from all pages in current PDF
+        reader = PdfReader(str(pdf_path))
+
+        for page_num, page in enumerate(reader.pages, start=1):
+            text = page.extract_text()
+
+            if text and text.strip():
+                pages.append({
+                    "text": text,
+                    "source": pdf_path.name,
+                    "insurer": doc_meta["insurer"],
+                    "doc_date": doc_meta["doc_date"],
+                    "page": page_num,
+                })
+
+    print(pages)
     return pages
 
 # CHUNKING
@@ -61,6 +99,8 @@ def chunk_pages(pages, chunk_size, overlap):
             chunks.append({
                 "text": chunked_text,
                 "source": page["source"],
+                "insurer": page["insurer"],
+                "doc_date": page["doc_date"],
                 "page": page["page"],
                 "chunk_index": i,
             })
@@ -116,7 +156,7 @@ def store_embeddings(chunks, embeddings, db_path, collection_name):
     # create collection for current Allianz PDS document
     collection = client.create_collection(
         name=collection_name,
-        metadata={"description": "Allianz 2025 PDS chunks"}
+        metadata={"description": "Travel insurance PDS chunks"}
     )
 
     # create schema for DB entries
@@ -128,6 +168,8 @@ def store_embeddings(chunks, embeddings, db_path, collection_name):
         metadatas.append(
             {
                 "source": c["source"],
+                "insurer": c["insurer"],
+                "doc_date": c["doc_date"],
                 "page": c["page"],
                 "chunk_index": c["chunk_index"],
             }
@@ -147,17 +189,33 @@ def store_embeddings(chunks, embeddings, db_path, collection_name):
 
     return collection
 
+# INGEST
+def ingest():
+    """
+    Run full ingestion pipeline for all raw PDFs.
+    """
+
+    print(f"\n{'='*50}")
+    print("\nINGESTION PIPELINE:")
+    
+    print(f"\n{'='*50}")
+    print("\n[1/4] Loading PDFS...")
+    pages = load_pdfs("data/raw_docs/")
+
+    print(f"\n{'='*50}")
+    print("\n[2/4] Chunking text...")
+    chunks = chunk_pages(pages, 500, 100) 
+
+    print(f"\n{'='*50}")
+    print("\n[3/4] Embedding chunks...")
+    embeddings = embed_chunks(chunks)
+
+    print(f"\n{'='*50}")
+    print("\n[4/4] Storing in ChromaDB...")
+    collection = store_embeddings(chunks, embeddings, "data/vector_db/", "Travel_Insurance")
+
+    result = collection.get(include=["documents"])
+    print(f"Total stored documents: {len(result["documents"])}")
 
 
-
-
-pages = load_file("data/raw_docs/ALLIANZ_20251219.pdf")
-chunks = chunk_pages(pages, 500, 100) 
-# print(chunks)
-embeddings = embed_chunks(chunks)
-# print(embeddings)
-# print(f"Chunks: {len(chunks)}\nEmbeddings: {len(embeddings)}")
-collection = store_embeddings(chunks, embeddings, "data/vector_db/", "Allianz_20251219")
-
-result = collection.get(include=["documents"])
-print(f"Total stored documents: {len(result["documents"])}")
+ingest()
