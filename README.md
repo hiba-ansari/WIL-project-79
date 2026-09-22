@@ -12,12 +12,10 @@
 
 ## Installation
 1. [Install Ollama](https://ollama.com/download).
-
-2. In a new terminal, install embeddings model: `ollama pull nomic-embed-text`.
-
-3. Confirm installation: `ollama list`.
-
-4. Run the `setup.sh` script to start a virtual environment and install the required packages.
+2. In a new terminal, install llama3 model: `ollama pull llama3`
+3. Install embeddings model: `ollama pull nomic-embed-text`.
+4. Confirm installation: `ollama list`.
+5. Run the `setup.sh` script to start a virtual environment and install the required packages.
 
 ## Documentation
 - [Add collections in ChromaDB](https://docs.trychroma.com/docs/collections/add-data)
