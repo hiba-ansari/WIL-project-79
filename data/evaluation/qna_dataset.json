@@ -1,0 +1,290 @@
+[
+  {
+    "id": "ALLIANZ-F-01",
+    "insurer": "ALLIANZ",
+    "question_type": "factual",
+    "question": "How long is the cooling-off period for an Allianz travel insurance policy?",
+    "golden_answer": "The cooling-off period is 14 days after the Certificate of Insurance is issued. A full premium refund is available if the journey has not started, no claim is being made, and no other policy right is being exercised.",
+    "relevant_pages": [7]
+  },
+  {
+    "id": "ALLIANZ-F-02",
+    "insurer": "ALLIANZ",
+    "question_type": "factual",
+    "question": "Under the Allianz Comprehensive Plan, what is the per-item limit for a laptop or other personal computer?",
+    "golden_answer": "The per-item limit for a personal computer, including a laptop, is $3,000.",
+    "relevant_pages": [9]
+  },
+  {
+    "id": "ALLIANZ-F-03",
+    "insurer": "ALLIANZ",
+    "question_type": "factual",
+    "question": "What is the Rental Vehicle Excess benefit limit under the Allianz Comprehensive Plan?",
+    "golden_answer": "The Rental Vehicle Excess benefit limit is $6,000. An excess applies to this benefit.",
+    "relevant_pages": [9]
+  },
+  {
+    "id": "ALLIANZ-R-01",
+    "insurer": "ALLIANZ",
+    "question_type": "reasoning",
+    "question": "I purchased the Allianz Adventure Pack, but I was injured while riding a motorcycle without a helmet. Would the claim be covered?",
+    "golden_answer": "No. Even with the Adventure Pack, motorcycle or moped cover requires the rider to wear an appropriate safety helmet at all times. The claim would not satisfy the activity conditions.",
+    "relevant_pages": [17, 37]
+  },
+  {
+    "id": "ALLIANZ-R-02",
+    "insurer": "ALLIANZ",
+    "question_type": "reasoning",
+    "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Allianz cover it?",
+    "golden_answer": "No. A laptop is a valuable, and valuables left in a vehicle at any time are excluded even when they are in a concealed storage compartment. The limited vehicle-storage cover only applies in daylight and does not override the exclusion for valuables.",
+    "relevant_pages": [26, 27]
+  },
+  {
+    "id": "ALLIANZ-R-03",
+    "insurer": "ALLIANZ",
+    "question_type": "reasoning",
+    "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Allianz cover the medical claim?",
+    "golden_answer": "No, if the alcohol affected your physical or mental functions or impaired your judgement and caused or contributed to the fall. Allianz excludes claims arising from or contributed to by impairment from intoxicating liquor or drugs.",
+    "relevant_pages": [38]
+  },
+  {
+    "id": "ALLIANZ-O-01",
+    "insurer": "ALLIANZ",
+    "question_type": "out_of_knowledge_base",
+    "question": "What will the weather be in Tokyo next Tuesday?",
+    "golden_answer": "This cannot be answered from the Allianz PDS because it does not contain live weather forecasts. The user should consult a current weather service.",
+    "relevant_pages": []
+  },
+  {
+    "id": "ALLIANZ-O-02",
+    "insurer": "ALLIANZ",
+    "question_type": "out_of_knowledge_base",
+    "question": "Do Australian passport holders currently need a visa for a two-week holiday in Japan?",
+    "golden_answer": "This cannot be answered from the Allianz PDS because it does not provide current visa or entry requirements. The user should consult official Japanese government travel or immigration guidance.",
+    "relevant_pages": []
+  },
+  {
+    "id": "ALLIANZ-O-03",
+    "insurer": "ALLIANZ",
+    "question_type": "out_of_knowledge_base",
+    "question": "Which airline has the cheapest return flights from Sydney to Bali next month?",
+    "golden_answer": "This cannot be answered from the Allianz PDS because it does not contain live flight schedules or prices. The user should consult airlines or a current flight-comparison service.",
+    "relevant_pages": []
+  },
+  {
+    "id": "BUDGET-DIRECT-F-01",
+    "insurer": "BUDGET-DIRECT",
+    "question_type": "factual",
+    "question": "How long is the cooling-off period for a Budget Direct travel insurance policy?",
+    "golden_answer": "The cooling-off period is 21 days from the date of purchase. The full premium is refundable if no claim has been made and the journey has not begun.",
+    "relevant_pages": [9]
+  },
+  {
+    "id": "BUDGET-DIRECT-F-02",
+    "insurer": "BUDGET-DIRECT",
+    "question_type": "factual",
+    "question": "Under the Budget Direct International Comprehensive plan, what is the per-item limit for a laptop computer?",
+    "golden_answer": "The per-item limit for a laptop computer is $3,000.",
+    "relevant_pages": [10]
+  },
+  {
+    "id": "BUDGET-DIRECT-F-03",
+    "insurer": "BUDGET-DIRECT",
+    "question_type": "factual",
+    "question": "What is the Rental Vehicle Insurance Excess benefit limit under the Budget Direct International Comprehensive plan?",
+    "golden_answer": "The Rental Vehicle Insurance Excess benefit limit is $10,000.",
+    "relevant_pages": [38]
+  },
+  {
+    "id": "BUDGET-DIRECT-R-01",
+    "insurer": "BUDGET-DIRECT",
+    "question_type": "reasoning",
+    "question": "I paid for Budget Direct motorcycle or moped riding cover, but I was injured while riding without a helmet. Would the claim be covered?",
+    "golden_answer": "No. The optional motorcycle or moped riding cover requires the rider to wear a helmet. Paying the additional premium does not provide cover when that condition is not met.",
+    "relevant_pages": [11]
+  },
+  {
+    "id": "BUDGET-DIRECT-R-02",
+    "insurer": "BUDGET-DIRECT",
+    "question_type": "reasoning",
+    "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Budget Direct cover it?",
+    "golden_answer": "No. Items left unattended in a motor vehicle overnight are excluded even when they are stored in a concealed compartment of a locked vehicle.",
+    "relevant_pages": [36, 37]
+  },
+  {
+    "id": "BUDGET-DIRECT-R-03",
+    "insurer": "BUDGET-DIRECT",
+    "question_type": "reasoning",
+    "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Budget Direct cover the medical claim?",
+    "golden_answer": "No. The general exclusions apply to claims involving impairment from drinking too much alcohol when a blood test records a BAC of 0.19% or above. A BAC of 0.20% exceeds that threshold.",
+    "relevant_pages": [49]
+  },
+  {
+    "id": "BUDGET-DIRECT-O-01",
+    "insurer": "BUDGET-DIRECT",
+    "question_type": "out_of_knowledge_base",
+    "question": "What will the weather be in Tokyo next Tuesday?",
+    "golden_answer": "This cannot be answered from the Budget Direct PDS because it does not contain live weather forecasts. The user should consult a current weather service.",
+    "relevant_pages": []
+  },
+  {
+    "id": "BUDGET-DIRECT-O-02",
+    "insurer": "BUDGET-DIRECT",
+    "question_type": "out_of_knowledge_base",
+    "question": "Do Australian passport holders currently need a visa for a two-week holiday in Japan?",
+    "golden_answer": "This cannot be answered from the Budget Direct PDS because it does not provide current visa or entry requirements. The user should consult official Japanese government travel or immigration guidance.",
+    "relevant_pages": []
+  },
+  {
+    "id": "BUDGET-DIRECT-O-03",
+    "insurer": "BUDGET-DIRECT",
+    "question_type": "out_of_knowledge_base",
+    "question": "Which airline has the cheapest return flights from Sydney to Bali next month?",
+    "golden_answer": "This cannot be answered from the Budget Direct PDS because it does not contain live flight schedules or prices. The user should consult airlines or a current flight-comparison service.",
+    "relevant_pages": []
+  },
+  {
+    "id": "COVER-MORE-F-01",
+    "insurer": "COVER-MORE",
+    "question_type": "factual",
+    "question": "How long is the cooling-off period for a Cover-More travel insurance policy?",
+    "golden_answer": "The cooling-off period is 21 days from the date of purchase. The entire premium is refundable if no claim has been made and the journey has not begun.",
+    "relevant_pages": [11]
+  },
+  {
+    "id": "COVER-MORE-F-02",
+    "insurer": "COVER-MORE",
+    "question_type": "factual",
+    "question": "Under the Cover-More International Comprehensive plan, what is the per-item limit for a laptop computer?",
+    "golden_answer": "The per-item limit for a laptop computer is $4,000. The higher Comprehensive+ plan has a different limit.",
+    "relevant_pages": [12]
+  },
+  {
+    "id": "COVER-MORE-F-03",
+    "insurer": "COVER-MORE",
+    "question_type": "factual",
+    "question": "What is the Rental Vehicle Insurance Excess benefit limit under the Cover-More International Comprehensive plan?",
+    "golden_answer": "The Rental Vehicle Insurance Excess benefit limit is $5,000.",
+    "relevant_pages": [35]
+  },
+  {
+    "id": "COVER-MORE-R-01",
+    "insurer": "COVER-MORE",
+    "question_type": "reasoning",
+    "question": "I paid for Cover-More motorcycle or moped riding cover, but I was injured while riding without a helmet. Would the claim be covered?",
+    "golden_answer": "No. Both levels of optional motorcycle or moped riding cover require the rider to wear a helmet. Paying the additional premium does not provide cover when that condition is not met.",
+    "relevant_pages": [16]
+  },
+  {
+    "id": "COVER-MORE-R-02",
+    "insurer": "COVER-MORE",
+    "question_type": "reasoning",
+    "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Cover-More cover it?",
+    "golden_answer": "No. Items left unattended in a motor vehicle overnight are excluded even when they are stored in a concealed compartment of a locked vehicle.",
+    "relevant_pages": [34]
+  },
+  {
+    "id": "COVER-MORE-R-03",
+    "insurer": "COVER-MORE",
+    "question_type": "reasoning",
+    "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Cover-More cover the medical claim?",
+    "golden_answer": "No. The general exclusions apply to claims involving impairment from drinking too much alcohol when a blood test records a BAC of 0.19% or above. A BAC of 0.20% exceeds that threshold.",
+    "relevant_pages": [50]
+  },
+  {
+    "id": "COVER-MORE-O-01",
+    "insurer": "COVER-MORE",
+    "question_type": "out_of_knowledge_base",
+    "question": "What will the weather be in Tokyo next Tuesday?",
+    "golden_answer": "This cannot be answered from the Cover-More PDS because it does not contain live weather forecasts. The user should consult a current weather service.",
+    "relevant_pages": []
+  },
+  {
+    "id": "COVER-MORE-O-02",
+    "insurer": "COVER-MORE",
+    "question_type": "out_of_knowledge_base",
+    "question": "Do Australian passport holders currently need a visa for a two-week holiday in Japan?",
+    "golden_answer": "This cannot be answered from the Cover-More PDS because it does not provide current visa or entry requirements. The user should consult official Japanese government travel or immigration guidance.",
+    "relevant_pages": []
+  },
+  {
+    "id": "COVER-MORE-O-03",
+    "insurer": "COVER-MORE",
+    "question_type": "out_of_knowledge_base",
+    "question": "Which airline has the cheapest return flights from Sydney to Bali next month?",
+    "golden_answer": "This cannot be answered from the Cover-More PDS because it does not contain live flight schedules or prices. The user should consult airlines or a current flight-comparison service.",
+    "relevant_pages": []
+  },
+  {
+    "id": "MEDIBANK-F-01",
+    "insurer": "MEDIBANK",
+    "question_type": "factual",
+    "question": "How long is the cooling-off period for a Medibank travel insurance policy?",
+    "golden_answer": "The cooling-off period is 21 days from the date of purchase. The entire premium is refundable if no claim has been made and the journey has not begun.",
+    "relevant_pages": [8]
+  },
+  {
+    "id": "MEDIBANK-F-02",
+    "insurer": "MEDIBANK",
+    "question_type": "factual",
+    "question": "Under the Medibank International Comprehensive plan, what is the per-item limit for a laptop computer?",
+    "golden_answer": "The per-item limit for a laptop computer is $4,000.",
+    "relevant_pages": [8]
+  },
+  {
+    "id": "MEDIBANK-F-03",
+    "insurer": "MEDIBANK",
+    "question_type": "factual",
+    "question": "What is the Rental Car Insurance Excess benefit limit under the Medibank International Comprehensive plan?",
+    "golden_answer": "The Rental Car Insurance Excess benefit limit is $10,000.",
+    "relevant_pages": [35]
+  },
+  {
+    "id": "MEDIBANK-R-01",
+    "insurer": "MEDIBANK",
+    "question_type": "reasoning",
+    "question": "I paid for Medibank motorcycle or moped riding cover, but I was injured while riding without a helmet. Would the claim be covered?",
+    "golden_answer": "No. The optional motorcycle or moped riding cover requires the rider to wear a helmet. Paying the additional premium does not provide cover when that condition is not met.",
+    "relevant_pages": [9]
+  },
+  {
+    "id": "MEDIBANK-R-02",
+    "insurer": "MEDIBANK",
+    "question_type": "reasoning",
+    "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Medibank cover it?",
+    "golden_answer": "No. Items left unattended in a motor vehicle overnight are excluded even when they are stored in a concealed compartment of a locked vehicle.",
+    "relevant_pages": [33]
+  },
+  {
+    "id": "MEDIBANK-R-03",
+    "insurer": "MEDIBANK",
+    "question_type": "reasoning",
+    "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Medibank cover the medical claim?",
+    "golden_answer": "No. The general exclusions apply to claims involving impairment from drinking too much alcohol when a blood test records a BAC of 0.19% or above. A BAC of 0.20% exceeds that threshold.",
+    "relevant_pages": [42]
+  },
+  {
+    "id": "MEDIBANK-O-01",
+    "insurer": "MEDIBANK",
+    "question_type": "out_of_knowledge_base",
+    "question": "What will the weather be in Tokyo next Tuesday?",
+    "golden_answer": "This cannot be answered from the Medibank PDS because it does not contain live weather forecasts. The user should consult a current weather service.",
+    "relevant_pages": []
+  },
+  {
+    "id": "MEDIBANK-O-02",
+    "insurer": "MEDIBANK",
+    "question_type": "out_of_knowledge_base",
+    "question": "Do Australian passport holders currently need a visa for a two-week holiday in Japan?",
+    "golden_answer": "This cannot be answered from the Medibank PDS because it does not provide current visa or entry requirements. The user should consult official Japanese government travel or immigration guidance.",
+    "relevant_pages": []
+  },
+  {
+    "id": "MEDIBANK-O-03",
+    "insurer": "MEDIBANK",
+    "question_type": "out_of_knowledge_base",
+    "question": "Which airline has the cheapest return flights from Sydney to Bali next month?",
+    "golden_answer": "This cannot be answered from the Medibank PDS because it does not contain live flight schedules or prices. The user should consult airlines or a current flight-comparison service.",
+    "relevant_pages": []
+  }
+]
