@@ -67,7 +67,7 @@ def retrieve(question, db_path, collection_name, insurer_filter, top_k = 5):
 
     return sources
 
-def build_prompt(sources, system_prompt):
+def build_prompt(question, sources, system_prompt):
     """
     Step 2: Construct what the LLM will recieve before responding
 
@@ -148,7 +148,7 @@ def ask(question, db_path, collection_name, insurer, top_k=5):
 
     # call method 2: build_prompt()
     print(f"[2/3] Building augmented prompt for LLM...")
-    messages = build_prompt(sources, system_prompt)
+    messages = build_prompt(question, sources, system_prompt)
     print(f"  Propmt assembled ({len(messages)} messages)")
     print(f"  Assembled prompt: {messages}")
 
@@ -193,10 +193,10 @@ def print_result(result: RAGResult):
 
 
 
-insurer = "BUDGET-DIRECT"
-question = "What is the per-item limit for a laptop on the Comprehensive plan?"
-db_path = "./data/vector_db/"
-collection_name = "Travel_Insurance"
-# retrieve(question, db_path, collection_name)
-result = ask(question, db_path, collection_name, insurer)
-print_result(result)
+if __name__ == "__main__":
+    insurer = "BUDGET-DIRECT"
+    question = "What is the per-item limit for a laptop on the Comprehensive plan?"
+    db_path = "./data/vector_db/"
+    collection_name = "Travel_Insurance"
+    result = ask(question, db_path, collection_name, insurer)
+    print_result(result)

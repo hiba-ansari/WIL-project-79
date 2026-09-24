@@ -1,0 +1,617 @@
+{
+  "summary": {
+    "total": 9,
+    "by_type": {
+      "factual": 3,
+      "reasoning": 3,
+      "out_of_knowledge_base": 3
+    },
+    "retrieval_page_hit_rate": 0.667,
+    "answer_token_overlap": 0.424,
+    "by_type_answer_token_overlap": {
+      "factual": 0.609,
+      "reasoning": 0.364,
+      "out_of_knowledge_base": 0.3
+    }
+  },
+  "results": [
+    {
+      "id": "ALLIANZ-F-01",
+      "insurer": "ALLIANZ",
+      "question_type": "factual",
+      "question": "How long is the cooling-off period for an Allianz travel insurance policy?",
+      "golden_answer": "The cooling-off period is 14 days after the Certificate of Insurance is issued. A full premium refund is available if the journey has not started, no claim is being made, and no other policy right is being exercised.",
+      "relevant_pages": [
+        7
+      ],
+      "answer": "According to Source 2: ALLIANZ_20251219.pdf, page 7, it states: \"Even after you have purchased your policy, you have cooling-off rights. If you decide that you do not want your policy, you may cancel within the cooling-off period.\"\n\nHowever, the policy does not specify the exact duration of the cooling-off period.",
+      "retrieved_pages": [
+        5,
+        6,
+        7,
+        8,
+        40
+      ],
+      "retrieved_sources": [
+        {
+          "text": "www.allianzpartners.com.au/travel-insurance/regions for our \nRegions list. \nAside from any destinations where your transit time or stop\u00ad\nover is less than 24 hours, your policy will not provide cover \noutside of the destination(s), countries and/or regions listed on \nyour Certificate of Insurance. \nWhen does my cover start? \nFor a Comprehensive, Basic, Domestic, Multi-Trip or Non\u00ad\nMedical Plan: \ncover under Benefit 2.1 Cancellation begins from the date",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 6,
+          "chunk_index": 2,
+          "distance": 0.5356624126434326
+        },
+        {
+          "text": "the pre-existing medical condition(s) of the people \ninsured under the policy. \nthe likelihood of a claim being made on your policy. \nany commissions that may be payable; \nany discounts that may apply; \nany government charges we pay, such as Stamp Duty \nand GST; \nany other charges we tell you about; \nthe excess you choose. \nCooling-off period \nEven after you have purchased your policy, you have cooling\u00ad\noff rights. \nIf you decide that you do not want your policy, you may cancel",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 7,
+          "chunk_index": 10,
+          "distance": 0.554781436920166
+        },
+        {
+          "text": "We will calculate the partial refund on a pro-rata basis from \nthe date you contact us to cancel your policy until the end date \nof the period of cover provided by your policy. \nCancellation after the cooling-off period due to \nCOVID-19 \nIf you have been prevented from travelling or, where you have \nalready commenced your journey, you have had your journey \nshortened, because: \nof a border closure arising from COVID-19; or \nyou are required to complete a mandatory quarantine",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 8,
+          "chunk_index": 0,
+          "distance": 0.5974715948104858
+        },
+        {
+          "text": "Claims \nRead through the terms, conditions, exclusions, limits and \napplicable sub-limits of your policy - for example, the benefits \nlisted under the Policy Benefits and also in the Optional \nCovers - Cruise Pack and Snow Pack Policy Benefits, the \nGeneral Exclusions, or on your Certificate of Insurance - to \ncheck whether you are covered. \nReturn to Contents \n0 \nWhere to make a claim \nYou must notify Allianz Global Assistance as soon as you",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 40,
+          "chunk_index": 7,
+          "distance": 0.606266975402832
+        },
+        {
+          "text": "Certificate of Insurance. The Certificate of Insurance will list the \nperiod you are insured for. See When does my cover start? \nand When does my cover end? below. \nImportant travel alert information \nBefore purchasing your travel insurance, check \nwww.smartraveller.gov.au and \nwww.allianzpartners.com.au/travel-insurance/travel-alerts for \ntravel alerts or advisories for your intended destination(s). \nCoverage may be affected or declined where a claim arises",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 5,
+          "chunk_index": 11,
+          "distance": 0.6204437017440796
+        }
+      ],
+      "retrieval_page_hit": true,
+      "answer_token_overlap": 0.29,
+      "evaluated_at": "2026-09-23T22:25:02.620556+00:00"
+    },
+    {
+      "id": "ALLIANZ-F-02",
+      "insurer": "ALLIANZ",
+      "question_type": "factual",
+      "question": "Under the Allianz Comprehensive Plan, what is the per-item limit for a laptop or other personal computer?",
+      "golden_answer": "The per-item limit for a personal computer, including a laptop, is $3,000.",
+      "relevant_pages": [
+        9
+      ],
+      "answer": "Based on the provided policy document excerpts, the per-item limit for a laptop or other personal computer under the Allianz Comprehensive Plan is $3,000.",
+      "retrieved_pages": [
+        9,
+        12,
+        20
+      ],
+      "retrieved_sources": [
+        {
+          "text": "Individual item sub-limits: \n- $3,000 for personal computers, tablets, cameras or video cameras; \n- $1,000 for mobile phones (including smart phones and any items with \nphone capabilities) \n- $750 for all other items (including jewellery and watches) \n- Items left in a concealed storage compartment of a locked vehicle during \ndaylight hours - $200 per item up to a maximum of $2,000 \n$1,000 \n(minimum delay 10 hours) \n$5,000 \n$250 \n$6,000 \n$5 million",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 12,
+          "chunk_index": 1,
+          "distance": 0.5124433040618896
+        },
+        {
+          "text": "Individual item sub-limits: \n- $3,000 for personal computers, tablets, cameras or video cameras; \n- $1,000 for mobile phones (including smart phones and any items with \nphone capabilities) \n- $750 for all other items (including jewellery and watches) \n- Items left in a concealed storage compartment of a locked vehicle \nduring daylight hours - $200 per item up to a maximum of $2,000 \n$1,000 \n(Minimum delay 10 hours) \n$5,000 \n12",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 12,
+          "chunk_index": 6,
+          "distance": 0.5196452736854553
+        },
+        {
+          "text": "\u2022 \n\u2022 \n\u2022 \n \n \n \n \n \n \n \nIncreased Item Limits Cover \nThis product provides cover for your luggage and personal \neffects and valuables under Benefit 4.1 Luggage, Personal \nEffects & Valuables. The standard item limits which apply in \nthe event of a claim are as follows (please refer to sub-section \n4.1.la] on page 26 for further details): \n$3,000 for personal computers, tablets, cameras or video \ncameras; \n$1,000 for mobile phones (including any items with \nphone capabilities); or",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 20,
+          "chunk_index": 0,
+          "distance": 0.5262848734855652
+        },
+        {
+          "text": "$5,000 $5,000 $10,000 \n$10,000 $10,000 $20,000 \nIndividual item sub-limits: \n- $3,000 for personal computers, tablets, cameras or video cameras. \n- $1,000 for mobile phones (including smart phones and any items with phone \ncapabilities). \n- $750 for all other items (including jewellery and watches). \n- Items left in a concealed storage compartment of a locked vehicle during daylight \nhours - $200 per item up to a maximum of $2,000. \n$1000 $1,000 $2,000",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 9,
+          "chunk_index": 5,
+          "distance": 0.5448638796806335
+        },
+        {
+          "text": "Plan and selecting the item type(s) and new item limits you \nrequire from the choices available. \nThe total limit which can be selected for all item types \ncombined is: \nUp to $7,000 for a Single cover type \nUp to $7,000 per person for a Duo cover type \nUp to $14,000 for a Family cover type. \nThe details of the option you have purchased will be shown on \nyour Certificate of Insurance. \nYou cannot purchase this optional cover with a Basic Plan. \nPlease note in the event of a claim:",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 20,
+          "chunk_index": 2,
+          "distance": 0.5589116811752319
+        }
+      ],
+      "retrieval_page_hit": true,
+      "answer_token_overlap": 0.923,
+      "evaluated_at": "2026-09-23T23:17:02.542010+00:00"
+    },
+    {
+      "id": "ALLIANZ-F-03",
+      "insurer": "ALLIANZ",
+      "question_type": "factual",
+      "question": "What is the Rental Vehicle Excess benefit limit under the Allianz Comprehensive Plan?",
+      "golden_answer": "The Rental Vehicle Excess benefit limit is $6,000. An excess applies to this benefit.",
+      "relevant_pages": [
+        9
+      ],
+      "answer": "According to the policy document excerpt [Source 2: ALLIANZ_20251219.pdf, page 28], the Rental Vehicle Excess benefit only provides cover for the amount specified in your rental vehicle agreement that you are responsible to pay if you are involved in an accident or the rental vehicle is stolen.",
+      "retrieved_pages": [
+        8,
+        13,
+        27,
+        28
+      ],
+      "retrieved_sources": [
+        {
+          "text": "Benefit \n4.4 Theft of Cash \n5.1 Rental Vehicle Excess \n6.1 Personal Liability' \nExcess applies \nNil \nYes \nYes \nNon-Medical Plan \nBenefit Limit \n$250 \n$6,000 \n$5 million \nt A default limit for Benefit 2.1 Cancellation is automatically included in your cover unless you make a selection. However, you are able to choose \ndifferent levels of cover from the amounts available to you when you purchase your policy. Any benefit limit selected by you will be shown on your",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 13,
+          "chunk_index": 0,
+          "distance": 0.429997056722641
+        },
+        {
+          "text": "agreement; and \nthe rental vehicle agreement offered by the rental \ncompany or agency specifies a maximum amount that \nyou must pay if the rental vehicle is damaged or stolen. \n0 \nThis Benefit only provides cover for the amount specified in \nyour rental vehicle agreement that you are responsible to \npay if you are involved in an accident or the rental vehicle is \nstolen. Please carefully read the rental vehicle agreement \nand the options available to limit the amount you are",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 28,
+          "chunk_index": 11,
+          "distance": 0.504467785358429
+        },
+        {
+          "text": "and the options available to limit the amount you are \nresponsible for. The rental vehicle agreement may also \ncontain conditions or exclusions that you need to be aware \nof. \nThis Benefit may not provide cover for items, such as but \nnot limited to, tyres, rims, windscreens, glass, roof and/or \nunderbody if damage to these items is in addition to the \n28",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 28,
+          "chunk_index": 12,
+          "distance": 0.5121933817863464
+        },
+        {
+          "text": "under each benefit, including any sub-limits. Maximum limits for benefits 1.1 to 6.1 across Comprehensive, Basic and Domestic plans \napply to all claims combined, including any dependants and not to each insured person except for Duo cover types where limits are per \nperson unless specified. \nReturn to Contents 8",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 8,
+          "chunk_index": 8,
+          "distance": 0.5681507587432861
+        },
+        {
+          "text": "(including a pair or related set of items as shown in the \nexample in sub-section 4.1.1 a]) is up to the increased \nitem limit shown on your Certificate of Insurance. \nThe maximum we will pay for all claims combined under \nBenefit 4.1 Luggage, Personal Effects & Valuables is the \nbenefit limit shown in the Table of Benefits for the plan \nyou have selected, even if you have purchased Increased \nItem Limits Cover. \nc] Any luggage and personal effects left in a vehicle will only",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 27,
+          "chunk_index": 3,
+          "distance": 0.5706809163093567
+        }
+      ],
+      "retrieval_page_hit": false,
+      "answer_token_overlap": 0.615,
+      "evaluated_at": "2026-09-23T23:20:31.913456+00:00"
+    },
+    {
+      "id": "ALLIANZ-R-01",
+      "insurer": "ALLIANZ",
+      "question_type": "reasoning",
+      "question": "I purchased the Allianz Adventure Pack, but I was injured while riding a motorcycle without a helmet. Would the claim be covered?",
+      "golden_answer": "No. Even with the Adventure Pack, motorcycle or moped cover requires the rider to wear an appropriate safety helmet at all times. The claim would not satisfy the activity conditions.",
+      "relevant_pages": [
+        17,
+        37
+      ],
+      "answer": "Based on the provided policy document excerpts, the claim would not be covered. The Adventure Pack has specific exclusions, and one of them is \"participating in any of the activities listed in the Adventure Pack\" (Source 1, page 17). Riding a motorcycle without a helmet is likely one of the activities listed in the Adventure Pack, and therefore, the claim would not be covered under Benefits 1.5 Permanent Disability or 6.1 Personal Liability.",
+      "retrieved_pages": [
+        9,
+        12,
+        17,
+        21,
+        40
+      ],
+      "retrieved_sources": [
+        {
+          "text": "your Certificate of Insurance. \nYou must be aged under 75 years at the time of issue of your \nCertificate of Insurance in order to purchase this optional pack. \nA \nNo cover will apply under Benefits 1.5 Permanent \nDisability or 6.1 Personal Liability for any claims \narising from, or in any way connected with you \nparticipating in any of the activities listed in the \nAdventure Pack. \nAn excess of $500, which is in addition to any base \nexcess, will apply to any claims made under Benefits",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 17,
+          "chunk_index": 4,
+          "distance": 0.5309596657752991
+        },
+        {
+          "text": "Claims \nRead through the terms, conditions, exclusions, limits and \napplicable sub-limits of your policy - for example, the benefits \nlisted under the Policy Benefits and also in the Optional \nCovers - Cruise Pack and Snow Pack Policy Benefits, the \nGeneral Exclusions, or on your Certificate of Insurance - to \ncheck whether you are covered. \nReturn to Contents \n0 \nWhere to make a claim \nYou must notify Allianz Global Assistance as soon as you",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 40,
+          "chunk_index": 7,
+          "distance": 0.5448231101036072
+        },
+        {
+          "text": "A you do not have cover under this benefit while travelling in Australia. \n# you will not have cover under Benefits 1.5 Permanent Disability and 6.1 Personal Liability for any claims arising from your participation in any of the \nactivities listed under Adventure Pack or your participation in snow sport activities. \nTable of Benefits - Non-Medical Plan \nBenefit \n1.4 Accidental Death \n1.5 Permanent DisabilityA# \n2.1 Cancellation \n3.1 Additional Expenses \n3.2 Travel Delay Expenses",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 12,
+          "chunk_index": 3,
+          "distance": 0.5931588411331177
+        },
+        {
+          "text": "had you followed reasonable medical advice. This \nincludes any subsequent medical, hospital or evacuation \nexpenses incurred when you did not follow the reasonable \nmedical advice; \nReturn to Contents \nc] any claims under this benefit arising from your \nparticipation in snow sport activities. However, you may \nhave cover under Benefit 7.8 Overseas Emergency Snow \nSport Assistance if you have purchased the optional \nSnow Pack; \nd] any claims under this benefit arising while you are on a",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 21,
+          "chunk_index": 7,
+          "distance": 0.5950522422790527
+        },
+        {
+          "text": "\" you do not have cover under this benefit while travelling in Australia. \n# you will not have cover under Benefits 1.5 Permanent Disability and 6.1 Personal Liability for any claims arising from your participation in any of the \nactivities listed under Adventure Pack or your participation in snow sport activities. \nReturn to Contents 9",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 9,
+          "chunk_index": 8,
+          "distance": 0.602599024772644
+        }
+      ],
+      "retrieval_page_hit": true,
+      "answer_token_overlap": 0.333,
+      "evaluated_at": "2026-09-23T23:23:45.462240+00:00"
+    },
+    {
+      "id": "ALLIANZ-R-02",
+      "insurer": "ALLIANZ",
+      "question_type": "reasoning",
+      "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Allianz cover it?",
+      "golden_answer": "No. A laptop is a valuable, and valuables left in a vehicle at any time are excluded even when they are in a concealed storage compartment. The limited vehicle-storage cover only applies in daylight and does not override the exclusion for valuables.",
+      "relevant_pages": [
+        26,
+        27
+      ],
+      "answer": "Based on the policy document excerpts provided, it appears that Allianz would cover your stolen laptop. Here's why:\n\n* According to Source 3, \"Any luggage and personal effects left in a vehicle will only be covered during daylight hours and only if the items were placed in a concealed storage compartment of a locked vehicle.\" Since you left your laptop in the locked boot of your rental car overnight, it meets this condition.\n* Additionally, Source 3 states that \"In the event of theft, forced entry must have been made to the vehicle.\" Since the thief had to break into the locked boot to steal your laptop, this condition is also met.\n* The policy also specifies that the most Allianz will pay for each stolen item is $200, and $2,000 in total for all stolen items. Since you only have one laptop to claim, the maximum payout would be $200.\n\nOverall, it appears that Allianz would cover your stolen laptop, up to the maximum payout amount of $200.",
+      "retrieved_pages": [
+        27,
+        33,
+        40
+      ],
+      "retrieved_sources": [
+        {
+          "text": "be covered during daylight hours, and only if the items \nwere: \nplaced in a concealed storage compartment of \na locked vehicle or, where this is not possible; \nsecurely locked to the luggage/ski racks fitted \nto the roof of a locked vehicle. \nIn the event of theft, forced entry must have been made \nto the vehicle or, where the items were securely locked to \nthe luggage/ski racks, leaving evidence of damage to \nthe locking mechanism. \nThe most we will pay in the event of a payable claim",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 33,
+          "chunk_index": 7,
+          "distance": 0.5968371629714966
+        },
+        {
+          "text": "journey you must tell us as soon as possible. Contact \nAllianz Global Assistance using the contact number shown \non the back cover of this PDS, or the 24 hour emergency \nassistance number if you are still overseas. \nb] For medical, hospital or dental claims, contact Allianz \nGlobal Assistance as soon as practicable. \nc] For loss or theft of your luggage and personal effects or \nvaluables, report it as soon as reasonably practicable to",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 40,
+          "chunk_index": 12,
+          "distance": 0.6071884632110596
+        },
+        {
+          "text": "Item Limits Cover. \nc] Any luggage and personal effects left in a vehicle will only \nbe covered during daylight hours and only if the items \nwere placed in a concealed storage compartment of a \nlocked vehicle. In the event of theft, forced entry must \nhave been made to the vehicle. \nThe most we will pay in the event of a payable claim \nunder 4.1.lc] is $200 for each item, and $2,000 in total for \nall stolen items, even if you have purchased the optional",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 27,
+          "chunk_index": 4,
+          "distance": 0.6360680460929871
+        },
+        {
+          "text": "home unless it has been approved by Allianz Global \nAssistance, such approval will not be unreasonably \nwithheld or delayed. Please contact Allianz Global \nAssistance to confirm approval for these expenses; \nb] for costs and expenses that you would not have incurred \nhad you followed reasonable medical advice. This \nincludes any subsequent medical, hospital or evacuation \nexpenses incurred when you did not follow the reasonable \nmedical advice;",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 33,
+          "chunk_index": 2,
+          "distance": 0.6954295635223389
+        },
+        {
+          "text": "personal effects, caused by the airline or any other \noperator or accommodation provider, report the damage \nor misplacement to an appropriate official as soon as \nreasonably possible and take all reasonable steps to \nobtain a written report, including any offer of settlement \nthat they may make. \nAllianz Global Assistance will consider your claim within 10 \nbusiness days of receiving a completed claim form and all \nreasonably necessary documentation. If they need additional",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 40,
+          "chunk_index": 14,
+          "distance": 0.6961841583251953
+        }
+      ],
+      "retrieval_page_hit": true,
+      "answer_token_overlap": 0.5,
+      "evaluated_at": "2026-09-23T23:26:37.065118+00:00"
+    },
+    {
+      "id": "ALLIANZ-R-03",
+      "insurer": "ALLIANZ",
+      "question_type": "reasoning",
+      "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Allianz cover the medical claim?",
+      "golden_answer": "No, if the alcohol affected your physical or mental functions or impaired your judgement and caused or contributed to the fall. Allianz excludes claims arising from or contributed to by impairment from intoxicating liquor or drugs.",
+      "relevant_pages": [
+        38
+      ],
+      "answer": "Based on the provided policy document excerpts, I would answer as follows:\n\nAccording to Source 1, if the medical claim is not related to any covered pre-existing medical condition, the $250 base excess would be applied. Since the medical condition is not related to Sam's pre-existing heart condition, the $250 base excess would be applied.\n\nHowever, according to Source 4, Allianz Global Assistance may decline to provide cover for any medical or hospital expenses if the condition is related to excessive alcohol consumption. Since the blood test recorded a BAC of 0.20%, it is likely that the medical condition is related to excessive alcohol consumption.\n\nAccording to Source 2, if Allianz Global Assistance declines to provide cover as stated in point c], you will not be able to continue with your purchase. Therefore, it is likely that Allianz would decline to cover the medical claim in this case.\n\nIn summary, based on the provided policy document excerpts, it is likely that Allianz would decline to cover the medical claim due to the medical condition being related to excessive alcohol consumption.",
+      "retrieved_pages": [
+        6,
+        7,
+        14,
+        41
+      ],
+      "retrieved_sources": [
+        {
+          "text": "Sam applies for cover for a pre-existing heart condition. \nAllianz Global Assistance agrees to provide cover for this \ncondition and Sam selects a $500 medical excess. If Sam \nneeds to make a claim arising from this condition, the \nmedical excess of $500 will be applied to the claim. \nHowever, if Sam needs to make a claim which is not related \nto any covered pre-existing medical condition, then the \n$250 base excess will be applied - not the medical excess.",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 7,
+          "chunk_index": 3,
+          "distance": 0.5691511631011963
+        },
+        {
+          "text": "existing medical condition(s); or \nc] decline to provide you with cover for any medical or \nhospital expenses, as well as for any other expenses \narising from, related to or associated with any injury, \nillness or sickness suffered by you. \nPlease note that if Allianz Global Assistance declines to \nprovide you with cover as stated in point c] above, you will not \nbe able to continue with your purchase; however there may be \nother options available such as: \nReturn to Contents",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 14,
+          "chunk_index": 6,
+          "distance": 0.6025350093841553
+        },
+        {
+          "text": "Exclusions from page 36). You must, as soon as possible, \nadvise Allianz Global Assistance of your admission to hospital \nor your early return to Australia based on written medical \nadvice. If you do not get the medical treatment you expect, \nAllianz Global Assistance can assist you but neither Allianz nor \nAllianz Global Assistance are liable for anything that results \nfrom that. \nOther insurance \nIf any loss, damage or liability covered under this policy is",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 41,
+          "chunk_index": 4,
+          "distance": 0.624319314956665
+        },
+        {
+          "text": "advise you of the outcome. Depending on your pre-existing \nmedical condition(s), Allianz Global Assistance may either: \na] agree in writing to include cover under your policy for your \npre-existing medical condition(s) (an additional premium \nmay be payable, and a medical excess may apply); or \nb] decline to include cover under your policy for your pre-\nexisting medical condition(s); or \nc] decline to provide you with cover for any medical or",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 14,
+          "chunk_index": 5,
+          "distance": 0.6253772377967834
+        },
+        {
+          "text": "for any pre-existing medical condition covered under your \noriginal policy unless you make further application for \ncover and Allianz Global Assistance agrees to provide \ncover for your pre-existing medical condition; \nfor any medical condition you suffered during the term of \nyour original policy (which will be defined as a pre\u00ad\nexisting medical condition under your new policy) unless \nyou apply for cover for your pre-existing medical \nconditions at the time you apply for your new policy; or",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 6,
+          "chunk_index": 12,
+          "distance": 0.635456383228302
+        }
+      ],
+      "retrieval_page_hit": false,
+      "answer_token_overlap": 0.259,
+      "evaluated_at": "2026-09-23T23:29:13.469561+00:00"
+    },
+    {
+      "id": "ALLIANZ-O-01",
+      "insurer": "ALLIANZ",
+      "question_type": "out_of_knowledge_base",
+      "question": "What will the weather be in Tokyo next Tuesday?",
+      "golden_answer": "This cannot be answered from the Allianz PDS because it does not contain live weather forecasts. The user should consult a current weather service.",
+      "relevant_pages": [],
+      "answer": "I'm happy to help! However, I must point out that the provided policy document excerpts do not contain any information about the weather in Tokyo or any other specific location. The excerpts appear to be related to travel insurance policies and exclusions for skiing and bad weather. Therefore, I cannot provide an answer to your question about the weather in Tokyo. If you're looking for weather forecasts or information, I recommend checking a reliable weather service or website.",
+      "retrieved_pages": [
+        16,
+        33,
+        34
+      ],
+      "retrieved_sources": [
+        {
+          "text": "transport to and from areas designed for recreational \nskiing; or \nReturn to Contents \nb] for any claims arising outside the period 15th December to \n31st March in Northern Hemisphere resorts and 15th June \nto 30th September in Southern Hemisphere resorts. This \nexclusion will not apply to those resorts which are open \noutside these time periods and have sufficient snow for \nnormal skiing activities. \nPlease ensure you also read all the other sections of the",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 6,
+          "distance": 0.967536985874176
+        },
+        {
+          "text": "skiing; or \nd] for any claims arising outside the period 15th December to \n31st March in Northern Hemisphere resorts, and 15th June \nto 30th September in Southern Hemisphere resorts. This \nexclusion will not apply to those resorts which are open \noutside these time periods and have sufficient snow for \nnormal skiing activities. \nPlease ensure you also read all the other sections of the \nPDS - in particular, consider the General Exclusions from \npage 36 and Our Definitions from page 44.",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 33,
+          "chunk_index": 4,
+          "distance": 0.9690639972686768
+        },
+        {
+          "text": "Pack. See the Optional Covers section for details. \n7.13.1 What we cover \nIf, during the period of cover for your journey, your pre-booked \noutbound or return travel is delayed for more than 12 \nconsecutive hours from your scheduled departure time due to \nbad weather or an avalanche, we will reimburse you for the \nreasonable additional travel and accommodation expenses \nyou incur until the reason for the delay has ended and you are \nable to continue with your travel.",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 11,
+          "distance": 0.9765411615371704
+        },
+        {
+          "text": "exclusion will not apply to those resorts which are open \noutside these time periods and have sufficient snow for \nnormal skiing activities. \nPlease ensure you also read all the other sections of the \nPDS - in particular, consider the General Exclusions from \npage 36 and Our Definitions from page 44. \n7.13 Bad Weather & Avalanches \nYou only have this cover if you purchased the optional Snow \nPack. See the Optional Covers section for details. \n7.13.1 What we cover",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 10,
+          "distance": 0.9769710302352905
+        },
+        {
+          "text": "nautical miles off any land mass; \ntrack and field athletics; and \nwalking, hiking, trekking or tramping, peaking at \naltitudes up to 3,000 metres where specialist climbing \nequipment is not required (excluding expeditions to or on \nthe Kokoda Track/Trail) \n16",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 16,
+          "chunk_index": 9,
+          "distance": 0.9841030836105347
+        }
+      ],
+      "retrieval_page_hit": null,
+      "answer_token_overlap": 0.409,
+      "evaluated_at": "2026-09-23T23:32:44.974566+00:00"
+    },
+    {
+      "id": "ALLIANZ-O-02",
+      "insurer": "ALLIANZ",
+      "question_type": "out_of_knowledge_base",
+      "question": "Do Australian passport holders currently need a visa for a two-week holiday in Japan?",
+      "golden_answer": "This cannot be answered from the Allianz PDS because it does not provide current visa or entry requirements. The user should consult official Japanese government travel or immigration guidance.",
+      "relevant_pages": [],
+      "answer": "Based on the provided policy document excerpts, there is no information that directly addresses visa requirements for Australian passport holders traveling to Japan. The policy excerpts only discuss working holiday visas, Australian Medicare cards, and travel expenses related to returning to Australia. Therefore, I cannot provide an answer to this question based on the provided context.",
+      "retrieved_pages": [
+        4,
+        5,
+        24,
+        25,
+        26
+      ],
+      "retrieved_sources": [
+        {
+          "text": "working holiday visa - that will remain valid after your \njourney ends and allows you unrestricted right of \nentry into Australia; or \nhold a valid Australian Medicare card; and \nyou purchase your policy before starting your journey; \nand \nyour journey will start and end in Australia. \n4",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 4,
+          "chunk_index": 13,
+          "distance": 0.5199474096298218
+        },
+        {
+          "text": "Please note that if requested, you will need to prove your \neligibility (where reasonable) by providing any of the following: \na] a copy of your passport; \nb] Australian residency documents; \nc] a copy of your current visa; \nd] a copy of your valid Medicare card; or \ne] other official documents confirming your right to reside in \nAustralia. \nf] a copy of your flight or travel itinerary \nTravelling with children/ grandchildren?",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 5,
+          "chunk_index": 0,
+          "distance": 0.6593080759048462
+        },
+        {
+          "text": "accommodation which, before you left Australia, you had \nplanned to attend or utilise while you are overseas, we will pay \nyour reasonable additional travel expenses to enable you to \narrive on time. \n0 \nExplanation - Travel expenses refers to expenses directly \nrelated to transport, such as airfares, rail fares, bus fares, \ntaxi fares, and rideshare services. \nWhenever claims are made by you under Benefits 3.3 \nAlternative Transport Expenses, 3.1 Additional Expenses and",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 26,
+          "chunk_index": 4,
+          "distance": 0.723955512046814
+        },
+        {
+          "text": "We will only pay the cost of the fare class that you had \noriginally planned to return home on and you must take \nadvantage of any pre-arranged return travel to Australia. \nPlease call Allianz Global Assistance to confirm approval for \nthese expenses. \ne] Return home due to relative's death or hospital \nadmission \nIf you need to return to Australia earlier than planned because, \nduring the period of cover for your journey: \n24",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 24,
+          "chunk_index": 14,
+          "distance": 0.7254680395126343
+        },
+        {
+          "text": "expenses. We will only pay the fare class that you had \noriginally planned to travel on and you must take advantage \nof any pre-arranged travel. Please call Allianz Global \nAssistance to confirm approval for these expenses. \nIf we pay your claim for additional travel expenses to return to \nyour home and you do not have a return ticket booked to \nAustralia before the event causing your claim occurred, we will \nreduce the amount of your claim by the price of the fare to",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 25,
+          "chunk_index": 5,
+          "distance": 0.7379839420318604
+        }
+      ],
+      "retrieval_page_hit": null,
+      "answer_token_overlap": 0.259,
+      "evaluated_at": "2026-09-23T23:34:43.122413+00:00"
+    },
+    {
+      "id": "ALLIANZ-O-03",
+      "insurer": "ALLIANZ",
+      "question_type": "out_of_knowledge_base",
+      "question": "Which airline has the cheapest return flights from Sydney to Bali next month?",
+      "golden_answer": "This cannot be answered from the Allianz PDS because it does not contain live flight schedules or prices. The user should consult airlines or a current flight-comparison service.",
+      "relevant_pages": [],
+      "answer": "I'm happy to help you with your travel insurance questions, but I'm afraid I won't be able to provide information on the cheapest airline from Sydney to Bali. The policy document excerpts you provided don't mention anything about airline prices or routes. My expertise is in helping you understand the travel insurance policy, not in booking flights. If you have any questions about the policy, I'd be happy to help!",
+      "retrieved_pages": [
+        19,
+        24,
+        25
+      ],
+      "retrieved_sources": [
+        {
+          "text": "We will only pay the cost of the fare class that you had \noriginally planned to return home on and you must take \nadvantage of any pre-arranged return travel to Australia. \nPlease call Allianz Global Assistance to confirm approval for \nthese expenses. \ne] Return home due to relative's death or hospital \nadmission \nIf you need to return to Australia earlier than planned because, \nduring the period of cover for your journey: \n24",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 24,
+          "chunk_index": 14,
+          "distance": 0.7056171298027039
+        },
+        {
+          "text": "reduce the amount of your claim by the price of the fare to \nAustralia from the place you planned to return to Australia \nfrom. The fare will be at the same fare class as the one you left \nAustralia on. \nWhenever claims are made by you under Benefits 3.1 \nAdditional Expenses and 2.1 Cancellation for cancelled \nservices/facilities or alternative arrangements for the same or \nsimilar services/facilities, we will pay for the higher of the two \namounts, not both.",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 25,
+          "chunk_index": 6,
+          "distance": 0.720754086971283
+        },
+        {
+          "text": "expenses. We will only pay the fare class that you had \noriginally planned to travel on and you must take advantage \nof any pre-arranged travel. Please call Allianz Global \nAssistance to confirm approval for these expenses. \nIf we pay your claim for additional travel expenses to return to \nyour home and you do not have a return ticket booked to \nAustralia before the event causing your claim occurred, we will \nreduce the amount of your claim by the price of the fare to",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 25,
+          "chunk_index": 5,
+          "distance": 0.7443802952766418
+        },
+        {
+          "text": "items) \n$2,000 \n(Minimum delay 24 hours) \n$1,000 \n$1,000 \n($100 after initial 24 hours, then again for each consecutive 24-hour \nperiod thereafter) \n$1,000 \n(Minimum delay 12 hours) \n# you only have cover for these benefits if the relevant pack has been purchased. \n' you do not have cover under this benefit while travelling in Australia \nReturn to Contents 19",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 19,
+          "chunk_index": 6,
+          "distance": 0.8166906833648682
+        },
+        {
+          "text": "payable for your claim to the extent we are prejudiced. \nd] Return home on medical advice \nIf you shorten your journey and return to Australia on the \nadvice of your treating medical adviser and with the approval \nof Allianz Global Assistance, such approval will not be \nunreasonably withheld or delayed, we will reimburse your \nreasonable additional travel and accommodation expenses. \nWe will only pay the cost of the fare class that you had",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 24,
+          "chunk_index": 13,
+          "distance": 0.8231616020202637
+        }
+      ],
+      "retrieval_page_hit": null,
+      "answer_token_overlap": 0.231,
+      "evaluated_at": "2026-09-23T23:36:17.792927+00:00"
+    }
+  ]
+}
