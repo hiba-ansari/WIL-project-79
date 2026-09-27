@@ -1,4 +1,5 @@
 import argparse
+import asyncio
 import json
 import re
 import statistics
@@ -15,6 +16,8 @@ from query import ask, load_config
 RESULTS_DIR = PROJECT_ROOT / "eval" / "results"
 DB_PATH = PROJECT_ROOT / "data" / "vector_db"
 COLLECTION_NAME = "Travel_Insurance"
+OLLAMA_BASE_URL = "http://localhost:11434/v1"
+OLLAMA_API_KEY = "ollama" 
 
 
 # Cheap metrics (no LLM)
@@ -54,14 +57,15 @@ def custom_metrics(item: dict, run_entry: dict):
     relevant_pages = item["relevant_pages"]
     refused = is_refusal(answer)
 
-    if category == "out_of_scope":
+    if category == "out_of_knowledge_base":
         ookb_correct = 1.0 if refused else 0.0
     else:
         ookb_correct = 0.0 if refused else 1.0
 
     retrieved_pages = [s["page"] for s in run_entry["sources"]]
     cited_pages = extract_cited_pages(answer)
-    if category == "out_of_scope":
+
+    if category == "out_of_knowledge_base":
         retrieval_hit = precision_at_k = attribution_precision = None
     else:
         rp = set(relevant_pages)
@@ -83,9 +87,73 @@ def custom_metrics(item: dict, run_entry: dict):
     }
 
 
+# calculate RAGAS metrics
+RAGAS_METRICS = ["faithfulness", "answer_correctness", "context_precision"]
+
+def build_ragas_metrics(model: str, embedding_model: str):
+    """Construct the three RAGAS metrics using Ollama."""
+
+    from openai import AsyncOpenAI
+    from ragas.llms import llm_factory
+    from ragas.embeddings import OpenAIEmbeddings as RagasOpenAIEmbeddings
+    from ragas.metrics import collections as rc
+
+    client = AsyncOpenAI(base_url=OLLAMA_BASE_URL, api_key=OLLAMA_API_KEY)
+    llm = llm_factory(model, provider="openai", client=client)
+    embeddings = RagasOpenAIEmbeddings(client=client, model=embedding_model)
+
+    return {
+        "faithfulness": rc.Faithfulness(llm=llm),
+        "answer_correctness": rc.AnswerCorrectness(llm=llm, embeddings=embeddings),
+        "context_precision": rc.ContextPrecision(llm=llm),
+    }
+
+async def score_ragas_one(metrics: dict, item: dict, entry: dict):
+    """
+    Compute all RAGAS metrics for a single test item. Metrics for refusal answers are 
+    not meaningful and thus recorded as None.
+    """
+    contexts = [s["text"] for s in entry["sources"]]
+    refused = is_refusal(entry["answer"])
+    scores = {}
+
+    for name, m in metrics.items():
+        if refused and name in ("faithfulness", "context_precision"):
+            scores[name] = None
+            continue
+        try:
+            if name == "faithfulness":
+                r = await m.ascore(
+                    user_input=item["question"],
+                    response=entry["answer"],
+                    retrieved_contexts=contexts,
+                )
+            elif name == "answer_correctness":
+                r = await m.ascore(
+                    user_input=item["question"],
+                    response=entry["answer"],
+                    reference=item["golden_answer"],
+                )
+            elif name == "context_precision":
+                r = await m.ascore(
+                    user_input=item["question"],
+                    reference=item["golden_answer"],
+                    retrieved_contexts=contexts,
+                )
+            else:
+                raise KeyError(name)
+            scores[name] = r.value
+        except Exception as e:
+            print(f"      ! {name} failed: {type(e).__name__}: {e}")
+            scores[name] = None
+
+    return scores
+
+
 # collect: run the RAG pipeline and score
 def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
-            ids: list[str] | None, resume_file: Path | None = None):
+            ids: list[str] | None, resume_file: Path | None = None,
+            cheap_only: bool = False):
     """Run test question against the RAG pipeline."""
 
     items = select_items(test_set, limit, ids)
@@ -111,6 +179,13 @@ def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
             "entries": [],
         }
 
+    ragas_metrics = {}
+    if not cheap_only:
+        model = config.get("llm", {}).get("model", "llama3")
+        emb_model = config.get("embeddings", {}).get("model", "nomic-embed-text")
+        print(f"Building RAGAS evaluator (model={model}, base={OLLAMA_BASE_URL})")
+        ragas_metrics = build_ragas_metrics(model, emb_model)
+
     total = len(items)
     for i, item in enumerate(items, 1):
         print(f"\n[{i}/{total}] {item['id']}: {item['question'][:60]}...")
@@ -121,7 +196,7 @@ def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
             question=item["question"],
             db_path=DB_PATH,
             collection_name=COLLECTION_NAME,
-            insurer=item.get("insurer") if item["question_type"] != "out_of_scope" else None,
+            insurer=item.get("insurer") if item["question_type"] != "out_of_knowledge_base" else None,
         )
         latency = time.perf_counter() - t0
 
@@ -133,7 +208,16 @@ def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
             "sources": result.sources,
             "latency_s": round(latency, 2),
         }
+
+        # cheap metrics (always calculated)
         entry["scores"] = custom_metrics(item, entry)
+
+        # RAGAS metrics (unless command contains '--cheap-only')
+        if ragas_metrics:
+            print(f"  scoring RAGAS (may take minutes)...")
+            ragas_scores = asyncio.run(score_ragas_one(ragas_metrics, item, entry))
+            entry["scores"].update(ragas_scores)
+
         run["entries"].append(entry)
         save_run(run_file, run)
         print(f"  [{i}/{total}] saved (latency {latency:.1f}s)")
@@ -156,9 +240,11 @@ def mean_or_none(vals: list) -> float | None:
 def aggregate(run: dict):
     out = {}
     cats = ["factual", "reasoning", "out_of_knowledge_base"]
-    keys = ["ookb_correct", "retrieval_hit_at_k", "retrieval_precision_at_k",
+    keys = ["faithfulness", "answer_correctness", "context_precision",
+            "ookb_correct", "retrieval_hit_at_k", "retrieval_precision_at_k",
             "attribution_precision", "refused"]
-    groups = {"overall": run["entries"], **{c: [e for e in run["entries"] if e["question_type"] == c] for c in cats}}
+    groups = {"overall": run["entries"],
+              **{c: [e for e in run["entries"] if e["question_type"] == c] for c in cats}}
     for gname, entries in groups.items():
         agg = {k: mean_or_none([e.get("scores", {}).get(k) for e in entries]) for k in keys}
         lats = [e["latency_s"] for e in entries if "latency_s" in e]
@@ -177,16 +263,19 @@ def report(run_file: Path):
     print(f"\n{'='*90}")
     print(f"EVALUATION REPORT — {run_file.name}")
     print(f"{'='*90}")
-    header = f"{'group':<22}{'n':>4}{'ookb_ok':>9}{'pgHit':>7}{'pgPrec':>8}{'attrPrec':>9}{'refused':>9}{'lat50':>7}"
+    header = (f"{'group':<22}{'n':>4}{'faithfulness':>14}{'ansCorrectness':>16}{'contextPrec':>14}"
+              f"{'ookb_ok':>10}{'retrievalHit':>14}{'retrievalPrec':>15}{'attributionPrec':>17}{'refused':>9}{'lat50':>7}")
     print(header)
     print("-" * len(header))
     for g, a in agg.items():
-        print(f"{g:<22}{a['n']:>4}{fmt(a,'ookb_correct'):>9}{fmt(a,'retrieval_hit_at_k'):>7}"
-              f"{fmt(a,'retrieval_precision_at_k'):>8}{fmt(a,'attribution_precision'):>9}"
+        print(f"{g:<22}{a['n']:>4}"
+              f"{fmt(a,'faithfulness'):>14}{fmt(a,'answer_correctness'):>16}{fmt(a,'context_precision'):>14}"
+              f"{fmt(a,'ookb_correct'):>10}{fmt(a,'retrieval_hit_at_k'):>14}"
+              f"{fmt(a,'retrieval_precision_at_k'):>15}{fmt(a,'attribution_precision'):>17}"
               f"{fmt(a,'refused'):>9}{fmt(a,'latency_p50_s'):>7}")
 
     report_path = run_file.with_name(run_file.stem + "_report.json")
-    report_path.write_text(json.dumps({"rag": agg, "run_file": str(run_file)}, indent=2, default=str),
+    report_path.write_text(json.dumps({"rag": agg, "run_file": str(run_file.name)}, indent=2, default=str),
                            encoding="utf-8")
     print(f"\nSaved report in {report_path}")
 
@@ -201,7 +290,7 @@ def fmt(a, k):
 
 def load_test_set(path: Path):
     """Load JSON test QnA set."""
-    
+
     return json.loads(path.read_text(encoding="utf-8"))
 
 
@@ -255,6 +344,8 @@ def main():
     parser.add_argument("--resume", default=None, help="Run file to continue (collect)")
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--ids", default=None, help="Comma-separated test ids")
+    parser.add_argument("--cheap-only", action="store_true",
+                    help="Skip RAGAS metrics (fast, no Ollama evaluator needed)")
     args = parser.parse_args()
 
     config = load_config(args.config)
@@ -263,7 +354,7 @@ def main():
     resume = Path(args.resume) if args.resume else None
 
     if args.mode == "collect":
-        collect(config, args.domain, test_set, args.limit, ids, resume)
+        collect(config, args.domain, test_set, args.limit, ids, resume, args.cheap_only)
     elif args.mode == "report":
         if not args.run_file:
             parser.error("--run-file required (path or 'latest')")
