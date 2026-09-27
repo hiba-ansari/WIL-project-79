@@ -1,0 +1,41 @@
+{
+  "rag": {
+    "overall": {
+      "ookb_correct": 0.611,
+      "retrieval_hit_at_k": 0.583,
+      "retrieval_precision_at_k": 0.117,
+      "attribution_precision": 0.576,
+      "refused": 0.389,
+      "latency_p50_s": 3.8,
+      "n": 36
+    },
+    "in_scope_factual": {
+      "ookb_correct": null,
+      "retrieval_hit_at_k": null,
+      "retrieval_precision_at_k": null,
+      "attribution_precision": null,
+      "refused": null,
+      "latency_p50_s": null,
+      "n": 0
+    },
+    "in_scope_reasoning": {
+      "ookb_correct": null,
+      "retrieval_hit_at_k": null,
+      "retrieval_precision_at_k": null,
+      "attribution_precision": null,
+      "refused": null,
+      "latency_p50_s": null,
+      "n": 0
+    },
+    "out_of_scope": {
+      "ookb_correct": null,
+      "retrieval_hit_at_k": null,
+      "retrieval_precision_at_k": null,
+      "attribution_precision": null,
+      "refused": null,
+      "latency_p50_s": null,
+      "n": 0
+    }
+  },
+  "run_file": "/Users/hibiscus/WIL-project-79/eval/results/run_collect_travel_insurance_20260927_164219.json"
+}

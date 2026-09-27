@@ -20,3 +20,4 @@
 ## Documentation
 - [Add collections in ChromaDB](https://docs.trychroma.com/docs/collections/add-data)
 - [Querying ChromaDB](https://docs.trychroma.com/docs/querying-collections/query-and-get)
+- [RAGAS library available metrics](https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/)

@@ -3,6 +3,8 @@ from langchain_ollama import ChatOllama, OllamaEmbeddings
 import json
 from dataclasses import dataclass
 
+import yaml
+
 @dataclass
 class RAGResult:
     """
@@ -15,6 +17,10 @@ class RAGResult:
     sources: list[dict]
     model: str
     top_k: int
+
+def load_config(config_path: str = "config.yaml") -> dict:
+    with open(config_path, "r") as f:
+        return yaml.safe_load(f)
 
 def retrieve(question, db_path, collection_name, insurer_filter, top_k = 5):
     """
@@ -130,7 +136,7 @@ def ask(question, db_path, collection_name, insurer, top_k=5):
     emb_model = "nomic-embed-text"
     llm_model = "llama3"
     temperature = 0.1
-    system_prompt = "You are a helpful travel insurance assistant. Answer based on the provided context."
+    system_prompt = "You are a travel insurance policy assistant. Answer questions based ONLY on the provided policy document excerpts. Always cite the source document and section when answering. If the question cannot be answered from the provided context, say so clearly and suggest the user contact their insurer directly. Do not make up coverage details, exclusions, or conditions that are not stated in the provided text."
 
     # run query
     print(f"\n=== RAG QUERY ===")

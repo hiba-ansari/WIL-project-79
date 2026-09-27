@@ -1,0 +1,25 @@
+domains:
+  travel_insurance:
+    display_name: "Travel Insurance PDS"
+    raw_docs_dir: "data/travel_insurance/raw_docs"
+    chunks_dir: "data/travel_insurance/chunks"
+    vectordb_dir: "data/travel_insurance/vectordb"
+    system_prompt: |
+      You are a travel insurance policy assistant. Answer questions based ONLY on the provided policy document excerpts.
+      Always cite the source document and section when answering.
+      If the question cannot be answered from the provided context, say so clearly and suggest the user contact their insurer directly.
+      Do not make up coverage details, exclusions, or conditions that are not stated in the provided text.
+
+ingestion:
+  chunk_size: 500
+  chunk_overlap: 100
+
+retrieval:
+  top_k: 5
+
+llm:
+  model: "llama3"
+  temperature: 0.1
+
+embeddings:
+  model: "nomic-embed-text"
