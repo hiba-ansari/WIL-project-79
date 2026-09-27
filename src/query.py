@@ -131,7 +131,7 @@ def generate_response(messages, temperature=0.1):
 
     return response.content
 
-def ask(question, db_path, collection_name, insurer, top_k = TOP_K):
+def ask(question, db_path, collection_name, insurer, top_k):
     """
     Run full RAG query pipeline. All 3 methods are called here.
     """

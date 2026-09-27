@@ -160,6 +160,7 @@ def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
             cheap_only: bool = False):
     """Run test question against the RAG pipeline."""
 
+    top_k = config.get("retrieval", {}).get("top_k", TOP_K)
     items = select_items(test_set, limit, ids)
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -170,7 +171,7 @@ def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
         run_file = resume_file
         print(f"Resuming {run_file.name}: {len(done)} done, {len(items)} remaining")
     else:
-        run_file = RESULTS_DIR / f"run_collect_{domain}_{datetime.now():%Y%m%d_%H%M%S}.json"
+        run_file = RESULTS_DIR / f"run_collect_{domain}_k_{top_k}_{datetime.now():%Y%m%d_%H%M%S}.json"
         run = {
             "mode": "collect",
             "domain": domain,
@@ -201,6 +202,7 @@ def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
             db_path=DB_PATH,
             collection_name=COLLECTION_NAME,
             insurer=item.get("insurer") if item["question_type"] != "out_of_knowledge_base" else None,
+            top_k=top_k,
         )
         latency = time.perf_counter() - t0
 
@@ -350,6 +352,8 @@ def main():
     parser.add_argument("--ids", default=None, help="Comma-separated test ids")
     parser.add_argument("--cheap-only", action="store_true",
                     help="Skip RAGAS metrics (fast, no Ollama evaluator needed)")
+    parser.add_argument("--top-k", type=int, default=None,
+                    help="Override config retrieval.top_k for this run")
     args = parser.parse_args()
 
     config = load_config(args.config)
@@ -358,6 +362,8 @@ def main():
     resume = Path(args.resume) if args.resume else None
 
     if args.mode == "collect":
+        if args.top_k is not None:
+            config.setdefault("retrieval", {})["top_k"] = args.top_k
         collect(config, args.domain, test_set, args.limit, ids, resume, args.cheap_only)
     elif args.mode == "report":
         if not args.run_file:

@@ -29,7 +29,7 @@ ingestion:
   chunk_overlap: 100
 
 retrieval:
-  top_k: 8
+  top_k: 7
 
 llm:
   model: "llama3"
