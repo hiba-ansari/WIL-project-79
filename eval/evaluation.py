@@ -114,11 +114,12 @@ async def score_ragas_one(metrics: dict, item: dict, entry: dict):
     not meaningful and thus recorded as None.
     """
     contexts = [s["text"] for s in entry["sources"]]
-    refused = is_refusal(entry["answer"])
+    # refused = is_refusal(entry["answer"])
+    ookb = item["question_type"] == "out_of_knowledge_base"
     scores = {}
 
     for name, m in metrics.items():
-        if refused and name in ("faithfulness", "context_precision"):
+        if ookb and name in ("faithfulness", "context_precision", "answer_correctness"):
             scores[name] = None
             continue
         try:

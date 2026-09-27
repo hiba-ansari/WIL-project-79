@@ -22,7 +22,12 @@ def load_config(config_path: str = "config.yaml") -> dict:
     with open(config_path, "r") as f:
         return yaml.safe_load(f)
 
-def retrieve(question, db_path, collection_name, insurer_filter, top_k = 5):
+config = load_config()
+SYSTEM_PROMPT = config['domains']['travel_insurance']['system_prompt']
+TOP_K = 5
+
+
+def retrieve(question, db_path, collection_name, insurer_filter, top_k = TOP_K):
     """
     Step 1: Retrieve most relevant chunks for the query
 
@@ -126,7 +131,7 @@ def generate_response(messages, temperature=0.1):
 
     return response.content
 
-def ask(question, db_path, collection_name, insurer, top_k=5):
+def ask(question, db_path, collection_name, insurer, top_k = TOP_K):
     """
     Run full RAG query pipeline. All 3 methods are called here.
     """
@@ -135,8 +140,7 @@ def ask(question, db_path, collection_name, insurer, top_k=5):
     k = top_k
     emb_model = "nomic-embed-text"
     llm_model = "llama3"
-    temperature = 0.1
-    system_prompt = "You are a travel insurance policy assistant. Answer questions based ONLY on the provided policy document excerpts. Always cite the source document and section when answering. If the question cannot be answered from the provided context, say so clearly and suggest the user contact their insurer directly. Do not make up coverage details, exclusions, or conditions that are not stated in the provided text."
+    temperature = 0.1    
 
     # run query
     print(f"\n=== RAG QUERY ===")
@@ -154,7 +158,7 @@ def ask(question, db_path, collection_name, insurer, top_k=5):
 
     # call method 2: build_prompt()
     print(f"[2/3] Building augmented prompt for LLM...")
-    messages = build_prompt(question, sources, system_prompt)
+    messages = build_prompt(question, sources, SYSTEM_PROMPT)
     print(f"  Propmt assembled ({len(messages)} messages)")
     print(f"  Assembled prompt: {messages}")
 
