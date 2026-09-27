@@ -19,6 +19,9 @@ COLLECTION_NAME = "Travel_Insurance"
 OLLAMA_BASE_URL = "http://localhost:11434/v1"
 OLLAMA_API_KEY = "ollama" 
 
+config = load_config()
+TOP_K = config['retrieval']['top_k']
+
 
 # Cheap metrics (no LLM)
 REFUSAL_PATTERNS = [
@@ -173,7 +176,7 @@ def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
             "domain": domain,
             "created": datetime.now().isoformat(timespec="seconds"),
             "config_snapshot": {
-                "top_k": config.get("retrieval", {}).get("top_k", 5),
+                "top_k": config.get("retrieval", {}).get("top_k", TOP_K),
                 "llm": config.get("llm", {}),
                 "embeddings": config.get("embeddings", {}),
             },

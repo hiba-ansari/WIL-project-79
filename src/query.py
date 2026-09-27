@@ -24,7 +24,7 @@ def load_config(config_path: str = "config.yaml") -> dict:
 
 config = load_config()
 SYSTEM_PROMPT = config['domains']['travel_insurance']['system_prompt']
-TOP_K = 5
+TOP_K = config['retrieval']['top_k']
 
 
 def retrieve(question, db_path, collection_name, insurer_filter, top_k = TOP_K):
