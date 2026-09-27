@@ -1,0 +1,1143 @@
+{
+  "mode": "collect",
+  "domain": "travel_insurance",
+  "created": "2026-09-27T23:02:08",
+  "config_snapshot": {
+    "top_k": 8,
+    "llm": {
+      "model": "llama3",
+      "temperature": 0.1
+    },
+    "embeddings": {
+      "model": "nomic-embed-text"
+    }
+  },
+  "entries": [
+    {
+      "id": "ALLIANZ-R-01",
+      "question": "I purchased the Allianz Adventure Pack, but I was injured while riding a motorcycle without a helmet. Would the claim be covered?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the claim would not be covered.\n\nThe relevant excerpt is:\n\n[Source 1: ALLIANZ_20251219.pdf, page 17]\nNo cover will apply under Benefits 1.5 Permanent Disability or 6.1 Personal Liability for any claims arising from, or in any way connected with you participating in any of the activities listed in the Adventure Pack.\n\nSince you were injured while riding a motorcycle without a helmet, which is an activity listed in the Adventure Pack, the claim would not be covered under Benefits 1.5 Permanent Disability or 6.1 Personal Liability.\n\nSource: [Source 1: ALLIANZ_20251219.pdf, page 17]",
+      "sources": [
+        {
+          "text": "your Certificate of Insurance. \nYou must be aged under 75 years at the time of issue of your \nCertificate of Insurance in order to purchase this optional pack. \nA \nNo cover will apply under Benefits 1.5 Permanent \nDisability or 6.1 Personal Liability for any claims \narising from, or in any way connected with you \nparticipating in any of the activities listed in the \nAdventure Pack. \nAn excess of $500, which is in addition to any base \nexcess, will apply to any claims made under Benefits",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 17,
+          "chunk_index": 4,
+          "distance": 0.530992329120636
+        },
+        {
+          "text": "Claims \nRead through the terms, conditions, exclusions, limits and \napplicable sub-limits of your policy - for example, the benefits \nlisted under the Policy Benefits and also in the Optional \nCovers - Cruise Pack and Snow Pack Policy Benefits, the \nGeneral Exclusions, or on your Certificate of Insurance - to \ncheck whether you are covered. \nReturn to Contents \n0 \nWhere to make a claim \nYou must notify Allianz Global Assistance as soon as you",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 40,
+          "chunk_index": 7,
+          "distance": 0.5447061061859131
+        },
+        {
+          "text": "A you do not have cover under this benefit while travelling in Australia. \n# you will not have cover under Benefits 1.5 Permanent Disability and 6.1 Personal Liability for any claims arising from your participation in any of the \nactivities listed under Adventure Pack or your participation in snow sport activities. \nTable of Benefits - Non-Medical Plan \nBenefit \n1.4 Accidental Death \n1.5 Permanent DisabilityA# \n2.1 Cancellation \n3.1 Additional Expenses \n3.2 Travel Delay Expenses",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 12,
+          "chunk_index": 3,
+          "distance": 0.5932335257530212
+        },
+        {
+          "text": "had you followed reasonable medical advice. This \nincludes any subsequent medical, hospital or evacuation \nexpenses incurred when you did not follow the reasonable \nmedical advice; \nReturn to Contents \nc] any claims under this benefit arising from your \nparticipation in snow sport activities. However, you may \nhave cover under Benefit 7.8 Overseas Emergency Snow \nSport Assistance if you have purchased the optional \nSnow Pack; \nd] any claims under this benefit arising while you are on a",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 21,
+          "chunk_index": 7,
+          "distance": 0.5950963497161865
+        },
+        {
+          "text": "\" you do not have cover under this benefit while travelling in Australia. \n# you will not have cover under Benefits 1.5 Permanent Disability and 6.1 Personal Liability for any claims arising from your participation in any of the \nactivities listed under Adventure Pack or your participation in snow sport activities. \nReturn to Contents 9",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 9,
+          "chunk_index": 8,
+          "distance": 0.602641224861145
+        },
+        {
+          "text": "benefits that apply to the optional Snow Pack and the \nmaximum amount we will pay for all claims combined under \neach benefit. For full details of the cover provided, see the \nOptional Covers - Cruise Pack and Snow Pack Policy Benefits \n7.8-7.13. \nYou cannot purchase any benefits of the Snow Pack \nindividually. If you purchase the Snow Pack, it will be shown on \nyour Certificate of Insurance. The Table of Benefits on the next \npage is a summary only. Please carefully read the PDS in full",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 19,
+          "chunk_index": 1,
+          "distance": 0.6097773909568787
+        },
+        {
+          "text": "the policy provides. In particular, please consider the General \nExclusions from page 36 and Our Definitions from page 44. \nIn order to be sure that you are covered under this policy you \nshould always contact Allianz Global Assistance for approval \nbefore you incur expenses you wish to claim. If you do not, we \nwill only pay for expenses incurred up to the amount we would \nhave authorised had you asked us first. \n1.1 Overseas Emergency Assistance",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 21,
+          "chunk_index": 1,
+          "distance": 0.6116098165512085
+        },
+        {
+          "text": "Pack. See the Optional Covers section for details. \n7.10.1 What we cover \nIf during the period of cover, you need to hire snow sport \nequipment because: \nyour snow sport equipment was misdirected or delayed \nfor more than 24 consecutive hours; or \nyour snow sport equipment is stolen, accidentally \ndamaged or permanently lost, provided you have a \npayable claim under Benefit 7.9 Own Snow Sport \nEquipment for that theft, accidental damage or loss;",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 1,
+          "distance": 0.6139959096908569
+        }
+      ],
+      "latency_s": 3.26,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.125,
+        "cited_pages": [
+          17
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.6666666666666666,
+        "answer_correctness": 0.6556776224885245,
+        "context_precision": 0.7095238095060713
+      }
+    },
+    {
+      "id": "ALLIANZ-R-02",
+      "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Allianz cover it?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, I can answer your question as follows:\n\nThe policy excerpt that is most relevant to your situation is [Source 3: ALLIANZ_20251219.pdf, page 27], which states:\n\n\"Item Limits Cover.\nc] Any luggage and personal effects left in a vehicle will only be covered during daylight hours and only if the items were placed in a concealed storage compartment of a locked vehicle. In the event of theft, forced entry must have been made to the vehicle.\nThe most we will pay in the event of a payable claim under 4.1.lc] is $200 for each item, and $2,000 in total for all stolen items, even if you have purchased the optional Increased Item Limits Cover.\"\n\nSince your laptop was stolen after being left hidden in the locked boot of your rental car overnight, it does not meet the condition of being placed in a concealed storage compartment of a locked vehicle during daylight hours. Therefore, according to the policy, it would not be covered.\n\nThe supporting sentence is:\n\n\"Any luggage and personal effects left in a vehicle will only be covered during daylight hours and only if the items were placed in a concealed storage compartment of a locked vehicle.\"\n\nConclusion: The laptop would not be covered because it was left in the locked boot of the rental car overnight, which does not meet the condition of being placed in a concealed storage compartment of a locked vehicle during daylight hours.",
+      "sources": [
+        {
+          "text": "be covered during daylight hours, and only if the items \nwere: \nplaced in a concealed storage compartment of \na locked vehicle or, where this is not possible; \nsecurely locked to the luggage/ski racks fitted \nto the roof of a locked vehicle. \nIn the event of theft, forced entry must have been made \nto the vehicle or, where the items were securely locked to \nthe luggage/ski racks, leaving evidence of damage to \nthe locking mechanism. \nThe most we will pay in the event of a payable claim",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 33,
+          "chunk_index": 7,
+          "distance": 0.5969334244728088
+        },
+        {
+          "text": "journey you must tell us as soon as possible. Contact \nAllianz Global Assistance using the contact number shown \non the back cover of this PDS, or the 24 hour emergency \nassistance number if you are still overseas. \nb] For medical, hospital or dental claims, contact Allianz \nGlobal Assistance as soon as practicable. \nc] For loss or theft of your luggage and personal effects or \nvaluables, report it as soon as reasonably practicable to",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 40,
+          "chunk_index": 12,
+          "distance": 0.60719233751297
+        },
+        {
+          "text": "Item Limits Cover. \nc] Any luggage and personal effects left in a vehicle will only \nbe covered during daylight hours and only if the items \nwere placed in a concealed storage compartment of a \nlocked vehicle. In the event of theft, forced entry must \nhave been made to the vehicle. \nThe most we will pay in the event of a payable claim \nunder 4.1.lc] is $200 for each item, and $2,000 in total for \nall stolen items, even if you have purchased the optional",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 27,
+          "chunk_index": 4,
+          "distance": 0.6361649036407471
+        },
+        {
+          "text": "home unless it has been approved by Allianz Global \nAssistance, such approval will not be unreasonably \nwithheld or delayed. Please contact Allianz Global \nAssistance to confirm approval for these expenses; \nb] for costs and expenses that you would not have incurred \nhad you followed reasonable medical advice. This \nincludes any subsequent medical, hospital or evacuation \nexpenses incurred when you did not follow the reasonable \nmedical advice;",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 33,
+          "chunk_index": 2,
+          "distance": 0.6954711675643921
+        },
+        {
+          "text": "personal effects, caused by the airline or any other \noperator or accommodation provider, report the damage \nor misplacement to an appropriate official as soon as \nreasonably possible and take all reasonable steps to \nobtain a written report, including any offer of settlement \nthat they may make. \nAllianz Global Assistance will consider your claim within 10 \nbusiness days of receiving a completed claim form and all \nreasonably necessary documentation. If they need additional",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 40,
+          "chunk_index": 14,
+          "distance": 0.6962218880653381
+        },
+        {
+          "text": "all stolen items, even if you have purchased the optional \nIncreased Item Limits Cover. No cover is available for \nvaluables left in a vehicle at any time. \nThe maximum amount we will pay for all claims combined \nunder this benefit is the benefit limit shown in the Table of \nBenefits for the plan you have selected, even if you have \npurchased the optional Increased Item Limits Cover. \nWhere reasonably practicable, we expect you to report any",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 27,
+          "chunk_index": 5,
+          "distance": 0.6964004039764404
+        },
+        {
+          "text": "Assistance at travelclaims@allianz-assistance.com.au or by \ncalling the contact number on the back cover of this PDS. \nIn order to be sure that you are covered under this policy you \nshould, where practical, always contact Allianz Global \nAssistance for approval before you incur expenses you wish to \nclaim in order to check you are covered and that the amount is \nreasonable. If you do not, we may reduce your claim to the \nextent that we are prejudiced.",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 40,
+          "chunk_index": 9,
+          "distance": 0.6977373361587524
+        },
+        {
+          "text": "claim at your expense. Examples of information to support \nyour claim includes police reports, valuations, medical reports, \noriginal receipts or proof of purchase and ownership. If \nrequired Allianz Global Assistance may reasonably ask you to \nprovide them with translations into English of any such \ndocuments to enable their consideration of your claim. \na] If you think that you may have to cancel or shorten your \njourney you must tell us as soon as possible. Contact",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 40,
+          "chunk_index": 11,
+          "distance": 0.7135910987854004
+        }
+      ],
+      "latency_s": 7.8,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.125,
+        "cited_pages": [
+          27
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.3333333333333333,
+        "answer_correctness": 0.6465865801980728,
+        "context_precision": 0.6845238095066964
+      }
+    },
+    {
+      "id": "ALLIANZ-R-03",
+      "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Allianz cover the medical claim?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the answer is:\n\nNo, Allianz would not cover the medical claim.\n\nThe excerpts do not contain this information",
+      "sources": [
+        {
+          "text": "Sam applies for cover for a pre-existing heart condition. \nAllianz Global Assistance agrees to provide cover for this \ncondition and Sam selects a $500 medical excess. If Sam \nneeds to make a claim arising from this condition, the \nmedical excess of $500 will be applied to the claim. \nHowever, if Sam needs to make a claim which is not related \nto any covered pre-existing medical condition, then the \n$250 base excess will be applied - not the medical excess.",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 7,
+          "chunk_index": 3,
+          "distance": 0.569054365158081
+        },
+        {
+          "text": "existing medical condition(s); or \nc] decline to provide you with cover for any medical or \nhospital expenses, as well as for any other expenses \narising from, related to or associated with any injury, \nillness or sickness suffered by you. \nPlease note that if Allianz Global Assistance declines to \nprovide you with cover as stated in point c] above, you will not \nbe able to continue with your purchase; however there may be \nother options available such as: \nReturn to Contents",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 14,
+          "chunk_index": 6,
+          "distance": 0.6024916172027588
+        },
+        {
+          "text": "Exclusions from page 36). You must, as soon as possible, \nadvise Allianz Global Assistance of your admission to hospital \nor your early return to Australia based on written medical \nadvice. If you do not get the medical treatment you expect, \nAllianz Global Assistance can assist you but neither Allianz nor \nAllianz Global Assistance are liable for anything that results \nfrom that. \nOther insurance \nIf any loss, damage or liability covered under this policy is",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 41,
+          "chunk_index": 4,
+          "distance": 0.624289870262146
+        },
+        {
+          "text": "advise you of the outcome. Depending on your pre-existing \nmedical condition(s), Allianz Global Assistance may either: \na] agree in writing to include cover under your policy for your \npre-existing medical condition(s) (an additional premium \nmay be payable, and a medical excess may apply); or \nb] decline to include cover under your policy for your pre-\nexisting medical condition(s); or \nc] decline to provide you with cover for any medical or",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 14,
+          "chunk_index": 5,
+          "distance": 0.6253005266189575
+        },
+        {
+          "text": "for any pre-existing medical condition covered under your \noriginal policy unless you make further application for \ncover and Allianz Global Assistance agrees to provide \ncover for your pre-existing medical condition; \nfor any medical condition you suffered during the term of \nyour original policy (which will be defined as a pre­\nexisting medical condition under your new policy) unless \nyou apply for cover for your pre-existing medical \nconditions at the time you apply for your new policy; or",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 6,
+          "chunk_index": 12,
+          "distance": 0.6353732347488403
+        },
+        {
+          "text": "have agreed in writing to include cover under your policy for \nthe condition. Details of the approved pre-existing medical \ncondition(s) will be set out on your Certificate of Insurance or \nMedical Terms of Cover document. \nIf you: \nchoose not to disclose any pre-existing medical condition; \nor \ndisclose your pre-existing medical condition to Allianz \nGlobal Assistance but do not accept the offer from them \nto include cover under your policy for your condition,",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 13,
+          "chunk_index": 9,
+          "distance": 0.6438310146331787
+        },
+        {
+          "text": "keeping you in touch with your family and work in an \nemergency. \nIf you are admitted to hospital, or you are being treated as an \noutpatient and the total cost of such treatment is likely to \nexceed $2,000, you or a member of your travelling party, \nshould contact Allianz Global Assistance as reasonably as \npossible to seek approval to incur such cost. Otherwise, we \nmay reduce the amount payable for your claim to the extent \nwe are prejudiced. Approval will not be unreasonably withheld",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 41,
+          "chunk_index": 1,
+          "distance": 0.6618726253509521
+        },
+        {
+          "text": "continued treatment from a medical adviser and is covered by \nyour policy, we will reimburse your reasonable additional \ntravel and accommodation expenses. To provide proof of \nincapacity and inability to travel, where reasonably \npracticable, you should obtain written confirmation from the \ntreating medical adviser. Please call Allianz Global Assistance \nto confirm approval for these expenses. Otherwise, we may \nreduce the amount payable for your claim to the extent we are",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 24,
+          "chunk_index": 7,
+          "distance": 0.6651061177253723
+        }
+      ],
+      "latency_s": 0.73,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 0.0,
+        "retrieval_hit_at_k": 0.0,
+        "retrieval_precision_at_k": 0.0,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": 0.2,
+        "answer_correctness": 0.5436935061536554,
+        "context_precision": 0.0
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-R-01",
+      "question": "I paid for Budget Direct motorcycle or moped riding cover, but I was injured while riding without a helmet. Would the claim be covered?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the claim would not be covered.\n\nThe relevant excerpt is:\n\n[Source 4: BUDGET-DIRECT_20260325.pdf, page 11]\n• You are wearing a helmet;\n\nThe policy states that to obtain motorcycle/moped riding cover, you must be wearing a helmet. Since you were injured while riding without a helmet, this condition is not met.\n\nConclusion: The claim would not be covered because you were not wearing a helmet, which is a condition for obtaining motorcycle/moped riding cover.",
+      "sources": [
+        {
+          "text": "• You are not racing; and\n• You are not participating in motocross.\nNote: No cover will apply under SECTION 17: Personal Liability on page 42. This \nmeans You are responsible to pay costs associated with damage to the motorcycle, \nmoped or property or injury to another person.",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 11,
+          "chunk_index": 8,
+          "distance": 0.4474986791610718
+        },
+        {
+          "text": "• If You are unable to provide Us with a copy of the relevant report, You must provide \nUs with a reasonable explanation and details of the time and place You made the \nreport, including their contact details.\nMotorcycle/moped riding cover\nClaims involving participation by You (during the Journey) in motorcycling or moped \nriding for any purpose are specifically excluded by this policy. \nTo obtain motorcycle/moped riding cover (as the driver or passenger) while You are",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 11,
+          "chunk_index": 3,
+          "distance": 0.45054560899734497
+        },
+        {
+          "text": "period.\nIf the Rental Vehicle is damaged or stolen while in Your control during the Journey \nWe will pay the lower of the Rental Vehicle insurance excess or the repair costs to the \nRental Vehicle that You become liable to pay. It is Your responsibility to provide the final \nloss/repair report to substantiate Your claim.\nIf You paid for one of the motorcycle/moped riding cover options, We will also include \ncover for the insurance excess You become liable to pay for damage to or theft of a",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 38,
+          "chunk_index": 4,
+          "distance": 0.5384634733200073
+        },
+        {
+          "text": "Even if You pay the additional premium for Motorcycle/Moped Riding, You will \nonly be covered if: \n• the engine capacity is 250cc or less;\n• while in control of a motorcycle or moped You hold a valid Australian \nmotorcycle rider’s licence or Australian motor vehicle driver’s licence; \n• while You are a passenger the driver holds a valid licence for riding that vehicle;\n• You are wearing a helmet;\n• You are not participating in a Professional capacity; \n• You are not racing; and",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 11,
+          "chunk_index": 5,
+          "distance": 0.545181930065155
+        },
+        {
+          "text": "To obtain motorcycle/moped riding cover (as the driver or passenger) while You are \ntravelling, We have options to vary cover available and You must pay an additional \npremium. Cover starts from the time the additional premium is paid.\nAvailable on all plans. There are two levels of cover to choose from:\n•  Motorcycle/Moped Riding\n• Motorcycle/Moped Riding +\nMotorcycle/moped riding \nEngine capacity 250cc or less\nEven if You pay the additional premium for Motorcycle/Moped Riding, You will",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 11,
+          "chunk_index": 4,
+          "distance": 0.5451942086219788
+        },
+        {
+          "text": "cover for the insurance excess You become liable to pay for damage to or theft of a \nmotorcycle or moped rented from a licensed motor vehicle rental company or agency.\nThe maximum benefit limit for this section is:\nPlan Limit\nInternational Comprehensive $10,000\nInternational Essential $4,000\nInternational Basic $Nil\nDomestic $10,000\nWe will not pay for: \n1.  damage or theft, arising from the operation of a Rental Vehicle in violation of the \nterms of the rental agreement.",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 38,
+          "chunk_index": 5,
+          "distance": 0.5647608637809753
+        },
+        {
+          "text": "This cover applies if You have comprehensive car or motorcycle insurance on Your own \nvehicle.\nIf Your personal car or motorcycle is damaged or stolen while in Your control during the \nPeriod of Insurance, We will reimburse You up to $2,500 for:\na) the prescribed excess paid under Your comprehensive personal car or motorcycle \npolicy of insurance, relative to the loss or damage to Your own car or motorcycle \nand which is not legally recoverable from any other source; or",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 38,
+          "chunk_index": 7,
+          "distance": 0.571462094783783
+        },
+        {
+          "text": "• You are not participating in a Professional capacity; \n• You are not racing; and\n• You are not participating in motocross.\nMotorcycle/moped riding+\nEngine capacity unlimited\nEven if You pay the additional premium for Motorcycle/Moped Riding+, You will \nonly be covered if:\n• the motorcycle/moped is hired;\n• You have held an Australian motorcycle rider’s licence for the last 5 years;\n• while in control of a motorcycle or moped You hold a valid Australian \nmotorcycle rider’s licence;",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 11,
+          "chunk_index": 6,
+          "distance": 0.6083452701568604
+        }
+      ],
+      "latency_s": 4.32,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.125,
+        "cited_pages": [
+          11
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.8,
+        "answer_correctness": 0.8498576042976902,
+        "context_precision": 0.8736394557698324
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-R-02",
+      "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Budget Direct cover it?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the answer is:\n\nNo, Budget Direct would not cover the stolen laptop.\n\nThe relevant excerpt is:\n\n[Source 3: BUDGET-DIRECT_20260325.pdf, page 11]\n• Don’t leave items Unattended in ANY motor vehicle or towed land vehicle overnight, as they’re not covered.\n\nSince you left your laptop hidden in the locked boot of your rental car overnight, it falls under this exclusion.",
+      "sources": [
+        {
+          "text": "period.\nIf the Rental Vehicle is damaged or stolen while in Your control during the Journey \nWe will pay the lower of the Rental Vehicle insurance excess or the repair costs to the \nRental Vehicle that You become liable to pay. It is Your responsibility to provide the final \nloss/repair report to substantiate Your claim.\nIf You paid for one of the motorcycle/moped riding cover options, We will also include \ncover for the insurance excess You become liable to pay for damage to or theft of a",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 38,
+          "chunk_index": 4,
+          "distance": 0.6514883041381836
+        },
+        {
+          "text": "Domestic $250\nWe will not pay for: \n1. loss or theft that is not reported to the:\n a) police or security personnel;\n b)  responsible Transport Provider (if Your items are lost or stolen while travelling \nwith a Transport Provider); or\n c)  accommodation provider.\n All cases of loss or theft must be reported as soon as possible and within 7 days. A \ncopy of the relevant report must be submitted for any claim involving loss or theft.",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 38,
+          "chunk_index": 1,
+          "distance": 0.7060226202011108
+        },
+        {
+          "text": "• Don’t leave items Unattended in ANY motor vehicle or towed land vehicle \novernight, as they’re not covered.\n• Don’t walk away from or leave Your belongings Unattended in a Public Place. \nThey’re not covered by Us.\n• Report any loss or theft to the police within 7 days of when You first become aware \nof the incident, as a police report is required so We can validate that the incident \noccurred. Also, Your belongings may have been handed in and may be recovered",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 11,
+          "chunk_index": 1,
+          "distance": 0.7121998071670532
+        },
+        {
+          "text": "report, including their contact details.\n2.  damage, loss or theft of Valuables placed in the care of a Transport Provider unless \nsecurity regulations prevented You from keeping the Valuables with You. \n3. items left Unattended in any motor vehicle (for example, a car, campervan or \nmotorhome) or towed land vehicle overnight even if they were in a Concealed \nStorage Compartment.",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 36,
+          "chunk_index": 8,
+          "distance": 0.721523642539978
+        },
+        {
+          "text": "within 7 days of You first becoming aware of the loss or theft. You should obtain a \nreport confirming the incident to submit to Us with Your claim.\nb) You must take all reasonable steps to prevent or minimise a claim.\nc) You must not make any offer, promise of payment or admit any liability without Our \nconsent. We or Our Emergency Assistance team will not unreasonably withhold or \ndelay Our consent.\nd) You must advise Us of any claim or occurrence which may give rise to a claim as",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 29,
+          "chunk_index": 3,
+          "distance": 0.7313756942749023
+        },
+        {
+          "text": "with a Transport Provider); or\n c)  accommodation provider.\n All cases of loss or theft must be reported as soon as possible and within 7 days. A \ncopy of the relevant report must be submitted for any claim involving loss or theft. \n If You are unable to provide Us with a copy of the relevant report, You must provide \nUs with a reasonable explanation and details of the time and place You made the \nreport, including their contact details.",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 36,
+          "chunk_index": 7,
+          "distance": 0.7511764168739319
+        },
+        {
+          "text": "cover for the insurance excess You become liable to pay for damage to or theft of a \nmotorcycle or moped rented from a licensed motor vehicle rental company or agency.\nThe maximum benefit limit for this section is:\nPlan Limit\nInternational Comprehensive $10,000\nInternational Essential $4,000\nInternational Basic $Nil\nDomestic $10,000\nWe will not pay for: \n1.  damage or theft, arising from the operation of a Rental Vehicle in violation of the \nterms of the rental agreement.",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 38,
+          "chunk_index": 5,
+          "distance": 0.7657259702682495
+        },
+        {
+          "text": "occurred. Also, Your belongings may have been handed in and may be recovered \nor the police may have a chance to follow up an alleged crime.\n• Additionally, We require the relevant report from the related party. For example, an \nAirline Property Irregularity Report (PIR) is also required if Your items were lost or \nstolen when travelling with an airline.\n• If You are unable to provide Us with a copy of the relevant report, You must provide",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 11,
+          "chunk_index": 2,
+          "distance": 0.7716050744056702
+        }
+      ],
+      "latency_s": 4.11,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.125,
+        "cited_pages": [
+          11
+        ],
+        "attribution_precision": 0.0,
+        "faithfulness": 0.6,
+        "answer_correctness": 0.7267534205706181,
+        "context_precision": 0.622023809508259
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-R-03",
+      "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Budget Direct cover the medical claim?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the answer is:\n\nNo, Budget Direct would not cover the medical claim.\n\nThe relevant excerpt is:\n\n[Source 1: BUDGET-DIRECT_20260325.pdf, page 49]\n20. claims involving, arising from or related to Your impairment due to You drinking too much alcohol:\na) which is evidenced by the results of a blood test which show that Your blood alcohol concentration level is 0.19% or above.\n\nSince the blood test recorded a BAC of 0.20%, which is above the threshold of 0.19%, the claim would be excluded.",
+      "sources": [
+        {
+          "text": "PART 6: POLICY WORDING\nPage 49 of 55\n20. claims involving, arising from or related to Your impairment due to You drinking too \nmuch alcohol:\n a)  which is evidenced by the results of a blood test which show that Your blood \nalcohol concentration level is 0.19% or above. (The level of alcohol in Your \nblood is called blood alcohol concentration (BAC). As a point of reference, a \nBAC of 0.19% is almost four times the legal driving BAC limit range in Australia \nwhich is currently 0.05%); or",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 49,
+          "chunk_index": 0,
+          "distance": 0.6337219476699829
+        },
+        {
+          "text": "This policy does not provide cover for claims which in any way relate to, or are \nexacerbated by:\n• conditions involving drug or alcohol dependency;\n• travel booked or undertaken against the advice of any medical practitioner;\n• routine or cosmetic medical or dental treatment or surgery during the Journey, \neven if Your Existing Medical Condition has been approved;\n• conditions for which You are travelling to seek advice, treatment or review or to \nparticipate in a clinical trial.",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 16,
+          "chunk_index": 1,
+          "distance": 0.7012059688568115
+        },
+        {
+          "text": "e) did not have a drug or alcohol addiction; and\n f) did not have a Terminal Illness.\n If any point a)-f) cannot be met e.g. if Your non-travelling Relative was in a nursing \nhome or did have a Terminal Illness, which means Your claim would otherwise \nbe excluded, We will pay no more than $1,000 under all Sections of the policy \ncombined.\n5. the health or death of any other person (not listed in point 4).\n6. any contractual or business obligation or Your financial situation. This exclusion",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 34,
+          "chunk_index": 5,
+          "distance": 0.7320224642753601
+        },
+        {
+          "text": "smashed Your smart phone in the fall, the excess will be deducted once.\nClaim example: You have a $200 excess on Your policy. If You made a claim for $2,500 \nunder SECTION 1: Overseas Medical and Dental Expenses (including emergency \nrepatriation/evacuation), You already paid the expenses and We approve Your claim, \nWe would deduct the $200 excess from the claim before We paid You. If, via Our \nemergency assistance team, We approved a claim directly with an overseas medical",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 28,
+          "chunk_index": 6,
+          "distance": 0.7390108704566956
+        },
+        {
+          "text": "emergency assistance team, We approved a claim directly with an overseas medical \nprovider, We may ask You to pay the $200 excess directly to the provider at the time or \nrequest You to pay it to Us before We can finalise Your claim with the provider. In any \nevent, the total claim We pay is $2,300.\nThe excess, if applicable, applies to any claim arising from a separate event in respect of \nSections 1, 2, 3, 4, 5, 9, 10, 11 and Additional Cruise Benefits (i)-(iii), and for Section 18:",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 28,
+          "chunk_index": 7,
+          "distance": 0.7493730187416077
+        },
+        {
+          "text": "treatment or tests at a hospital or clinic;\ne) did not have a drug or alcohol addiction; and\nf) did not have a Terminal Illness.\nWhat are the restrictions and limits?\n If any point a)-f) cannot be met e.g. if Your non-travelling Relative was in a nursing \nhome or did have a Terminal Illness, the maximum We will pay is $1,000 under all \nSections of the policy combined.\n• For Your reference, “Relative” means a person who is Your spouse, de facto; parent,",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 20,
+          "chunk_index": 3,
+          "distance": 0.7502837181091309
+        },
+        {
+          "text": "Existing Medical Conditions\n(Of You or Your travelling companion)\nCover for claims which in any way relate to, or are exacerbated by, an Existing Medical \nCondition or related new infections are specifically excluded from this policy. However, \nWe may separately provide cover for an Existing Medical Condition. If such cover is \napplied for and approved, an additional premium may apply.\nWhat is an Existing Medical Condition?",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 15,
+          "chunk_index": 3,
+          "distance": 0.7579221725463867
+        },
+        {
+          "text": "or attempted suicide. \n19. claims which in any way relate to Your:\n a)  chronic use of alcohol; \n b)  substance abuse, drug abuse (whether over the counter, prescription or \notherwise); or\n c)  ingestion of any non-prescription drug or substance (e.g. marijuana, ecstasy, \nheroin).",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 48,
+          "chunk_index": 8,
+          "distance": 0.7601873874664307
+        }
+      ],
+      "latency_s": 2.78,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.125,
+        "cited_pages": [
+          49
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.25,
+        "answer_correctness": 0.6129137795294101,
+        "context_precision": 0.8551587301444776
+      }
+    },
+    {
+      "id": "COVER-MORE-R-01",
+      "question": "I paid for Cover-More motorcycle or moped riding cover, but I was injured while riding without a helmet. Would the claim be covered?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the claim would not be covered.\n\nThe relevant excerpt is:\n\n[Source 4: COVER-MORE_20251015.pdf, page 16]\n• You are wearing a helmet;\n\nSince you were injured while riding without a helmet, this condition is not met, and therefore, the claim would not be covered.\n\nSource: [Source 4: COVER-MORE_20251015.pdf, page 16]",
+      "sources": [
+        {
+          "text": "PART 2\n16\n PART 2: THE COVER\nMotorcycle/moped riding cover\nClaims involving participation by You (during the Journey) \nin motorcycling or moped riding for any purpose are \nspecifically excluded by this policy. \nTo obtain motorcycle/moped riding cover (as the driver or \npillion passenger) while You are travelling, We have options \nto vary the cover available and You must pay an additional \npremium. Cover starts from the time the additional premium \nis paid.\nThere are 2 levels of cover:",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 16,
+          "chunk_index": 0,
+          "distance": 0.3758055567741394
+        },
+        {
+          "text": "to substantiate Your claim.\nIf You paid for one of the motorcycle/moped riding cover \noptions, We will also include cover for the insurance excess \nYou become liable to pay for damage to or theft of a \nmotorcycle or moped rented from a licensed motor vehicle \nrental company. The word “Rental Vehicle” should be \ninterpreted to include motorcycle or moped. \nThe maximum benefit limit for this section is:\nDomestic International\nComprehensive+ $10,000 $10,000\nComprehensive $5,000 $5,000",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 35,
+          "chunk_index": 7,
+          "distance": 0.45191022753715515
+        },
+        {
+          "text": "page 40 for motorcycle or moped riding. This means You \nare responsible to pay costs associated with damage to the \nmotorcycle, moped or property or injury to another person.\n• If You paid for one of the motorcycle/moped riding \ncover options, We will also include cover for the \ninsurance excess You become liable to pay for damage \nto or theft of a motorcycle or moped that You rented \nfrom a licensed motor vehicle rental company. The \nword “Rental Vehicle” should be interpreted to include",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 16,
+          "chunk_index": 5,
+          "distance": 0.48347872495651245
+        },
+        {
+          "text": "premium. Cover starts from the time the additional premium \nis paid.\nThere are 2 levels of cover:\n• Motorcycle/Moped Riding\n• Motorcycle/Moped Riding+\nMotorcycle/Moped Riding\nEngine capacity 250cc or less\nEven if You pay the additional premium for Motorcycle/\nMoped Riding, You will only be covered if: \n• the engine capacity is 250cc or less;\n• while in control of a motorcycle or moped You hold a \nvalid Australian motorcycle rider’s licence or Australian \nmotor vehicle driver’s licence;",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 16,
+          "chunk_index": 1,
+          "distance": 0.49275392293930054
+        },
+        {
+          "text": "due to the health of a Relative or Your business partner who \nis not travelling. \nWhat is covered?\nWe will pay for claims arising from the sudden disabling \ninjury, sickness or disease or death of a Relative or Your \nbusiness partner who is not travelling if, at the Relevant \nTime, that person:\na) in the last 12 months, had not been hospitalised \n(including day surgery or emergency department \nattendance) for a condition that was in any way related",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 20,
+          "chunk_index": 5,
+          "distance": 0.526952862739563
+        },
+        {
+          "text": "or equal to the engine capacity of the motorcycle/\nmoped You are hiring;\n• while You are a passenger the driver holds a valid \nlicence for riding that vehicle;\n• You are wearing a helmet;\n• You are not participating in a Professional capacity;\n• You are not racing; and\n• You are not participating in motocross.\nPlease note\nNo cover will apply under SECTION 18: Personal Liability on \npage 40 for motorcycle or moped riding. This means You",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 16,
+          "chunk_index": 4,
+          "distance": 0.555828869342804
+        },
+        {
+          "text": "but do not take steps to cover it under my travel \ninsurance policy?\nWe will not pay any claims which in any way relate to, or are \nexacerbated by, Your Existing Medical Condition if:\n• You do not apply for this cover for that Existing Medical \nCondition at the Relevant Time or, at the latest, before \nYou depart on Your Journey;\n• You apply for this cover for that Existing Medical \nCondition and We do not agree to provide cover; or\n• We agree to provide cover for that Existing Medical",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 19,
+          "chunk_index": 9,
+          "distance": 0.5665658712387085
+        },
+        {
+          "text": "word “Rental Vehicle” should be interpreted to include \nmotorcycle or moped. See SECTION 8: Driving Holidays \non page 35.\nSnow sports: snow skiing, \nsnowboarding and snowmobiling \ncover\nClaims involving participation by You (during the Journey) in \nsnow skiing, snowboarding or snowmobiling are specifically \nexcluded by this policy. \nTo obtain cover for snow skiing, snowboarding and \nsnowmobiling while You are travelling, We have options to",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 16,
+          "chunk_index": 6,
+          "distance": 0.5689271688461304
+        }
+      ],
+      "latency_s": 1.91,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.125,
+        "cited_pages": [
+          16
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.5,
+        "answer_correctness": 0.8291984228110603,
+        "context_precision": 0.6416666666538333
+      }
+    },
+    {
+      "id": "COVER-MORE-R-02",
+      "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Cover-More cover it?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the conclusion is:\n\nNo, Cover-More would not cover the stolen laptop.\n\nThe relevant excerpt is:\n\n[Source 3: COVER-MORE_20251015.pdf, page 12]\n• Don’t leave items Unattended in ANY motor vehicle or towed land vehicle overnight, as they’re not covered.\n\nThis excerpt explicitly states that items left unattended in a motor vehicle or towed land vehicle overnight are not covered. Since your laptop was left hidden in the locked boot of your rental car overnight, it falls under this exclusion.",
+      "sources": [
+        {
+          "text": "Transport Provider (unless security regulations meant \nYou were forced to check them in).\n•  Items left Unattended in any motor vehicle (for example, \na car, campervan or motorhome) or towed land vehicle \nduring daylight hours are not covered, unless they \nare stored in the Concealed Storage Compartment of \nthe locked motor vehicle or towed land vehicle and \nforced entry was gained. A limit of $500 per item and a \nmaximum of $2,000 in total applies.",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 12,
+          "chunk_index": 2,
+          "distance": 0.666281521320343
+        },
+        {
+          "text": "c) have comprehensive motor vehicle insurance for the \nRental Vehicle for the hire period.\nIf the Rental Vehicle is damaged or stolen while in Your \ncontrol during the Journey We will pay the lower of the \nRental Vehicle insurance excess or the repair costs to the \nRental Vehicle that You become liable to pay.\nIt is Your responsibility to provide the final loss/repair report \nto substantiate Your claim.\nIf You paid for one of the motorcycle/moped riding cover",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 35,
+          "chunk_index": 6,
+          "distance": 0.6783379316329956
+        },
+        {
+          "text": "forced entry was gained. A limit of $500 per item and a \nmaximum of $2,000 in total applies.\n•  Don’t leave items Unattended in ANY motor vehicle or \ntowed land vehicle overnight, as they’re not covered.\n•  Don’t walk away from or leave Your belongings \nUnattended in a Public Place. They’re not covered by Us.\n•  Report any loss or theft to the police within 7 days \nof when You first become aware of the incident, as a \npolice report is required so We can validate that the \nincident occurred.",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 12,
+          "chunk_index": 3,
+          "distance": 0.6929054856300354
+        },
+        {
+          "text": "a car, campervan or motorhome) or towed land vehicle \novernight even if they were in a Concealed Storage \nCompartment.\n4. items left Unattended in any motor vehicle (for example, \na car, campervan or motorhome) or towed land vehicle \nduring daylight hours, unless they were stored in a \nConcealed Storage Compartment of a locked motor \nvehicle or towed land vehicle and forced entry was \ngained.\n5. any amount exceeding $500 per item and $2,000 in",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 34,
+          "chunk_index": 5,
+          "distance": 0.7007855176925659
+        },
+        {
+          "text": "theft. If You are unable to provide Us with a copy of the \nrelevant report, You must provide Us with a reasonable \nexplanation and details of the time and place You made \nthe report, including their contact details.\n2. damage, loss or theft of Valuables placed in the care \nof a Transport Provider unless security regulations \nprevented You from keeping the Valuables with You. \n3. items left Unattended in any motor vehicle (for example, \na car, campervan or motorhome) or towed land vehicle",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 34,
+          "chunk_index": 4,
+          "distance": 0.7032732963562012
+        },
+        {
+          "text": "type of fuel is put into the Rental Vehicle by any person \nnamed on the Rental Vehicle agreement.\nLock Out\nIf You are unintentionally locked out of Your Rental Vehicle \nduring the Period of Insurance, We will pay costs incurred up \nto a maximum of $1,000 for a Rental Vehicle hire company \napproved locksmith to open the vehicle without causing \nfurther damage to the Rental Vehicle.\nWe will not pay: \n1. where the locksmith is not approved by the Rental \nCompany.",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 36,
+          "chunk_index": 8,
+          "distance": 0.7070713043212891
+        },
+        {
+          "text": "to substantiate Your claim.\nIf You paid for one of the motorcycle/moped riding cover \noptions, We will also include cover for the insurance excess \nYou become liable to pay for damage to or theft of a \nmotorcycle or moped rented from a licensed motor vehicle \nrental company. The word “Rental Vehicle” should be \ninterpreted to include motorcycle or moped. \nThe maximum benefit limit for this section is:\nDomestic International\nComprehensive+ $10,000 $10,000\nComprehensive $5,000 $5,000",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 35,
+          "chunk_index": 7,
+          "distance": 0.7098327279090881
+        },
+        {
+          "text": "2. damage, loss or theft of Valuables placed in the care \nof a Transport Provider unless security regulations \nprevented You from keeping the Valuables with You. \n3. items left Unattended in any motor vehicle (for example, \na car, campervan or motorhome) or towed land vehicle \novernight even if they were in a Concealed Storage \nCompartment. \n4. items left Unattended in any motor vehicle (for example, \na car, campervan or motorhome) or towed land vehicle",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 41,
+          "chunk_index": 9,
+          "distance": 0.719211757183075
+        }
+      ],
+      "latency_s": 4.58,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.125,
+        "cited_pages": [
+          12
+        ],
+        "attribution_precision": 0.0,
+        "faithfulness": 0.4,
+        "answer_correctness": 0.49303160100510723,
+        "context_precision": 0.7291666666484374
+      }
+    },
+    {
+      "id": "COVER-MORE-R-03",
+      "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Cover-More cover the medical claim?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the answer is:\n\nNo, Cover-More would not cover the medical claim.\n\nThe relevant excerpt is:\n\n[Source 1: COVER-MORE_20251015.pdf, page 50]\nwhich show that Your blood alcohol concentration level is 0.19% or above.\n\nSince your BAC level is 0.20%, which is above the threshold of 0.19%, your claim would be excluded.",
+      "sources": [
+        {
+          "text": "which show that Your blood alcohol concentration \nlevel is 0.19% or above. (The level of alcohol in Your \nblood is called blood alcohol concentration (BAC). \nAs a point of reference, a BAC of 0.19% is almost \nfour times the legal driving BAC limit range in \nAustralia which is currently 0.05%); or\n b) taking into account the following, where available:\n  (i) the report of a medical practitioner or forensic \nexpert;\n  (ii) the witness report of a third party;\n  (iii) Your own admission; or",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 50,
+          "chunk_index": 1,
+          "distance": 0.5611315965652466
+        },
+        {
+          "text": "needed surgery, inpatient treatment or tests at a \nhospital or clinic;\n e) did not have a drug or alcohol addiction; and\n f) did not have a Terminal Illness.\n If any point a)-f) cannot be met e.g. if  Your non-\ntravelling Relative was in a nursing home or did have \na Terminal Illness, which means Your claim would \notherwise be excluded, We will pay no more than $1,000 \nunder all Sections of the policy combined (unless \nCancellation Plus Cover applies. See page 13).",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 32,
+          "chunk_index": 4,
+          "distance": 0.5941845774650574
+        },
+        {
+          "text": "due to the health of a Relative or Your business partner who \nis not travelling. \nWhat is covered?\nWe will pay for claims arising from the sudden disabling \ninjury, sickness or disease or death of a Relative or Your \nbusiness partner who is not travelling if, at the Relevant \nTime, that person:\na) in the last 12 months, had not been hospitalised \n(including day surgery or emergency department \nattendance) for a condition that was in any way related",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 20,
+          "chunk_index": 5,
+          "distance": 0.6120834350585938
+        },
+        {
+          "text": "(Of You or Your travelling companion)\nCover for claims which in any way relate to, or are \nexacerbated by, an Existing Medical Condition or related \nnew infections are specifically excluded from this policy. \nHowever, We may separately provide cover for an Existing \nMedical Condition. If such cover is applied for and approved, \nan extra premium may apply.\nWhat is an Existing Medical Condition?\n“Existing Medical Condition” means a disease, illness,",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 17,
+          "chunk_index": 3,
+          "distance": 0.6220255494117737
+        },
+        {
+          "text": "• Conditions We automatically include\n• Conditions We need to assess\nPlease review each of the categories to determine which \ncategory applies.\nExisting Medical Conditions which cannot be covered\nThis policy does not provide cover for claims arising from, or \nexacerbated by:\n• conditions involving drug or alcohol dependency;\n• travel booked or undertaken against the advice of any \nmedical practitioner;\n• routine or cosmetic medical or dental treatment or",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 17,
+          "chunk_index": 8,
+          "distance": 0.6380509734153748
+        },
+        {
+          "text": "limits; or\ne) in some circumstances, prior to Your entry into the \npolicy or when You apply for cover for Your Existing \nMedical Conditions, whichever occurs later, We may \nimpose an additional of higher excess for claims arising \nfrom Existing Medical Conditions. We will inform You \nin writing if this applies: These will be set out in Your \nCertificate of Insurance or in a letter from Our medical \nassessment team.\nf) where the amount covered for Cancellation Plus Cover",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 26,
+          "chunk_index": 13,
+          "distance": 0.6421108245849609
+        },
+        {
+          "text": "but do not take steps to cover it under my travel \ninsurance policy?\nWe will not pay any claims which in any way relate to, or are \nexacerbated by, Your Existing Medical Condition if:\n• You do not apply for this cover for that Existing Medical \nCondition at the Relevant Time or, at the latest, before \nYou depart on Your Journey;\n• You apply for this cover for that Existing Medical \nCondition and We do not agree to provide cover; or\n• We agree to provide cover for that Existing Medical",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 19,
+          "chunk_index": 9,
+          "distance": 0.6456969976425171
+        },
+        {
+          "text": "diagnosis; or\n• You were awaiting specialist opinion.\nYou will still be eligible for the other benefits provided by \nthe policy but You may not apply for cover for any Existing \nMedical Conditions. There will be no cover for claims which \nin any way relate to, or are exacerbated by, any Existing \nMedical Condition or any condition where the points listed \nabove apply.\nIf You receive a diagnosis before You depart on Your \nJourney, You may be able to complete a health assessment",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 17,
+          "chunk_index": 11,
+          "distance": 0.6466046571731567
+        }
+      ],
+      "latency_s": 4.16,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.125,
+        "cited_pages": [
+          50
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 1.0,
+        "answer_correctness": 0.6165999693578577,
+        "context_precision": 0.8357142857003571
+      }
+    },
+    {
+      "id": "MEDIBANK-R-01",
+      "question": "I paid for Medibank motorcycle or moped riding cover, but I was injured while riding without a helmet. Would the claim be covered?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the claim would not be covered.\n\nThe relevant excerpt is:\n\n[Source 1: MEDIBANK_20260422.pdf, page 9]\n• You are wearing a helmet;\n\nSince you were injured while riding without a helmet, this condition is not met. The policy explicitly states that you must be wearing a helmet to be covered.\n\nSource: [Source 1: MEDIBANK_20260422.pdf, page 9]",
+      "sources": [
+        {
+          "text": "• You are wearing a helmet;\n• You are not participating in a Professional capacity;\n• You are not racing; and\n• You are not participating in motocross.\nNote: No cover will apply under Section 17 Personal Liability for \nmotorcycle or moped riding. This means You are responsible to \npay costs associated with damage to the motorcycle, moped or \nproperty or injury to another person.\nSnow skiing, snowboarding and snowmobiling\nClaims involving participation by You (during the Journey) in",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 9,
+          "chunk_index": 7,
+          "distance": 0.39083462953567505
+        },
+        {
+          "text": "68 69\nIf You paid for the motorcycle/moped riding cover option, We will \nalso include cover for the insurance excess You become liable \nto pay for damage to or theft of a motorcycle or moped rented \nfrom a licensed motor vehicle rental company. The word “Rental \nCar” should be interpreted to include motorcycle or moped.\nThe maximum benefit limit for this section is:\n• International Comprehensive Plan: $10,000 \n• International Medical Only Plan: No Cover \n• Domestic Plan: $10,000",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 35,
+          "chunk_index": 0,
+          "distance": 0.4786399304866791
+        },
+        {
+          "text": "• parasailing\n• snorkelling\n• surfing\n• trekking\n• white water rafting\n• working holidays\nMotorcycle/Moped riding\nClaims involving participation by You (during the Journey) in \nmotorcycling or moped riding for any purpose are specifically \nexcluded from this policy. \nIf You wish to be covered for this activity during Your Journey and \nbe able to hire a motorcycle (including a moped) as the driver or \na pillion passenger, You must pay an extra premium. Please ask \nfor a quote.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 9,
+          "chunk_index": 5,
+          "distance": 0.5460197925567627
+        },
+        {
+          "text": "Your cover for Your original Journey;\nd.  no claim due to the same event is made under Section 2  \nof this policy;\ne.  the death was not caused by an illness or injury appearing \nprior to the commencement of Your original Journey; and\nf.  the onset of the illness or injury did not occur prior to the \ncommencement of Your original Journey.\nThe maximum benefit limit for this section is:\n• International Comprehensive Plan: $3,000 \n• International Medical Only Plan: No Cover",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 36,
+          "chunk_index": 3,
+          "distance": 0.5588141679763794
+        },
+        {
+          "text": "health of a Relative or Your business partner who is not travelling. \nWhat Is Covered?\nWe will pay for claims arising from the sudden disabling injury, \nsickness or disease or death of a Relative or Your business \npartner who is not travelling if, at the Relevant Time, that person:\na.  in the last 12 months, had not been hospitalised (including \nday surgery or emergency department attendance) for a \ncondition that was in any way related to, or exacerbated by,",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 15,
+          "chunk_index": 2,
+          "distance": 0.5658295750617981
+        },
+        {
+          "text": "• You are not racing; and\n• You are not participating in a Professional capacity.\nNote: No cover will apply under Section 17 Personal Liability \nfor snowmobiling. This means You are responsible to pay costs \nassociated with damage to the vehicle or property or injury to \nanother person.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 9,
+          "chunk_index": 9,
+          "distance": 0.5769791603088379
+        },
+        {
+          "text": "Claims involving participation by You (during the Journey) in \nsnow skiing, snowboarding or snowmobiling are specifically \nexcluded from this policy. If You wish to be covered for these \nactivities during Your Journey, You must pay an extra premium. \nPlease ask for a quote.\nEven if You pay the extra premium, You will only be covered if:\n• You are skiing or snowboarding On-Piste;\n• You are not racing; and\n• You are not participating in a Professional capacity.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 9,
+          "chunk_index": 8,
+          "distance": 0.5883609056472778
+        },
+        {
+          "text": "84 85\n24.  claims involving participation by You (during the Journey) in \nmotorcycling for any purpose.\n  S e e  Motorcycle/Moped riding on page 17 for details of \noptional cover available to purchase and the terms that \napply.\n25.  claims involving participation by You (during the Journey) \nin On-Piste snow skiing, On-Piste snowboarding or \nsnowmobiling.\n  S e e  Snow skiing, snowboarding and snowmobiling on page \n17 for details of optional cover available to purchase and \nthe terms that apply.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 43,
+          "chunk_index": 0,
+          "distance": 0.5906749367713928
+        }
+      ],
+      "latency_s": 2.23,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.125,
+        "cited_pages": [
+          9
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.2,
+        "answer_correctness": 0.8624700413558621,
+        "context_precision": 0.7226190476045953
+      }
+    },
+    {
+      "id": "MEDIBANK-R-02",
+      "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Medibank cover it?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, I would say that Medibank would not cover the stolen laptop.\n\nThe relevant excerpt is:\n\n[Source 3: MEDIBANK_20260422.pdf, page 33]\n2. items left Unattended in any motor vehicle (for example, a car, campervan or motorhome) or towed land vehicle overnight even if they were in a Concealed Storage Compartment.\n\nThis excerpt explicitly states that items left unattended in a motor vehicle or towed land vehicle overnight are not covered. Since your laptop was left hidden in the locked boot of your rental car overnight, it falls under this exclusion.\n\nSource: [Source 3: MEDIBANK_20260422.pdf, page 33]",
+      "sources": [
+        {
+          "text": "land vehicle as long as they are in a Concealed Storage \nCompartment. Also, don’t leave items in a motor vehicle or \ntowed land vehicle overnight, as they’re not covered.\n• Don’t walk away from or leave Your belongings Unattended \nin a Public Place. They’re not covered by Us in this event.\n• Report any loss or theft to the police within 7 days of when \nYou first become aware of the incident, as a police report \nis required so We can validate that the incident occurred.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 9,
+          "chunk_index": 1,
+          "distance": 0.6947548389434814
+        },
+        {
+          "text": "Transport Provider or accommodation provider as \nrelevant within 7 days of You first becoming aware of the \nloss or theft. You should obtain a report confirming the \nincident to submit to Us with Your claim.\nb.  You must take all reasonable steps to prevent or minimise \na claim.\nc.  You must not make any offer, promise of payment or \nadmit any liability without Our written consent. We or \nOur Emergency Assistance team will not unreasonably \nwithhold or delay Our consent.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 23,
+          "chunk_index": 7,
+          "distance": 0.7050216197967529
+        },
+        {
+          "text": "report, You must provide Us with a reasonable explanation \nand details of the time and place You made the report, \nincluding their contact details.\n2.  items left Unattended in any motor vehicle (for example, a car, \ncampervan or motorhome) or towed land vehicle overnight \neven if they were in a Concealed Storage Compartment.\n3.  items left Unattended in any motor vehicle (for example, a \ncar, campervan or motorhome) or towed land vehicle during",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 33,
+          "chunk_index": 9,
+          "distance": 0.7357149720191956
+        },
+        {
+          "text": "to provide Us with a copy of the relevant report, You must \nprovide Us with a reasonable explanation and details of the \ntime and place You made the report, including their contact \ndetails.\n2.  loss or theft of cash, bank or currency notes, postal or money \norders unless carried on Your person or stored in a locked \nsafe or safety deposit box.\nAlso refer to: General Exclusions – pages 81-85.  \nPolicy Conditions – pages 44-49.\nSECTION 9: Rental Car Insurance Excess\nThis cover applies if You:",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 34,
+          "chunk_index": 7,
+          "distance": 0.7423833608627319
+        },
+        {
+          "text": "their illegal use. You must however, comply with all the conditions \nof the issue of the document prior to and after the loss or theft.\nThe maximum benefit limit for this section is:\n• International Comprehensive Plan: $10,000 \n• International Medical Only Plan: No Cover \n• Domestic Plan: No Cover\nWe Will Not Pay For:\n1. loss or theft that is not reported to the:\na. police or security personnel;\nb.  responsible Transport Provider (if Your items are lost or",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 33,
+          "chunk_index": 7,
+          "distance": 0.7528741359710693
+        },
+        {
+          "text": "68 69\nIf You paid for the motorcycle/moped riding cover option, We will \nalso include cover for the insurance excess You become liable \nto pay for damage to or theft of a motorcycle or moped rented \nfrom a licensed motor vehicle rental company. The word “Rental \nCar” should be interpreted to include motorcycle or moped.\nThe maximum benefit limit for this section is:\n• International Comprehensive Plan: $10,000 \n• International Medical Only Plan: No Cover \n• Domestic Plan: $10,000",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 35,
+          "chunk_index": 0,
+          "distance": 0.7555708885192871
+        },
+        {
+          "text": "SECTION 8: Theft of Cash \nWe will reimburse You for cash, bank or currency notes, postal \nor money orders accidentally lost or stolen from Your person, or \nstolen from a locked safe or safety deposit box, during the Period \nof Insurance.\nThe maximum benefit limit for this section is:\n• International Comprehensive Plan: $500 \n• International Medical Only Plan: No Cover \n• Domestic Plan: No Cover\nWe Will Not Pay For:\n1. loss or theft that is not reported to the:\na. police or security personnel;",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 34,
+          "chunk_index": 5,
+          "distance": 0.7647752165794373
+        },
+        {
+          "text": "process and can often speed up the outcome.\nCheck that the amount You want to claim is higher than \nany excess that applies to Your claim.\nWho is Medibank Private?\nMedibank Private Limited (Medibank), its employees and call \ncentre staff, arrange the issue of the insurance to You as an \nauthorised representative of Travel Insurance Partners, on behalf \nof the insurer. Medibank’s contact details are provided on the \nback cover of this booklet. See the Financial Services Guide on",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 17,
+          "chunk_index": 4,
+          "distance": 0.7674369215965271
+        }
+      ],
+      "latency_s": 5.74,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.125,
+        "cited_pages": [
+          33
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.75,
+        "answer_correctness": 0.8642778292071298,
+        "context_precision": 0.7095238095060713
+      }
+    },
+    {
+      "id": "MEDIBANK-R-03",
+      "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Medibank cover the medical claim?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the answer is:\n\nNo, Medibank would not cover the medical claim.\n\nThe relevant excerpt is:\n\n[Source 8: MEDIBANK_20260422.pdf, page 42]\n20.  claims involving, arising from or related to Your impairment due to You drinking too much alcohol:\n\nThis excerpt explicitly states that Medibank will not cover claims that involve, arise from, or are related to impairment due to excessive alcohol consumption, which is evidenced by a blood test showing a BAC of 0.19% or above. Since your BAC was 0.20%, which is above the threshold, your claim would be excluded.",
+      "sources": [
+        {
+          "text": "due to You drinking too much alcohol:\na.  which is evidenced by the results of a blood test which \nshow that Your blood alcohol concentration level is 0.19% \nor above. (The level of alcohol in Your blood is called blood \nalcohol concentration (BAC). As a point of reference, a \nBAC of 0.19% is almost four times the legal driving BAC \nlimit range in Australia which is currently 0.05%); or\nb. taking into account the following, where available:",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 42,
+          "chunk_index": 6,
+          "distance": 0.5849931240081787
+        },
+        {
+          "text": "process and can often speed up the outcome.\nCheck that the amount You want to claim is higher than \nany excess that applies to Your claim.\nWho is Medibank Private?\nMedibank Private Limited (Medibank), its employees and call \ncentre staff, arrange the issue of the insurance to You as an \nauthorised representative of Travel Insurance Partners, on behalf \nof the insurer. Medibank’s contact details are provided on the \nback cover of this booklet. See the Financial Services Guide on",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 17,
+          "chunk_index": 4,
+          "distance": 0.637718677520752
+        },
+        {
+          "text": "policy but You may not apply for cover for any Existing Medical \nConditions. There will be no cover for claims which in any way \nrelate to, or are exacerbated by, any Existing Medical Condition \nor any condition where the points listed above apply.\nIf You receive a diagnosis before You depart on Your Journey, \nYou may be able to complete a health assessment and, if \napproved, add Existing Medical Condition cover to Your policy \nby paying Us the required premium.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 11,
+          "chunk_index": 3,
+          "distance": 0.6409552097320557
+        },
+        {
+          "text": "please call 1300 362 544.\nCompleting a health assessment\nYou can complete an online health assessment by either visiting \nmedibank.com.au/travel, visiting Your nearest Medibank Retail \nOutlet, or calling 132 331 for additional assistance. If You have \nalready purchased a policy please call 1300 362 544.\n•  You’ll need to have sufficient knowledge about each Existing \nMedical Condition so We can assess the risk.\n For example, We need to know the name of the medical",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 14,
+          "chunk_index": 4,
+          "distance": 0.6709067225456238
+        },
+        {
+          "text": "Limited (Medibank) ABN 47 080 890 259, arranges for the issue of \nthe insurance.\nThe person who provides You with this PDS is the providing entity. \nThe capacity in which they act is displayed in the Financial \nServices Guide on pages 92-94 of this booklet.\nQuick Tips \nProviding as much detail as possible when completing \ndetails of Your claim will help Us in the assessment \nprocess and can often speed up the outcome.\nCheck that the amount You want to claim is higher than",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 17,
+          "chunk_index": 3,
+          "distance": 0.6967642903327942
+        },
+        {
+          "text": "coverage, the giving of emergency assistance will not in \nitself be an admission of liability.\nb.  The medical standards, sanitary conditions, reliability \nof telephone systems and facilities for urgent medical \nevacuations differ from country to country. Responsibility \nfor any loss, medical complication or death resulting from \nany factor reasonably beyond Our control cannot be \naccepted by Medibank Private Limited, Our emergency \nassistance, Travel Insurance Partners or Us.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 24,
+          "chunk_index": 4,
+          "distance": 0.7046073079109192
+        },
+        {
+          "text": "approved, add Existing Medical Condition cover to Your policy \nby paying Us the required premium.\n*Examples of signs or symptoms include, but are not limited to, \nchest pain, shortness of breath, pain or discomfort in any part of \nYour body, persistent cough or unexplained bleeding.\nExisting Medical Conditions We automatically include\nWe automatically include the Existing Medical Conditions listed \nin the table following provided:\n• all Your Existing Medical Conditions are on this list;",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 11,
+          "chunk_index": 4,
+          "distance": 0.7057268619537354
+        },
+        {
+          "text": "18.  claims which in any way relate to Your wilful or self-inflicted \ninjury or illness, suicide or attempted suicide.\n19.  claims which in any way relate to Your:\na. chronic use of alcohol;\nb.  substance abuse, drug abuse (whether over the counter, \nprescription or otherwise); or\nc.  ingestion of any non-prescription drug or substance (e.g. \nmarijuana, ecstasy, heroin).\n20.  claims involving, arising from or related to Your impairment \ndue to You drinking too much alcohol:",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 42,
+          "chunk_index": 5,
+          "distance": 0.7144948840141296
+        }
+      ],
+      "latency_s": 5.37,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.125,
+        "cited_pages": [
+          42
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.8333333333333334,
+        "answer_correctness": 0.7695415430654218,
+        "context_precision": 0.6805555555328703
+      }
+    }
+  ]
+}
