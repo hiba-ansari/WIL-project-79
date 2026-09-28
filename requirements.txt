@@ -7,3 +7,5 @@ chromadb
 dataclasses
 ragas
 langchain-community<0.4.2
+pandas
+openpyxl

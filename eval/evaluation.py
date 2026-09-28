@@ -466,13 +466,15 @@ def report(run_file: Path, baseline_file: Path | None = None):
 
 
 def summary(report_file: Path):
-    """Format a saved report as a RAG vs baseline markdown table.
+    """Format a saved report as a RAG vs baseline summary Excel sheet.
 
-    Columns: Metric (overall) | RAG | Baseline | Δ.
+    Columns: Metric | Group | RAG | Baseline | Delta.
     Context-dependent metrics (faithfulness, context precision, retrieval)
     are left blank for the baseline — a context-less run has no definition
     for them, and setting as 0 would be misleading.
     """
+
+    import pandas as pd
 
     data = json.loads(report_file.read_text(encoding="utf-8"))
     rag = data["rag"]
@@ -494,23 +496,33 @@ def summary(report_file: Path):
         ("Latency p50 (s)", "overall", "latency_p50_s"),
     ]
 
-    def cell(v, dec=3):
-        return f"{v:.{dec}f}" if isinstance(v, (int, float)) else "*(blank)*"
-
-    lines = ["| Metric (overall) | RAG | Baseline | Δ |", "|---|---|---|---|"]
+    records = []
     for label, group, key in rows:
         r = rag.get(group, {}).get(key)
         b = base.get(group, {}).get(key) if base else None
         dec = 1 if "latency" in key else 3
-        d = f"{r - b:+.{dec}f}" if isinstance(r, (int, float)) and isinstance(b, (int, float)) else "—"
-        lines.append(f"| {label} | {cell(r, dec)} | {cell(b, dec)} | {d} |")
+        r = round(r, dec) if isinstance(r, (int, float)) else None
+        b = round(b, dec) if isinstance(b, (int, float)) else None
+        d = round(r - b, dec) if r is not None and b is not None else None
+        records.append({"Metric": label, "Group": group, "RAG": r, "Baseline": b, "Delta": d})
 
-    table = "\n".join(lines)
-    print(f"\n{'='*90}\nSUMMARY TABLE — {report_file.name}\n{'='*90}\n")
-    print(table)
-    out = report_file.with_name(report_file.name.replace("_report.json", "_summary.md"))
-    out.write_text(table + "\n", encoding="utf-8")
-    print(f"\nSaved summary table in {out}")
+    df = pd.DataFrame(records)
+    out = report_file.with_name(report_file.name.replace("_report.json", "_summary.xlsx"))
+    with pd.ExcelWriter(out, engine="openpyxl") as writer:
+        df.to_excel(writer, sheet_name="summary", index=False)
+        ws = writer.sheets["summary"]
+        # readable column widths + numeric formats
+        widths = {"A": 45, "B": 22, "C": 10, "D": 10, "E": 10}
+        for col, w in widths.items():
+            ws.column_dimensions[col].width = w
+        for row in ws.iter_rows(min_row=2, min_col=3, max_col=5):
+            for c in row:
+                if c.value is not None:
+                    c.number_format = "0.000" if "Latency" not in (ws.cell(c.row, 1).value or "") else "0.0"
+
+    print(f"\n{'='*90}\nSUMMARY — {report_file.name}\n{'='*90}\n")
+    print(df.to_string(index=False))
+    print(f"\nSaved summary sheet in {out}")
 
 
 # helper functions
