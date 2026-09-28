@@ -1,0 +1,104 @@
+{
+  "rag": {
+    "overall": {
+      "faithfulness": 0.707,
+      "answer_correctness": 0.597,
+      "context_precision": 0.662,
+      "ookb_correct": 0.972,
+      "retrieval_hit_at_k": 0.833,
+      "retrieval_precision_at_k": 0.119,
+      "attribution_precision": 0.524,
+      "refused": 0.361,
+      "latency_p50_s": 3.3,
+      "n": 36
+    },
+    "factual": {
+      "faithfulness": 0.856,
+      "answer_correctness": 0.625,
+      "context_precision": 0.7,
+      "ookb_correct": 0.917,
+      "retrieval_hit_at_k": 0.75,
+      "retrieval_precision_at_k": 0.107,
+      "attribution_precision": 0.409,
+      "refused": 0.083,
+      "latency_p50_s": 3.9,
+      "n": 12
+    },
+    "reasoning": {
+      "faithfulness": 0.559,
+      "answer_correctness": 0.57,
+      "context_precision": 0.625,
+      "ookb_correct": 1.0,
+      "retrieval_hit_at_k": 0.917,
+      "retrieval_precision_at_k": 0.131,
+      "attribution_precision": 0.65,
+      "refused": 0.0,
+      "latency_p50_s": 3.9,
+      "n": 12
+    },
+    "out_of_knowledge_base": {
+      "faithfulness": null,
+      "answer_correctness": null,
+      "context_precision": null,
+      "ookb_correct": 1.0,
+      "retrieval_hit_at_k": null,
+      "retrieval_precision_at_k": null,
+      "attribution_precision": null,
+      "refused": 1.0,
+      "latency_p50_s": 0.8,
+      "n": 12
+    }
+  },
+  "baseline": {
+    "overall": {
+      "faithfulness": null,
+      "answer_correctness": 0.581,
+      "context_precision": null,
+      "ookb_correct": 0.667,
+      "retrieval_hit_at_k": null,
+      "retrieval_precision_at_k": null,
+      "attribution_precision": null,
+      "refused": 0.0,
+      "latency_p50_s": 6.3,
+      "n": 36
+    },
+    "factual": {
+      "faithfulness": null,
+      "answer_correctness": 0.599,
+      "context_precision": null,
+      "ookb_correct": 1.0,
+      "retrieval_hit_at_k": null,
+      "retrieval_precision_at_k": null,
+      "attribution_precision": null,
+      "refused": 0.0,
+      "latency_p50_s": 4.2,
+      "n": 12
+    },
+    "reasoning": {
+      "faithfulness": null,
+      "answer_correctness": 0.563,
+      "context_precision": null,
+      "ookb_correct": 1.0,
+      "retrieval_hit_at_k": null,
+      "retrieval_precision_at_k": null,
+      "attribution_precision": null,
+      "refused": 0.0,
+      "latency_p50_s": 8.7,
+      "n": 12
+    },
+    "out_of_knowledge_base": {
+      "faithfulness": null,
+      "answer_correctness": null,
+      "context_precision": null,
+      "ookb_correct": 0.0,
+      "retrieval_hit_at_k": null,
+      "retrieval_precision_at_k": null,
+      "attribution_precision": null,
+      "refused": 0.0,
+      "latency_p50_s": 6.6,
+      "n": 12
+    }
+  },
+  "baseline_file": "run_baseline_travel_insurance_20260928_221502.json",
+  "run_file": "run_collect_travel_insurance_k_7_20260928_233012.json"
+}

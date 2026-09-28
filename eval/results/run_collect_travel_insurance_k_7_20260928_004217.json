@@ -427,8 +427,8 @@
       ],
       "latency_s": 6.51,
       "scores": {
-        "refused": 1.0,
-        "ookb_correct": 0.0,
+        "refused": 0.0,
+        "ookb_correct": 1.0,
         "retrieval_hit_at_k": 1.0,
         "retrieval_precision_at_k": 0.14285714285714285,
         "cited_pages": [
@@ -512,8 +512,8 @@
       ],
       "latency_s": 2.76,
       "scores": {
-        "refused": 1.0,
-        "ookb_correct": 0.0,
+        "refused": 0.0,
+        "ookb_correct": 1.0,
         "retrieval_hit_at_k": 0.0,
         "retrieval_precision_at_k": 0.0,
         "cited_pages": [],
@@ -2363,8 +2363,8 @@
       ],
       "latency_s": 5.66,
       "scores": {
-        "refused": 1.0,
-        "ookb_correct": 0.0,
+        "refused": 0.0,
+        "ookb_correct": 1.0,
         "retrieval_hit_at_k": 1.0,
         "retrieval_precision_at_k": 0.14285714285714285,
         "cited_pages": [

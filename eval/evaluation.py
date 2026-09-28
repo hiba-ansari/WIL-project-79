@@ -31,14 +31,40 @@ REFUSAL_PATTERNS = [
     "i cannot", "i'm unable", "sorry, i cannot",
     "contact your insurer", "contact us directly", "not covered by the provided",
     "i will only answer", "policy-related inquiries only", "unrelated to the policy",
+    "i'm only allowed", "i am only allowed", "i'm only able", "i am only able",
+    "i must say", "not related to the policy",
 ]
+
+_SOURCE_NARRATION = re.compile(
+    r"(source\s*\d+|\bpages?\b|\[source|the\s+excerpts?\b|the\s+policy\b|"
+    r"the\s+documents?\b|the\s+provided\b|this\s+document\b)"
+    r"[^.]*?"
+    r"\b(do(?:es)?\s*not\s+(?:contain|provide|mention|state|include)|not\s+contain|no\s+information)",
+    re.IGNORECASE,
+)
+
+_BOILERPLATE_REFUSAL = re.compile(
+    r"the\s+excerpts?\s+do\s+not\s+contain\s+this\s+information\.?",
+    re.IGNORECASE,
+)
 
 
 def is_refusal(answer: str):
-    """Check if response contains a refusal phrase."""
+    """Check if the response refuses to answer overall."""
 
     low = answer.lower()
-    return any(p in low for p in REFUSAL_PATTERNS)
+    kept = []
+    for sent in re.split(r"(?<=[.!?])\s+", low):
+        if _SOURCE_NARRATION.search(sent):
+            continue
+
+        sent = _BOILERPLATE_REFUSAL.sub("", sent).strip()
+        if sent:
+            kept.append(sent)
+    core = " ".join(kept).strip()
+    if not core:
+        return True
+    return any(p in core for p in REFUSAL_PATTERNS)
 
 
 def extract_cited_pages(answer: str):
@@ -52,8 +78,13 @@ def extract_cited_pages(answer: str):
     return sorted(pages)
 
 
-def custom_metrics(item: dict, run_entry: dict):
-    """Calculate cheap metrics for a given test question."""
+def custom_metrics(item: dict, run_entry: dict, has_retrieval: bool = True):
+    """Calculate cheap metrics for a given test question.
+
+    has_retrieval=False is used for baseline runs: no chunks were retrieved,
+    so page-level retrieval metrics are N/A (None, not 0 — a zero would
+    wrongly read as "retrieval failed" instead of "no retrieval by design").
+    """
 
     answer = run_entry["answer"]
     category = item["question_type"]
@@ -65,11 +96,17 @@ def custom_metrics(item: dict, run_entry: dict):
     else:
         ookb_correct = 0.0 if refused else 1.0
 
-    retrieved_pages = [s["page"] for s in run_entry["sources"]]
+    retrieved_pages = [s["page"] for s in run_entry["sources"]] if has_retrieval else []
     cited_pages = extract_cited_pages(answer)
 
     if category == "out_of_knowledge_base":
         retrieval_hit = precision_at_k = attribution_precision = None
+    elif not has_retrieval:
+        rp = set(relevant_pages)
+        retrieval_hit = precision_at_k = None
+        attribution_precision = (
+            len(rp & set(cited_pages)) / len(cited_pages) if cited_pages else None
+        )
     else:
         rp = set(relevant_pages)
         retrieval_hit = 1.0 if rp & set(retrieved_pages) else 0.0
@@ -153,6 +190,74 @@ async def score_ragas_one(metrics: dict, item: dict, entry: dict):
 
     return scores
 
+# run   
+def vanilla_answer(question: str, model: str):
+    """Answer without retrieval."""
+
+    from langchain_ollama import ChatOllama
+    llm = ChatOllama(model=model, temperature=0.1)
+    prompt = (
+        "You are a helpful travel insurance assistant. Answer the user's question "
+        "to the best of your ability.\n\nQuestion: " + question
+    )
+    return llm.invoke(prompt).content
+
+
+def baseline(config: dict, domain: str, test_set: list[dict], limit: int | None, ids: list[str] | None, resume_file: Path | None = None, cheap_only: bool = False):
+    """Run the vanilla-LLM control over the same test questions."""
+
+    items = select_items(test_set, limit, ids)
+    model = config.get("llm", {}).get("model", "llama3")
+    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    if resume_file:
+        run = json.loads(resume_file.read_text(encoding="utf-8"))
+        done = {e["id"] for e in run["entries"]}
+        items = [t for t in items if t["id"] not in done]
+        run_file = resume_file
+        print(f"Resuming {run_file.name}: {len(done)} done, {len(items)} remaining")
+    else:
+        run_file = RESULTS_DIR / f"run_baseline_{domain}_{datetime.now():%Y%m%d_%H%M%S}.json"
+        run = {
+            "mode": "baseline",
+            "domain": domain,
+            "created": datetime.now().isoformat(timespec="seconds"),
+            "config_snapshot": {"llm": {"model": model}, "retrieval": "none"},
+            "entries": [],
+        }
+
+    ragas_metrics = {}
+    if not cheap_only:
+        emb_model = config.get("embeddings", {}).get("model", "nomic-embed-text")
+        print(f"Building RAGAS evaluator (model={model}, base={OLLAMA_BASE_URL})")
+        all_metrics = build_ragas_metrics(model, emb_model)
+        ragas_metrics = {"answer_correctness": all_metrics["answer_correctness"]}
+
+    total = len(items)
+    for i, item in enumerate(items, 1):
+        print(f"\n[{i}/{total}] baseline {item['id']}: {item['question'][:60]}...")
+        t0 = time.perf_counter()
+        answer = vanilla_answer(item["question"], model)
+        latency = time.perf_counter() - t0
+        entry = {
+            "id": item["id"],
+            "question": item["question"],
+            "question_type": item["question_type"],
+            "answer": answer,
+            "sources": [],
+            "latency_s": round(latency, 2),
+        }
+        entry["scores"] = custom_metrics(item, entry, has_retrieval=False)
+        if ragas_metrics:
+            print(f"  scoring RAGAS (may take minutes)...")
+            entry["scores"].update(asyncio.run(score_ragas_one(ragas_metrics, item, entry)))
+        run["entries"].append(entry)
+        save_run(run_file, run)
+        print(f"  [{i}/{total}] saved (latency {latency:.1f}s)")
+
+    print(f"\nBaseline collected {total} answers in {run_file}")
+    print(f"Next: python eval/evaluation.py --mode report --run-file {run_file.name}")
+    return run_file
 
 # collect: run the RAG pipeline and score
 def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
@@ -232,6 +337,46 @@ def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
     return run_file
 
 
+def evaluate(config: dict, test_set: list[dict], run_file: Path, cheap_only: bool = False):
+    """(Re-)score a saved run file without re-running the pipeline.
+
+    Works for both collect and baseline runs. Cheap metrics are free, so they
+    are always recomputed; RAGAS metrics are skipped with --cheap-only.
+    """
+
+    run = json.loads(run_file.read_text(encoding="utf-8"))
+    by_id = {item["id"]: item for item in test_set}
+    has_retrieval = run["mode"] == "collect"
+
+    for entry in run["entries"]:
+        # merge instead of replace: keep any RAGAS scores already on the entry so a --cheap-only re-score doesn't wipe faithfulness/correctness/context.
+        entry.setdefault("scores", {}).update(
+            custom_metrics(by_id[entry["id"]], entry, has_retrieval)
+        )
+    save_run(run_file, run)
+
+    if cheap_only:
+        print(f"\nCheap metrics updated in {run_file}")
+        return
+
+    names = RAGAS_METRICS if has_retrieval else ["answer_correctness"]
+    model = run["config_snapshot"].get("llm", {}).get("model", "llama3")
+    emb_model = run["config_snapshot"].get("embeddings", {}).get("model", "nomic-embed-text")
+    print(f"Building RAGAS evaluator (model={model}, base={OLLAMA_BASE_URL})")
+    all_metrics = build_ragas_metrics(model, emb_model)
+    metrics = {n: m for n, m in all_metrics.items() if n in names}
+
+    total = len(run["entries"])
+    for i, entry in enumerate(run["entries"], 1):
+        print(f"[{i}/{total}] RAGAS {entry['id']}...")
+        entry["scores"].update(
+            asyncio.run(score_ragas_one(metrics, by_id[entry["id"]], entry))
+        )
+        save_run(run_file, run)
+
+    print(f"\nMetrics updated in {run_file}")
+
+
 # add / append to report
 def mean_or_none(vals: list) -> float | None:
     """
@@ -260,14 +405,30 @@ def aggregate(run: dict):
     return out
 
 
-def report(run_file: Path):
-    """Format evaluation report."""
+def report(run_file: Path, baseline_file: Path | None = None):
+    """Format evaluation report.
+
+    - Run on a baseline file  -> standalone BASELINE report (title carries
+      'baseline' so it is never confused with RAG reports).
+    - Run on a collect file   -> RAG report with baseline stats appended for
+      later comparison (explicit --baseline-file, else the latest baseline run).
+    """
 
     run = json.loads(run_file.read_text(encoding="utf-8"))
     agg = aggregate(run)
+    is_baseline_run = run.get("mode") == "baseline"
 
+    base_agg = None
+    base_run_name = None
+    if not is_baseline_run:
+        bf = baseline_file or find_latest_baseline()
+        if bf and bf.exists():
+            base_run_name = bf.name
+            base_agg = aggregate(json.loads(bf.read_text(encoding="utf-8")))
+
+    title = "BASELINE EVALUATION REPORT" if is_baseline_run else "EVALUATION REPORT"
     print(f"\n{'='*90}")
-    print(f"EVALUATION REPORT — {run_file.name}")
+    print(f"{title} — {run_file.name}")
     print(f"{'='*90}")
     header = (f"{'group':<22}{'n':>4}{'faithfulness':>14}{'ansCorrectness':>16}{'contextPrec':>14}"
               f"{'ookb_ok':>10}{'retrievalHit':>14}{'retrievalPrec':>15}{'attributionPrec':>17}{'refused':>9}{'lat50':>7}")
@@ -280,10 +441,76 @@ def report(run_file: Path):
               f"{fmt(a,'retrieval_precision_at_k'):>15}{fmt(a,'attribution_precision'):>17}"
               f"{fmt(a,'refused'):>9}{fmt(a,'latency_p50_s'):>7}")
 
+    if base_agg:
+        print(f"\n{'='*90}")
+        print(f"RAG vs VANILLA BASELINE (no retrieval) — {base_run_name}")
+        print(f"{'='*90}")
+        cmp_header = (f"{'group':<22}{'rag_correct':>12}{'base_correct':>13}"
+                      f"{'rag_ookb_ok':>12}{'base_ookb_ok':>13}{'rag_refused':>12}{'base_refused':>13}")
+        print(cmp_header)
+        print("-" * len(cmp_header))
+        for g, a in agg.items():
+            b = base_agg.get(g, {})
+            print(f"{g:<22}{fmt(a,'answer_correctness'):>12}{fmt(b,'answer_correctness'):>13}"
+                  f"{fmt(a,'ookb_correct'):>12}{fmt(b,'ookb_correct'):>13}"
+                  f"{fmt(a,'refused'):>12}{fmt(b,'refused'):>13}")
+
+    payload = {("baseline" if is_baseline_run else "rag"): agg}
+    if base_agg:
+        payload["baseline"] = base_agg
+        payload["baseline_file"] = base_run_name
+    payload["run_file"] = str(run_file.name)
     report_path = run_file.with_name(run_file.stem + "_report.json")
-    report_path.write_text(json.dumps({"rag": agg, "run_file": str(run_file.name)}, indent=2, default=str),
-                           encoding="utf-8")
+    report_path.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
     print(f"\nSaved report in {report_path}")
+
+
+def summary(report_file: Path):
+    """Format a saved report as a RAG vs baseline markdown table.
+
+    Columns: Metric (overall) | RAG | Baseline | Δ.
+    Context-dependent metrics (faithfulness, context precision, retrieval)
+    are left blank for the baseline — a context-less run has no definition
+    for them, and setting as 0 would be misleading.
+    """
+
+    data = json.loads(report_file.read_text(encoding="utf-8"))
+    rag = data["rag"]
+    base = data.get("baseline")
+    if base is None:
+        bf = find_latest_baseline()
+        base = aggregate(json.loads(bf.read_text(encoding="utf-8"))) if bf else None
+
+    rows = [
+        ("Right behaviour for scope, out_of_knowledge_base", "out_of_knowledge_base", "ookb_correct"),
+        ("Right behaviour, factual", "factual", "ookb_correct"),
+        ("Right behaviour, reasoning", "reasoning", "ookb_correct"),
+        ("Answer page retrieved", "overall", "retrieval_hit_at_k"),
+        ("Answer page cited (attribution)", "overall", "attribution_precision"),
+        ("Correctness", "overall", "answer_correctness"),
+        ("Faithfulness", "overall", "faithfulness"),
+        ("Context precision", "overall", "context_precision"),
+        ("Refusal rate", "overall", "refused"),
+        ("Latency p50 (s)", "overall", "latency_p50_s"),
+    ]
+
+    def cell(v, dec=3):
+        return f"{v:.{dec}f}" if isinstance(v, (int, float)) else "*(blank)*"
+
+    lines = ["| Metric (overall) | RAG | Baseline | Δ |", "|---|---|---|---|"]
+    for label, group, key in rows:
+        r = rag.get(group, {}).get(key)
+        b = base.get(group, {}).get(key) if base else None
+        dec = 1 if "latency" in key else 3
+        d = f"{r - b:+.{dec}f}" if isinstance(r, (int, float)) and isinstance(b, (int, float)) else "—"
+        lines.append(f"| {label} | {cell(r, dec)} | {cell(b, dec)} | {d} |")
+
+    table = "\n".join(lines)
+    print(f"\n{'='*90}\nSUMMARY TABLE — {report_file.name}\n{'='*90}\n")
+    print(table)
+    out = report_file.with_name(report_file.name.replace("_report.json", "_summary.md"))
+    out.write_text(table + "\n", encoding="utf-8")
+    print(f"\nSaved summary table in {out}")
 
 
 # helper functions
@@ -306,13 +533,40 @@ def resolve_run_arg(value: str):
     instead of inputting the full path.
     """
 
-    if value == "latest":
-        files = [f for f in sorted(RESULTS_DIR.glob("run_collect_*.json"))
+    if value in ("latest", "latest_baseline"):
+        prefix = "run_collect_" if value == "latest" else "run_baseline_"
+        files = [f for f in sorted(RESULTS_DIR.glob(f"{prefix}*.json"))
                  if not f.name.endswith("_report.json")]
         if not files:
-            raise FileNotFoundError(f"No run_collect_*.json run files in {RESULTS_DIR} yet")
+            raise FileNotFoundError(f"No {prefix}*.json run files in {RESULTS_DIR} yet")
         return files[-1]
-    return Path(value)
+    p = Path(value)
+    
+    if not p.exists() and not p.is_absolute() and str(p.parent) == ".":
+        candidate = RESULTS_DIR / value
+        if candidate.exists():
+            return candidate
+    return p
+
+
+def find_latest_baseline():
+    """Most recent baseline run file, or None if no baseline has been collected."""
+
+    files = [f for f in sorted(RESULTS_DIR.glob("run_baseline_*.json"))
+             if not f.name.endswith("_report.json")]
+    return files[-1] if files else None
+
+
+def resolve_report_arg(value: str | None):
+    if value in (None, "latest"):
+        files = sorted(RESULTS_DIR.glob("run_collect_*_report.json"))
+        if not files:
+            raise FileNotFoundError(f"No run_collect_*_report.json reports in {RESULTS_DIR} yet")
+        return files[-1]
+    p = resolve_run_arg(value)
+    if p.exists() and p.name.endswith("_report.json"):
+        return p
+    return p.with_name(p.stem + "_report.json")
 
 
 def select_items(test_set: list[dict], limit: int | None, ids: list[str] | None):
@@ -342,12 +596,13 @@ def main():
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     parser = argparse.ArgumentParser(description="RAG Evaluation")
-    parser.add_argument("--mode", required=True, choices=["collect", "report"])
+    parser.add_argument("--mode", required=True, choices=["collect", "evaluate", "baseline", "report", "summary"])
     parser.add_argument("--domain", default="travel_insurance")
     parser.add_argument("--test-set", default=str(PROJECT_ROOT / "data" / "evaluation" / "qna_dataset.json"))
     parser.add_argument("--config", default=str(PROJECT_ROOT / "config.yaml"))
-    parser.add_argument("--run-file", help="Run JSON or 'latest' (report)")
-    parser.add_argument("--resume", default=None, help="Run file to continue (collect)")
+    parser.add_argument("--run-file", help="Run JSON or 'latest' / 'latest_baseline' (evaluate/report)")
+    parser.add_argument("--baseline-file", help="Baseline run JSON or 'latest_baseline' (report)")
+    parser.add_argument("--resume", default=None, help="Run file to continue (collect/baseline)")
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--ids", default=None, help="Comma-separated test ids")
     parser.add_argument("--cheap-only", action="store_true",
@@ -365,10 +620,21 @@ def main():
         if args.top_k is not None:
             config.setdefault("retrieval", {})["top_k"] = args.top_k
         collect(config, args.domain, test_set, args.limit, ids, resume, args.cheap_only)
+    elif args.mode == "baseline":
+        baseline(config, args.domain, test_set, args.limit, ids, resume, args.cheap_only)
+    elif args.mode == "evaluate":
+        if not args.run_file:
+            parser.error("--run-file required (path or 'latest')")
+        evaluate(config, test_set, resolve_run_arg(args.run_file), args.cheap_only)
     elif args.mode == "report":
         if not args.run_file:
             parser.error("--run-file required (path or 'latest')")
-        report(resolve_run_arg(args.run_file))
+        report(
+            resolve_run_arg(args.run_file),
+            resolve_run_arg(args.baseline_file) if args.baseline_file else None,
+        )
+    elif args.mode == "summary":
+        summary(resolve_report_arg(args.run_file))
 
 
 if __name__ == "__main__":

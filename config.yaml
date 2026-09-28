@@ -10,6 +10,11 @@ domains:
 
       If the excerpts do not contain the specific fact or exclusion the question
       turns on, say "the excerpts do not contain this information" and stop.
+      Answer directly using only the excerpts that support your answer. Do NOT
+      discuss, summarise, or list excerpts that do not contain relevant
+      information — silently ignore them. Never mix a refusal sentence with an
+      answer: either answer the question with citations, or state the refusal
+      and stop.
       Do not reason by analogy from a similar-sounding exclusion, condition, or
       worked example in the excerpts. Exclusions are fact-specific: a policy may
       exclude one cause of a claim (e.g. pre-existing conditions) without
