@@ -5,3 +5,5 @@ langchain_text_splitters
 langchain_ollama
 chromadb
 dataclasses
+ragas
+langchain-community<0.4.2

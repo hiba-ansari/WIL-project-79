@@ -1,0 +1,53 @@
+{
+  "rag": {
+    "overall": {
+      "faithfulness": null,
+      "answer_correctness": null,
+      "context_precision": null,
+      "ookb_correct": 0.917,
+      "retrieval_hit_at_k": 0.708,
+      "retrieval_precision_at_k": 0.236,
+      "attribution_precision": 0.643,
+      "refused": 0.417,
+      "latency_p50_s": 2.2,
+      "n": 36
+    },
+    "factual": {
+      "faithfulness": null,
+      "answer_correctness": null,
+      "context_precision": null,
+      "ookb_correct": 0.833,
+      "retrieval_hit_at_k": 0.667,
+      "retrieval_precision_at_k": 0.222,
+      "attribution_precision": 0.6,
+      "refused": 0.167,
+      "latency_p50_s": 2.2,
+      "n": 12
+    },
+    "reasoning": {
+      "faithfulness": null,
+      "answer_correctness": null,
+      "context_precision": null,
+      "ookb_correct": 0.917,
+      "retrieval_hit_at_k": 0.75,
+      "retrieval_precision_at_k": 0.25,
+      "attribution_precision": 0.682,
+      "refused": 0.083,
+      "latency_p50_s": 3.4,
+      "n": 12
+    },
+    "out_of_knowledge_base": {
+      "faithfulness": null,
+      "answer_correctness": null,
+      "context_precision": null,
+      "ookb_correct": 1.0,
+      "retrieval_hit_at_k": null,
+      "retrieval_precision_at_k": null,
+      "attribution_precision": null,
+      "refused": 1.0,
+      "latency_p50_s": 1.6,
+      "n": 12
+    }
+  },
+  "run_file": "run_collect_travel_insurance_k_3_20260928_002407.json"
+}

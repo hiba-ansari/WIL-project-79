@@ -3,6 +3,8 @@ from langchain_ollama import ChatOllama, OllamaEmbeddings
 import json
 from dataclasses import dataclass
 
+import yaml
+
 @dataclass
 class RAGResult:
     """
@@ -16,7 +18,16 @@ class RAGResult:
     model: str
     top_k: int
 
-def retrieve(question, db_path, collection_name, insurer_filter, top_k = 5):
+def load_config(config_path: str = "config.yaml") -> dict:
+    with open(config_path, "r") as f:
+        return yaml.safe_load(f)
+
+config = load_config()
+SYSTEM_PROMPT = config['domains']['travel_insurance']['system_prompt']
+TOP_K = config['retrieval']['top_k']
+
+
+def retrieve(question, db_path, collection_name, insurer_filter, top_k = TOP_K):
     """
     Step 1: Retrieve most relevant chunks for the query
 
@@ -120,7 +131,7 @@ def generate_response(messages, temperature=0.1):
 
     return response.content
 
-def ask(question, db_path, collection_name, insurer, top_k=5):
+def ask(question, db_path, collection_name, insurer, top_k):
     """
     Run full RAG query pipeline. All 3 methods are called here.
     """
@@ -129,8 +140,7 @@ def ask(question, db_path, collection_name, insurer, top_k=5):
     k = top_k
     emb_model = "nomic-embed-text"
     llm_model = "llama3"
-    temperature = 0.1
-    system_prompt = "You are a helpful travel insurance assistant. Answer based on the provided context."
+    temperature = 0.1    
 
     # run query
     print(f"\n=== RAG QUERY ===")
@@ -148,7 +158,7 @@ def ask(question, db_path, collection_name, insurer, top_k=5):
 
     # call method 2: build_prompt()
     print(f"[2/3] Building augmented prompt for LLM...")
-    messages = build_prompt(question, sources, system_prompt)
+    messages = build_prompt(question, sources, SYSTEM_PROMPT)
     print(f"  Propmt assembled ({len(messages)} messages)")
     print(f"  Assembled prompt: {messages}")
 

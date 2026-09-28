@@ -1,0 +1,153 @@
+{
+  "mode": "collect",
+  "domain": "travel_insurance",
+  "created": "2026-09-27T19:33:54",
+  "config_snapshot": {
+    "top_k": 5,
+    "llm": {
+      "model": "llama3",
+      "temperature": 0.1
+    },
+    "embeddings": {
+      "model": "nomic-embed-text"
+    }
+  },
+  "entries": [
+    {
+      "id": "ALLIANZ-F-01",
+      "question": "How long is the cooling-off period for an Allianz travel insurance policy?",
+      "question_type": "factual",
+      "answer": "According to Source 2: ALLIANZ_20251219.pdf, page 7, it states:\n\n\"Even after you have purchased your policy, you have cooling-off rights. If you decide that you do not want your policy, you may cancel during the cooling-off period.\"\n\nHowever, the policy does not specify the exact duration of the cooling-off period. Therefore, I cannot provide a specific answer to this question.\n\nTo determine the cooling-off period, I recommend contacting Allianz directly, as they may have additional information or clarification on this topic.",
+      "sources": [
+        {
+          "text": "www.allianzpartners.com.au/travel-insurance/regions for our \nRegions list. \nAside from any destinations where your transit time or stop­\nover is less than 24 hours, your policy will not provide cover \noutside of the destination(s), countries and/or regions listed on \nyour Certificate of Insurance. \nWhen does my cover start? \nFor a Comprehensive, Basic, Domestic, Multi-Trip or Non­\nMedical Plan: \ncover under Benefit 2.1 Cancellation begins from the date",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 6,
+          "chunk_index": 2,
+          "distance": 0.5356539487838745
+        },
+        {
+          "text": "the pre-existing medical condition(s) of the people \ninsured under the policy. \nthe likelihood of a claim being made on your policy. \nany commissions that may be payable; \nany discounts that may apply; \nany government charges we pay, such as Stamp Duty \nand GST; \nany other charges we tell you about; \nthe excess you choose. \nCooling-off period \nEven after you have purchased your policy, you have cooling­\noff rights. \nIf you decide that you do not want your policy, you may cancel",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 7,
+          "chunk_index": 10,
+          "distance": 0.5547024011611938
+        },
+        {
+          "text": "We will calculate the partial refund on a pro-rata basis from \nthe date you contact us to cancel your policy until the end date \nof the period of cover provided by your policy. \nCancellation after the cooling-off period due to \nCOVID-19 \nIf you have been prevented from travelling or, where you have \nalready commenced your journey, you have had your journey \nshortened, because: \nof a border closure arising from COVID-19; or \nyou are required to complete a mandatory quarantine",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 8,
+          "chunk_index": 0,
+          "distance": 0.5973361730575562
+        },
+        {
+          "text": "Claims \nRead through the terms, conditions, exclusions, limits and \napplicable sub-limits of your policy - for example, the benefits \nlisted under the Policy Benefits and also in the Optional \nCovers - Cruise Pack and Snow Pack Policy Benefits, the \nGeneral Exclusions, or on your Certificate of Insurance - to \ncheck whether you are covered. \nReturn to Contents \n0 \nWhere to make a claim \nYou must notify Allianz Global Assistance as soon as you",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 40,
+          "chunk_index": 7,
+          "distance": 0.6062583923339844
+        },
+        {
+          "text": "Certificate of Insurance. The Certificate of Insurance will list the \nperiod you are insured for. See When does my cover start? \nand When does my cover end? below. \nImportant travel alert information \nBefore purchasing your travel insurance, check \nwww.smartraveller.gov.au and \nwww.allianzpartners.com.au/travel-insurance/travel-alerts for \ntravel alerts or advisories for your intended destination(s). \nCoverage may be affected or declined where a claim arises",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 5,
+          "chunk_index": 11,
+          "distance": 0.6204248666763306
+        }
+      ],
+      "latency_s": 2.39,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 0.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.2,
+        "cited_pages": [
+          7
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": null,
+        "answer_correctness": 0.525541157399763,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "ALLIANZ-F-02",
+      "question": "Under the Allianz Comprehensive Plan, what is the per-item limit for a laptop or other personal computer?",
+      "question_type": "factual",
+      "answer": "According to the policy document excerpts, the per-item limit for a laptop or other personal computer is $3,000. This is stated in multiple sections:\n\n* [Source 1: ALLIANZ_20251219.pdf, page 12]: \"$3,000 for personal computers, tablets, cameras or video cameras;\"\n* [Source 3: ALLIANZ_20251219.pdf, page 20]: \"$3,000 for personal computers, tablets, cameras or video cameras;\"\n* [Source 4: ALLIANZ_20251219.pdf, page 9]: \"$3,000 for personal computers, tablets, cameras or video cameras.\"\n\nNote that this limit applies to all policy sections and is not specific to a particular benefit or coverage.",
+      "sources": [
+        {
+          "text": "Individual item sub-limits: \n- $3,000 for personal computers, tablets, cameras or video cameras; \n- $1,000 for mobile phones (including smart phones and any items with \nphone capabilities) \n- $750 for all other items (including jewellery and watches) \n- Items left in a concealed storage compartment of a locked vehicle during \ndaylight hours - $200 per item up to a maximum of $2,000 \n$1,000 \n(minimum delay 10 hours) \n$5,000 \n$250 \n$6,000 \n$5 million",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 12,
+          "chunk_index": 1,
+          "distance": 0.5123344659805298
+        },
+        {
+          "text": "Individual item sub-limits: \n- $3,000 for personal computers, tablets, cameras or video cameras; \n- $1,000 for mobile phones (including smart phones and any items with \nphone capabilities) \n- $750 for all other items (including jewellery and watches) \n- Items left in a concealed storage compartment of a locked vehicle \nduring daylight hours - $200 per item up to a maximum of $2,000 \n$1,000 \n(Minimum delay 10 hours) \n$5,000 \n12",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 12,
+          "chunk_index": 6,
+          "distance": 0.5195454359054565
+        },
+        {
+          "text": "• \n• \n• \n \n \n \n \n \n \n \nIncreased Item Limits Cover \nThis product provides cover for your luggage and personal \neffects and valuables under Benefit 4.1 Luggage, Personal \nEffects & Valuables. The standard item limits which apply in \nthe event of a claim are as follows (please refer to sub-section \n4.1.la] on page 26 for further details): \n$3,000 for personal computers, tablets, cameras or video \ncameras; \n$1,000 for mobile phones (including any items with \nphone capabilities); or",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 20,
+          "chunk_index": 0,
+          "distance": 0.5260988473892212
+        },
+        {
+          "text": "$5,000 $5,000 $10,000 \n$10,000 $10,000 $20,000 \nIndividual item sub-limits: \n- $3,000 for personal computers, tablets, cameras or video cameras. \n- $1,000 for mobile phones (including smart phones and any items with phone \ncapabilities). \n- $750 for all other items (including jewellery and watches). \n- Items left in a concealed storage compartment of a locked vehicle during daylight \nhours - $200 per item up to a maximum of $2,000. \n$1000 $1,000 $2,000",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 9,
+          "chunk_index": 5,
+          "distance": 0.5447360873222351
+        },
+        {
+          "text": "Plan and selecting the item type(s) and new item limits you \nrequire from the choices available. \nThe total limit which can be selected for all item types \ncombined is: \nUp to $7,000 for a Single cover type \nUp to $7,000 per person for a Duo cover type \nUp to $14,000 for a Family cover type. \nThe details of the option you have purchased will be shown on \nyour Certificate of Insurance. \nYou cannot purchase this optional cover with a Basic Plan. \nPlease note in the event of a claim:",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 20,
+          "chunk_index": 2,
+          "distance": 0.5587193965911865
+        }
+      ],
+      "latency_s": 3.11,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.2,
+        "cited_pages": [
+          9,
+          12,
+          20
+        ],
+        "attribution_precision": 0.3333333333333333,
+        "faithfulness": 0.5,
+        "answer_correctness": 0.8708222065254528,
+        "context_precision": 0.999999999975
+      }
+    }
+  ]
+}

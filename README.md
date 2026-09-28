@@ -2,6 +2,18 @@
 
 An intelligent Retrieval-Augmented Generation (RAG) system designed to simplify the complex process of understanding travel insurance Policy Disclosure Statements (PDS). This tool allows users to ask natural language questions and receive precise, evidence-backed answers extracted from actual insurance documents.
 
+## 👥 Contributors
+
+| Student ID | Name |
+| -------- | -------- |
+| s4100892    | Hiba Ansari   |
+| s4124304 | Chanduru Ananthakumar   |
+| s4197718    | Dipesh Shrestha  |
+| s4215412    | Siris Sakhakarmi   |
+
+**Group ID: 79** \
+**Mentor: H Ruda Nie**
+
 ## 🚀 Key Features
 
 - **Context-Aware QA**: Uses RAG to ensure answers are grounded in specific policy documents, minimizing LLM hallucinations.
@@ -81,8 +93,14 @@ WIL-project-79/
     └── Planning.md       # Design specifications
 ```
 
-## 👥 Contributors
-- Hiba Ansari
-- Chanduru Ananthakumar
-- Dipesh Shrestha
-- Siris Sakhakarmi
+## Installation
+1. [Install Ollama](https://ollama.com/download).
+2. In a new terminal, install llama3 model: `ollama pull llama3`
+3. Install embeddings model: `ollama pull nomic-embed-text`.
+4. Confirm installation: `ollama list`.
+5. Run the `setup.sh` script to start a virtual environment and install the required packages.
+
+## Documentation
+- [Add collections in ChromaDB](https://docs.trychroma.com/docs/collections/add-data)
+- [Querying ChromaDB](https://docs.trychroma.com/docs/querying-collections/query-and-get)
+- [RAGAS library available metrics](https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/)
