@@ -1,9 +1,9 @@
 domains:
   travel_insurance:
     display_name: "Travel Insurance PDS"
-    raw_docs_dir: "data/travel_insurance/raw_docs"
-    chunks_dir: "data/travel_insurance/chunks"
-    vectordb_dir: "data/travel_insurance/vectordb"
+    raw_docs_dir: "data/raw_docs"
+    chunks_dir: "data/chunks"
+    vectordb_dir: "data/vector_db"
     system_prompt: |
       You are a travel insurance policy assistant. 
       Answer questions based ONLY on the provided policy document excerpts. 
@@ -24,11 +24,11 @@ domains:
       Do not make up coverage details, exclusions, or conditions that are not stated in the provided text.
 
 ingestion:
-  chunk_size: 500
-  chunk_overlap: 100
+  chunk_size: 250
+  chunk_overlap: 50
 
 retrieval:
-  top_k: 7
+  top_k: 5
 
 llm:
   model: "llama3"

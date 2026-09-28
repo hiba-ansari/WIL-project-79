@@ -1,10 +1,10 @@
+import shutil
 from pypdf import PdfReader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_ollama import OllamaEmbeddings
 import chromadb
 import re
 from pathlib import Path
-
 
 # PARSE PDF FILENAMES
 pattern = re.compile(r"^([A-Z0-9]+(?:-[A-Z0-9]+)*)_(\d{8})\.pdf$") # COMPANY-NAME_YYYYMMDD.pdf 
@@ -64,7 +64,7 @@ def load_pdfs(raw_docs_dir):
                     "page": page_num,
                 })
 
-    print(pages)
+    print(f"Loaded {len(pages)} pages from {len(pdf_files)} PDF files")
     return pages
 
 # CHUNKING
@@ -74,13 +74,6 @@ def chunk_pages(pages, chunk_size, overlap):
 
     Split the chunks by natural boundaries such as double newline (paragraphs), 
     single newlines, sentences, spaces, characters.
-
-    chunk_size is the number of tokens/words in each chunk. 500 is a good number 
-    as it is large enough to contain a complete cause or condition, but also 
-    small enough to capture specific meaning.
-
-    100 ≈ 1-2 sentences of overlap, enough to bridge splits and prevent 
-    losing info at chunk boundaries.
 
     Each chunk inherits the schema from its parent page (i.e "text", "source", "page").
     """
@@ -144,6 +137,22 @@ def store_embeddings(chunks, embeddings, db_path, collection_name):
 
     For each chunk, its id, embedding, document and metadata are stored.
     """
+    
+    # convert db_path to Path object
+    db_path_obj = Path(db_path)
+    
+    # clean up existing ChromaDB segment directories before creating new ones
+    if db_path_obj.exists():
+        for item in db_path_obj.iterdir():
+            if item.is_dir() and item.name != '.lock':  # don't delete lock files
+                # check if name contains UUID, which resembles a likely ChromaDB segment
+                import uuid
+                try:
+                    uuid.UUID(item.name)
+                    shutil.rmtree(item) # remove directory
+                    print(f"  Removed old ChromaDB segment directory: {item.name}")
+                except ValueError:
+                    continue
 
     client = chromadb.PersistentClient(path=db_path)
 
@@ -198,13 +207,24 @@ def ingest():
     print(f"\n{'='*50}")
     print("\nINGESTION PIPELINE:")
     
+    # read config first
+    import yaml
+    with open("config.yaml", "r") as f:
+        config = yaml.safe_load(f)
+    
+    # get directory paths from config
+    raw_docs_dir = config['domains']['travel_insurance']['raw_docs_dir']
+    vectordb_dir = config['domains']['travel_insurance']['vectordb_dir']
+    
     print(f"\n{'='*50}")
     print("\n[1/4] Loading PDFS...")
-    pages = load_pdfs("data/raw_docs/")
+    pages = load_pdfs(raw_docs_dir)
 
     print(f"\n{'='*50}")
     print("\n[2/4] Chunking text...")
-    chunks = chunk_pages(pages, 500, 100) 
+    chunk_size = config['ingestion']['chunk_size']
+    overlap = config['ingestion']['chunk_overlap']
+    chunks = chunk_pages(pages, chunk_size, overlap) 
 
     print(f"\n{'='*50}")
     print("\n[3/4] Embedding chunks...")
@@ -212,10 +232,13 @@ def ingest():
 
     print(f"\n{'='*50}")
     print("\n[4/4] Storing in ChromaDB...")
-    collection = store_embeddings(chunks, embeddings, "data/vector_db/", "Travel_Insurance")
-
+    collection = store_embeddings(chunks, embeddings, vectordb_dir, "Travel_Insurance")
+    
+    # query the collection to verify
     result = collection.get(include=["documents"])
-    print(f"Total stored documents: {len(result["documents"])}")
+    print(f"Total stored documents: {len(result['documents'])}")
+    
+    return collection
 
 
 ingest()
