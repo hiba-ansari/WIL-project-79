@@ -17,6 +17,7 @@ class RAGResult:
     sources: list[dict]
     model: str
     top_k: int
+    temperature: float = 0.1
 
 def load_config(config_path: str = "config.yaml") -> dict:
     with open(config_path, "r") as f:
@@ -131,16 +132,18 @@ def generate_response(messages, temperature=0.1):
 
     return response.content
 
-def ask(question, db_path, collection_name, insurer, top_k):
+def ask(question, db_path, collection_name, insurer, top_k, temperature=0.1):
     """
     Run full RAG query pipeline. All 3 methods are called here.
+
+    temperature defaults to 0.1; the eval pipeline passes its own value so
+    sweeps can measure generation behaviour across temperatures.
     """
 
     # initialise variables
     k = top_k
     emb_model = "nomic-embed-text"
     llm_model = "llama3"
-    temperature = 0.1    
 
     # run query
     print(f"\n=== RAG QUERY ===")
@@ -164,7 +167,7 @@ def ask(question, db_path, collection_name, insurer, top_k):
 
     # call method 3: generate_response()
     print(f"[3/3] Generating answer with {llm_model}...")
-    answer = generate_response(messages)
+    answer = generate_response(messages, temperature=temperature)
     print(f"  Answer generated ({len(answer)} chars)")
 
     # return RAGResult object for later formatting
@@ -174,7 +177,8 @@ def ask(question, db_path, collection_name, insurer, top_k):
         insurer=insurer,
         sources=sources,
         model=llm_model,
-        top_k=k
+        top_k=k,
+        temperature=temperature
     )
 
 def print_result(result: RAGResult):

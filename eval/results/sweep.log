@@ -1,0 +1,86 @@
+[2026-09-29 02:24:43] === sweep start | mode=overnight | 12 configs | 36 items/config ===
+[2026-09-29 02:24:54] === sweep start | mode=sanity | 3 configs | 36 items/config ===
+[2026-09-29 02:40:50] === sweep start | mode=sanity | 3 configs | 36 items/config ===
+[2026-09-29 02:40:50] [1/3] collect k=5 t=0.1 cheap
+[2026-09-29 02:40:50]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 5 --temperature 0.1 --cheap-only
+[2026-09-29 02:42:04]   OK   run_collect_travel_insurance_k_5_t0.1_20260929_024051.json  (1.2 min)
+[2026-09-29 02:42:04] [2/3] collect k=5 t=0.07 cheap
+[2026-09-29 02:42:04]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 5 --temperature 0.07 --cheap-only
+[2026-09-29 02:42:59]   OK   run_collect_travel_insurance_k_5_t0.07_20260929_024205.json  (0.9 min)
+[2026-09-29 02:42:59] [3/3] collect k=5 t=0.02 cheap
+[2026-09-29 02:42:59]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 5 --temperature 0.02 --cheap-only
+[2026-09-29 02:43:52]   OK   run_collect_travel_insurance_k_5_t0.02_20260929_024300.json  (0.9 min)
+[2026-09-29 02:43:52] Sweep finished in 3.0 min | ok=3 skipped=0 failed=0
+[2026-09-29 02:43:52] sanity: answer stability vs t=0.02 (36 items)
+[2026-09-29 02:43:52]   t=0.07: 26/36 answers identical (28% changed)
+[2026-09-29 02:43:52]   t=0.1: 23/36 answers identical (36% changed)
+[2026-09-29 02:43:52]   t=0.02: hit_at_k=0.958 ookb_correct=0.944 refused=0.389
+[2026-09-29 02:43:52]   t=0.07: hit_at_k=0.958 ookb_correct=0.944 refused=0.389
+[2026-09-29 02:43:52]   t=0.1: hit_at_k=0.958 ookb_correct=0.917 refused=0.417
+[2026-09-29 02:43:52] sanity done. If all three look identical, keep t=0.1 for production.
+[2026-09-29 02:55:20] === sweep start | mode=overnight | 12 configs | 36 items/config ===
+[2026-09-29 02:55:20] [1/12] collect k=3 t=0.1 full-RAGAS
+[2026-09-29 02:55:20]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 3 --temperature 0.1
+[2026-09-29 03:05:37]   OK   run_collect_travel_insurance_k_3_t0.1_20260929_025521.json  (10.3 min)
+[2026-09-29 03:05:37] [2/12] collect k=3 t=0.5 full-RAGAS
+[2026-09-29 03:05:37]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 3 --temperature 0.5
+[2026-09-29 03:14:52]   OK   run_collect_travel_insurance_k_3_t0.5_20260929_030538.json  (9.2 min)
+[2026-09-29 03:14:52] [3/12] collect k=3 t=0.8 full-RAGAS
+[2026-09-29 03:14:52]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 3 --temperature 0.8
+[2026-09-29 03:24:09]   OK   run_collect_travel_insurance_k_3_t0.8_20260929_031453.json  (9.3 min)
+[2026-09-29 03:24:09] [4/12] collect k=5 t=0.1 full-RAGAS
+[2026-09-29 03:24:09]   SKIP run_collect_travel_insurance_k_5_t0.1_*-  already complete (36/36) in run_collect_travel_insurance_k_5_t0.1_20260929_024051.json
+[2026-09-29 03:24:09] [5/12] collect k=5 t=0.5 full-RAGAS
+[2026-09-29 03:24:09]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 5 --temperature 0.5
+[2026-09-29 03:35:22]   OK   run_collect_travel_insurance_k_5_t0.5_20260929_032410.json  (11.2 min)
+[2026-09-29 03:35:22] [6/12] collect k=5 t=0.8 full-RAGAS
+[2026-09-29 03:35:22]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 5 --temperature 0.8
+[2026-09-29 03:45:27]   OK   run_collect_travel_insurance_k_5_t0.8_20260929_033522.json  (10.1 min)
+[2026-09-29 03:45:27] [7/12] collect k=7 t=0.1 full-RAGAS
+[2026-09-29 03:45:27]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 7 --temperature 0.1
+[2026-09-29 03:58:45]   OK   run_collect_travel_insurance_k_7_t0.1_20260929_034528.json  (13.3 min)
+[2026-09-29 03:58:45] [8/12] collect k=7 t=0.5 full-RAGAS
+[2026-09-29 03:58:45]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 7 --temperature 0.5
+[2026-09-29 04:10:53]   OK   run_collect_travel_insurance_k_7_t0.5_20260929_035846.json  (12.1 min)
+[2026-09-29 04:10:53] [9/12] collect k=7 t=0.8 full-RAGAS
+[2026-09-29 04:10:53]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 7 --temperature 0.8
+[2026-09-29 04:23:25]   OK   run_collect_travel_insurance_k_7_t0.8_20260929_041054.json  (12.5 min)
+[2026-09-29 04:23:25] [10/12] baseline k=5 t=0.1 full-RAGAS
+[2026-09-29 04:23:25]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode baseline --temperature 0.1
+[2026-09-29 04:33:17]   OK   run_baseline_travel_insurance_t0.1_20260929_042326.json  (9.9 min)
+[2026-09-29 04:33:17] [11/12] baseline k=5 t=0.5 full-RAGAS
+[2026-09-29 04:33:17]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode baseline --temperature 0.5
+[2026-09-29 04:41:22]   OK   run_baseline_travel_insurance_t0.5_20260929_043317.json  (8.1 min)
+[2026-09-29 04:41:22] [12/12] baseline k=5 t=0.8 full-RAGAS
+[2026-09-29 04:41:22]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode baseline --temperature 0.8
+[2026-09-29 04:49:48]   OK   run_baseline_travel_insurance_t0.8_20260929_044122.json  (8.4 min)
+[2026-09-29 04:49:48] Sweep finished in 114.5 min | ok=11 skipped=1 failed=0
+[2026-09-29 04:49:48] next: python eval/aggregate_sweep.py  ->  eval/results/sweep_summary.xlsx
+[2026-09-29 06:17:56] === sweep start | mode=overnight | 12 configs | 36 items/config ===
+[2026-09-29 06:17:56] [1/12] collect k=3 t=0.1 full-RAGAS
+[2026-09-29 06:17:56]   SKIP run_collect_travel_insurance_k_3_t0.1_*-  already complete (36/36) in run_collect_travel_insurance_k_3_t0.1_20260929_025521.json
+[2026-09-29 06:17:56] [2/12] collect k=3 t=0.5 full-RAGAS
+[2026-09-29 06:17:56]   SKIP run_collect_travel_insurance_k_3_t0.5_*-  already complete (36/36) in run_collect_travel_insurance_k_3_t0.5_20260929_030538.json
+[2026-09-29 06:17:56] [3/12] collect k=3 t=0.8 full-RAGAS
+[2026-09-29 06:17:56]   SKIP run_collect_travel_insurance_k_3_t0.8_*-  already complete (36/36) in run_collect_travel_insurance_k_3_t0.8_20260929_031453.json
+[2026-09-29 06:17:56] [4/12] collect k=5 t=0.1 full-RAGAS
+[2026-09-29 06:17:56]     $ /Users/hibiscus/WIL-project-79/.venv/bin/python /Users/hibiscus/WIL-project-79/eval/evaluation.py --mode collect --top-k 5 --temperature 0.1
+[2026-09-29 06:28:56]   OK   run_collect_travel_insurance_k_5_t0.1_20260929_061757.json  (11.0 min)
+[2026-09-29 06:28:56] [5/12] collect k=5 t=0.5 full-RAGAS
+[2026-09-29 06:28:56]   SKIP run_collect_travel_insurance_k_5_t0.5_*-  already complete (36/36) in run_collect_travel_insurance_k_5_t0.5_20260929_032410.json
+[2026-09-29 06:28:56] [6/12] collect k=5 t=0.8 full-RAGAS
+[2026-09-29 06:28:56]   SKIP run_collect_travel_insurance_k_5_t0.8_*-  already complete (36/36) in run_collect_travel_insurance_k_5_t0.8_20260929_033522.json
+[2026-09-29 06:28:56] [7/12] collect k=7 t=0.1 full-RAGAS
+[2026-09-29 06:28:56]   SKIP run_collect_travel_insurance_k_7_t0.1_*-  already complete (36/36) in run_collect_travel_insurance_k_7_t0.1_20260929_034528.json
+[2026-09-29 06:28:56] [8/12] collect k=7 t=0.5 full-RAGAS
+[2026-09-29 06:28:56]   SKIP run_collect_travel_insurance_k_7_t0.5_*-  already complete (36/36) in run_collect_travel_insurance_k_7_t0.5_20260929_035846.json
+[2026-09-29 06:28:56] [9/12] collect k=7 t=0.8 full-RAGAS
+[2026-09-29 06:28:56]   SKIP run_collect_travel_insurance_k_7_t0.8_*-  already complete (36/36) in run_collect_travel_insurance_k_7_t0.8_20260929_041054.json
+[2026-09-29 06:28:56] [10/12] baseline k=5 t=0.1 full-RAGAS
+[2026-09-29 06:28:56]   SKIP run_baseline_travel_insurance_t0.1_*-  already complete (36/36) in run_baseline_travel_insurance_t0.1_20260929_042326.json
+[2026-09-29 06:28:56] [11/12] baseline k=5 t=0.5 full-RAGAS
+[2026-09-29 06:28:56]   SKIP run_baseline_travel_insurance_t0.5_*-  already complete (36/36) in run_baseline_travel_insurance_t0.5_20260929_043317.json
+[2026-09-29 06:28:56] [12/12] baseline k=5 t=0.8 full-RAGAS
+[2026-09-29 06:28:56]   SKIP run_baseline_travel_insurance_t0.8_*-  already complete (36/36) in run_baseline_travel_insurance_t0.8_20260929_044122.json
+[2026-09-29 06:28:56] Sweep finished in 11.0 min | ok=1 skipped=11 failed=0
+[2026-09-29 06:28:56] next: python eval/aggregate_sweep.py  ->  eval/results/sweep_summary.xlsx

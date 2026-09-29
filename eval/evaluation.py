@@ -191,11 +191,11 @@ async def score_ragas_one(metrics: dict, item: dict, entry: dict):
     return scores
 
 # run   
-def vanilla_answer(question: str, model: str):
+def vanilla_answer(question: str, model: str, temperature: float = 0.1):
     """Answer without retrieval."""
 
     from langchain_ollama import ChatOllama
-    llm = ChatOllama(model=model, temperature=0.1)
+    llm = ChatOllama(model=model, temperature=temperature)
     prompt = (
         "You are a helpful travel insurance assistant. Answer the user's question "
         "to the best of your ability.\n\nQuestion: " + question
@@ -203,11 +203,13 @@ def vanilla_answer(question: str, model: str):
     return llm.invoke(prompt).content
 
 
-def baseline(config: dict, domain: str, test_set: list[dict], limit: int | None, ids: list[str] | None, resume_file: Path | None = None, cheap_only: bool = False):
+def baseline(config: dict, domain: str, test_set: list[dict], limit: int | None, ids: list[str] | None, resume_file: Path | None = None, cheap_only: bool = False, temperature: float | None = None):
     """Run the vanilla-LLM control over the same test questions."""
 
     items = select_items(test_set, limit, ids)
     model = config.get("llm", {}).get("model", "llama3")
+    if temperature is None:
+        temperature = config.get("llm", {}).get("temperature", 0.1)
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
     if resume_file:
@@ -217,12 +219,12 @@ def baseline(config: dict, domain: str, test_set: list[dict], limit: int | None,
         run_file = resume_file
         print(f"Resuming {run_file.name}: {len(done)} done, {len(items)} remaining")
     else:
-        run_file = RESULTS_DIR / f"run_baseline_{domain}_{datetime.now():%Y%m%d_%H%M%S}.json"
+        run_file = RESULTS_DIR / f"run_baseline_{domain}_t{temperature}_{datetime.now():%Y%m%d_%H%M%S}.json"
         run = {
             "mode": "baseline",
             "domain": domain,
             "created": datetime.now().isoformat(timespec="seconds"),
-            "config_snapshot": {"llm": {"model": model}, "retrieval": "none"},
+            "config_snapshot": {"llm": {"model": model, "temperature": temperature}, "retrieval": "none"},
             "entries": [],
         }
 
@@ -237,7 +239,7 @@ def baseline(config: dict, domain: str, test_set: list[dict], limit: int | None,
     for i, item in enumerate(items, 1):
         print(f"\n[{i}/{total}] baseline {item['id']}: {item['question'][:60]}...")
         t0 = time.perf_counter()
-        answer = vanilla_answer(item["question"], model)
+        answer = vanilla_answer(item["question"], model, temperature)
         latency = time.perf_counter() - t0
         entry = {
             "id": item["id"],
@@ -262,10 +264,14 @@ def baseline(config: dict, domain: str, test_set: list[dict], limit: int | None,
 # collect: run the RAG pipeline and score
 def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
             ids: list[str] | None, resume_file: Path | None = None,
-            cheap_only: bool = False):
+            cheap_only: bool = False, temperature: float | None = None):
     """Run test question against the RAG pipeline."""
 
     top_k = config.get("retrieval", {}).get("top_k", TOP_K)
+    if temperature is None:
+        temperature = config.get("llm", {}).get("temperature", 0.1)
+    # generation uses whatever value it was passed
+    config.setdefault("llm", {})["temperature"] = temperature
     items = select_items(test_set, limit, ids)
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -276,7 +282,7 @@ def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
         run_file = resume_file
         print(f"Resuming {run_file.name}: {len(done)} done, {len(items)} remaining")
     else:
-        run_file = RESULTS_DIR / f"run_collect_{domain}_k_{top_k}_{datetime.now():%Y%m%d_%H%M%S}.json"
+        run_file = RESULTS_DIR / f"run_collect_{domain}_k_{top_k}_t{temperature}_{datetime.now():%Y%m%d_%H%M%S}.json"
         run = {
             "mode": "collect",
             "domain": domain,
@@ -308,6 +314,7 @@ def collect(config: dict, domain: str, test_set: list[dict], limit: int | None,
             collection_name=COLLECTION_NAME,
             insurer=item.get("insurer") if item["question_type"] != "out_of_knowledge_base" else None,
             top_k=top_k,
+            temperature=temperature,
         )
         latency = time.perf_counter() - t0
 
@@ -621,6 +628,8 @@ def main():
                     help="Skip RAGAS metrics (fast, no Ollama evaluator needed)")
     parser.add_argument("--top-k", type=int, default=None,
                     help="Override config retrieval.top_k for this run")
+    parser.add_argument("--temperature", type=float, default=None,
+                    help="Override config llm.temperature for this run (collect/baseline)")
     args = parser.parse_args()
 
     config = load_config(args.config)
@@ -631,9 +640,9 @@ def main():
     if args.mode == "collect":
         if args.top_k is not None:
             config.setdefault("retrieval", {})["top_k"] = args.top_k
-        collect(config, args.domain, test_set, args.limit, ids, resume, args.cheap_only)
+        collect(config, args.domain, test_set, args.limit, ids, resume, args.cheap_only, args.temperature)
     elif args.mode == "baseline":
-        baseline(config, args.domain, test_set, args.limit, ids, resume, args.cheap_only)
+        baseline(config, args.domain, test_set, args.limit, ids, resume, args.cheap_only, args.temperature)
     elif args.mode == "evaluate":
         if not args.run_file:
             parser.error("--run-file required (path or 'latest')")

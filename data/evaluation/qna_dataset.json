@@ -29,7 +29,7 @@
     "question_type": "reasoning",
     "question": "I purchased the Allianz Adventure Pack, but I was injured while riding a motorcycle without a helmet. Would the claim be covered?",
     "golden_answer": "No. Even with the Adventure Pack, motorcycle or moped cover requires the rider to wear an appropriate safety helmet at all times. The claim would not satisfy the activity conditions.",
-    "relevant_pages": [17, 37]
+    "relevant_pages": [17, 38]
   },
   {
     "id": "ALLIANZ-R-02",
@@ -85,7 +85,7 @@
     "question_type": "factual",
     "question": "Under the Budget Direct International Comprehensive plan, what is the per-item limit for a laptop computer?",
     "golden_answer": "The per-item limit for a laptop computer is $3,000.",
-    "relevant_pages": [10]
+    "relevant_pages": [4, 10]
   },
   {
     "id": "BUDGET-DIRECT-F-03",
@@ -93,7 +93,7 @@
     "question_type": "factual",
     "question": "What is the Rental Vehicle Insurance Excess benefit limit under the Budget Direct International Comprehensive plan?",
     "golden_answer": "The Rental Vehicle Insurance Excess benefit limit is $10,000.",
-    "relevant_pages": [38]
+    "relevant_pages": [4, 38]
   },
   {
     "id": "BUDGET-DIRECT-R-01",
@@ -101,7 +101,7 @@
     "question_type": "reasoning",
     "question": "I paid for Budget Direct motorcycle or moped riding cover, but I was injured while riding without a helmet. Would the claim be covered?",
     "golden_answer": "No. The optional motorcycle or moped riding cover requires the rider to wear a helmet. Paying the additional premium does not provide cover when that condition is not met.",
-    "relevant_pages": [11]
+    "relevant_pages": [11, 49]
   },
   {
     "id": "BUDGET-DIRECT-R-02",
@@ -109,7 +109,7 @@
     "question_type": "reasoning",
     "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Budget Direct cover it?",
     "golden_answer": "No. Items left unattended in a motor vehicle overnight are excluded even when they are stored in a concealed compartment of a locked vehicle.",
-    "relevant_pages": [36, 37]
+    "relevant_pages": [11, 36, 37]
   },
   {
     "id": "BUDGET-DIRECT-R-03",
@@ -157,7 +157,7 @@
     "question_type": "factual",
     "question": "Under the Cover-More International Comprehensive plan, what is the per-item limit for a laptop computer?",
     "golden_answer": "The per-item limit for a laptop computer is $4,000. The higher Comprehensive+ plan has a different limit.",
-    "relevant_pages": [12]
+    "relevant_pages": [3, 12]
   },
   {
     "id": "COVER-MORE-F-03",
@@ -165,7 +165,7 @@
     "question_type": "factual",
     "question": "What is the Rental Vehicle Insurance Excess benefit limit under the Cover-More International Comprehensive plan?",
     "golden_answer": "The Rental Vehicle Insurance Excess benefit limit is $5,000.",
-    "relevant_pages": [35]
+    "relevant_pages": [3, 35]
   },
   {
     "id": "COVER-MORE-R-01",
@@ -173,7 +173,7 @@
     "question_type": "reasoning",
     "question": "I paid for Cover-More motorcycle or moped riding cover, but I was injured while riding without a helmet. Would the claim be covered?",
     "golden_answer": "No. Both levels of optional motorcycle or moped riding cover require the rider to wear a helmet. Paying the additional premium does not provide cover when that condition is not met.",
-    "relevant_pages": [16]
+    "relevant_pages": [16, 50]
   },
   {
     "id": "COVER-MORE-R-02",
@@ -181,7 +181,7 @@
     "question_type": "reasoning",
     "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Cover-More cover it?",
     "golden_answer": "No. Items left unattended in a motor vehicle overnight are excluded even when they are stored in a concealed compartment of a locked vehicle.",
-    "relevant_pages": [34]
+    "relevant_pages": [12, 36]
   },
   {
     "id": "COVER-MORE-R-03",
@@ -229,7 +229,7 @@
     "question_type": "factual",
     "question": "Under the Medibank International Comprehensive plan, what is the per-item limit for a laptop computer?",
     "golden_answer": "The per-item limit for a laptop computer is $4,000.",
-    "relevant_pages": [8]
+    "relevant_pages": [4, 8, 32]
   },
   {
     "id": "MEDIBANK-F-03",
@@ -237,7 +237,7 @@
     "question_type": "factual",
     "question": "What is the Rental Car Insurance Excess benefit limit under the Medibank International Comprehensive plan?",
     "golden_answer": "The Rental Car Insurance Excess benefit limit is $10,000.",
-    "relevant_pages": [35]
+    "relevant_pages": [4, 35]
   },
   {
     "id": "MEDIBANK-R-01",

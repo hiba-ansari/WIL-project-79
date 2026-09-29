@@ -1,0 +1,1748 @@
+{
+  "mode": "collect",
+  "domain": "travel_insurance",
+  "created": "2026-09-29T03:05:38",
+  "config_snapshot": {
+    "top_k": 3,
+    "llm": {
+      "model": "llama3",
+      "temperature": 0.5
+    },
+    "embeddings": {
+      "model": "nomic-embed-text"
+    }
+  },
+  "entries": [
+    {
+      "id": "ALLIANZ-F-01",
+      "question": "How long is the cooling-off period for an Allianz travel insurance policy?",
+      "question_type": "factual",
+      "answer": "According to the policy document excerpt [Source 1: ALLIANZ_20251219.pdf, page 7], the cooling-off period is:\n\n\"If you wish to cancel your policy more than 14 days after you are issued your Certificate of Insurance, we will provide a partial premium refund of the premium you paid...\"\n\nThis excerpt indicates that the cooling-off period is 14 days.",
+      "sources": [
+        {
+          "text": "Cancellation after the cooling-off period \nIf you wish to cancel your policy more than 14 days after you \nare issued your Certificate of Insurance, we will provide a \npartial premium refund of the premium you paid, provided:",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 7,
+          "chunk_index": 22,
+          "distance": 0.5652036666870117
+        },
+        {
+          "text": "and When does my cover end? below. \nImportant travel alert information \nBefore purchasing your travel insurance, check \nwww.smartraveller.gov.au and \nwww.allianzpartners.com.au/travel-insurance/travel-alerts for",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 5,
+          "chunk_index": 21,
+          "distance": 0.5927254557609558
+        },
+        {
+          "text": "any discounts that may apply; \nany government charges we pay, such as Stamp Duty \nand GST; \nany other charges we tell you about; \nthe excess you choose. \nCooling-off period \nEven after you have purchased your policy, you have cooling­\noff rights.",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 7,
+          "chunk_index": 19,
+          "distance": 0.6067211627960205
+        }
+      ],
+      "latency_s": 1.97,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          7
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.75,
+        "answer_correctness": 0.6062892220505736,
+        "context_precision": 0.9999999999
+      }
+    },
+    {
+      "id": "ALLIANZ-F-02",
+      "question": "Under the Allianz Comprehensive Plan, what is the per-item limit for a laptop or other personal computer?",
+      "question_type": "factual",
+      "answer": "According to the policy document excerpts, the per-item limit for a laptop or other personal computer is $3,000.\n\n[Source 1: ALLIANZ_20251219.pdf, page 9]\n- $3,000 for personal computers, tablets, cameras or video cameras.\n\n[Source 2: ALLIANZ_20251219.pdf, page 12]\n- $3,000 for personal computers, tablets, cameras or video cameras;\n\nNote: There is no indication in the provided excerpts that the limit can be increased or varied by purchasing the Increased Item Limits Cover or selecting a different item type.",
+      "sources": [
+        {
+          "text": "Individual item sub-limits: \n- $3,000 for personal computers, tablets, cameras or video cameras. \n- $1,000 for mobile phones (including smart phones and any items with phone \ncapabilities).",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 9,
+          "chunk_index": 10,
+          "distance": 0.46200132369995117
+        },
+        {
+          "text": "$5,000 \n$10,000 \nIndividual item sub-limits: \n- $3,000 for personal computers, tablets, cameras or video cameras; \n- $1,000 for mobile phones (including smart phones and any items with \nphone capabilities)",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 12,
+          "chunk_index": 2,
+          "distance": 0.49472689628601074
+        },
+        {
+          "text": "variety of items by purchasing Increased Item Limits Cover \nwith a Comprehensive, Multi-Trip, Domestic or Non-Medical \nPlan and selecting the item type(s) and new item limits you \nrequire from the choices available.",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 20,
+          "chunk_index": 3,
+          "distance": 0.584480881690979
+        }
+      ],
+      "latency_s": 2.8,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          9,
+          12
+        ],
+        "attribution_precision": 0.5,
+        "faithfulness": 1.0,
+        "answer_correctness": 0.8301435325402859,
+        "context_precision": 0.99999999995
+      }
+    },
+    {
+      "id": "ALLIANZ-F-03",
+      "question": "What is the Rental Vehicle Excess benefit limit under the Allianz Comprehensive Plan?",
+      "question_type": "factual",
+      "answer": "According to Source 2: ALLIANZ_20251219.pdf, page 9, the Rental Vehicle Excess benefit limit under the Allianz Comprehensive Plan is $6,000.\n\n\"5.1 Rental Vehicle Excess ... $6,000\"",
+      "sources": [
+        {
+          "text": "Benefit \n4.4 Theft of Cash \n5.1 Rental Vehicle Excess \n6.1 Personal Liability' \nExcess applies \nNil \nYes \nYes \nNon-Medical Plan \nBenefit Limit \n$250 \n$6,000 \n$5 million",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 13,
+          "chunk_index": 0,
+          "distance": 0.41489315032958984
+        },
+        {
+          "text": "Cards & Travellers Cheques\" \n4.4 Theft of Cash \n5.1 Rental Vehicle Excess \n6.1 Personal Liability# \nYes \nNil \nYes \nNil \nYes \nYes \nComprehensive plan \nduo benefit limit family benefit limit single benefit limit [per person unless \nspecified]",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 9,
+          "chunk_index": 3,
+          "distance": 0.49627768993377686
+        },
+        {
+          "text": "and the options available to limit the amount you are \nresponsible for. The rental vehicle agreement may also \ncontain conditions or exclusions that you need to be aware \nof. \nThis Benefit may not provide cover for items, such as but",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 28,
+          "chunk_index": 22,
+          "distance": 0.5172039270401001
+        }
+      ],
+      "latency_s": 1.54,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          9
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 1.0,
+        "answer_correctness": 0.7244644514372794,
+        "context_precision": 0.9999999999
+      }
+    },
+    {
+      "id": "ALLIANZ-R-01",
+      "question": "I purchased the Allianz Adventure Pack, but I was injured while riding a motorcycle without a helmet. Would the claim be covered?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the claim would not be covered.\n\nSource 1: The excerpt states that no cover will apply under Benefits 1.5 Permanent Disability or 6.1 Personal Liability for any claims arising from participating in activities listed in the Adventure Pack. Since you purchased the Adventure Pack, this exclusion would apply.\n\nSource 2 and 3: These excerpts reiterate the same exclusion, stating that you will not have cover under Benefits 1.5 Permanent Disability and 6.1 Personal Liability for any claims arising from participating in activities listed under Adventure Pack or snow sport activities. Since you were injured while riding a motorcycle, which is not a snow sport activity, the relevant exclusion is the one related to the Adventure Pack.\n\nQuoted excerpt: \"you will not have cover under Benefits 1.5 Permanent Disability and 6.1 Personal Liability for any claims arising from your participation in any of the activities listed under Adventure Pack or your participation in snow sport activities.\"\n\nConclusion: The claim would not be covered due to the exclusion related to the Adventure Pack.",
+      "sources": [
+        {
+          "text": "No cover will apply under Benefits 1.5 Permanent \nDisability or 6.1 Personal Liability for any claims \narising from, or in any way connected with you \nparticipating in any of the activities listed in the \nAdventure Pack.",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 17,
+          "chunk_index": 9,
+          "distance": 0.536524772644043
+        },
+        {
+          "text": "# you will not have cover under Benefits 1.5 Permanent Disability and 6.1 Personal Liability for any claims arising from your participation in any of the \nactivities listed under Adventure Pack or your participation in snow sport activities.",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 9,
+          "chunk_index": 16,
+          "distance": 0.5551643371582031
+        },
+        {
+          "text": "# you will not have cover under Benefits 1.5 Permanent Disability and 6.1 Personal Liability for any claims arising from your participation in any of the \nactivities listed under Adventure Pack or your participation in snow sport activities.",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 10,
+          "chunk_index": 3,
+          "distance": 0.5551643371582031
+        }
+      ],
+      "latency_s": 4.6,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": 0.5,
+        "answer_correctness": 0.48630093017981135,
+        "context_precision": 0.9999999999666667
+      }
+    },
+    {
+      "id": "ALLIANZ-R-02",
+      "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Allianz cover it?",
+      "question_type": "reasoning",
+      "answer": "No, Allianz would not cover the stolen laptop. According to [Source 1: ALLIANZ_20251219.pdf, page 27], \"No cover is available for valuables left in a vehicle at any time.\"\n\n(Note: I did not cite any other excerpts as they do not directly apply to this situation.)",
+      "sources": [
+        {
+          "text": "all stolen items, even if you have purchased the optional \nIncreased Item Limits Cover. No cover is available for \nvaluables left in a vehicle at any time. \nThe maximum amount we will pay for all claims combined",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 27,
+          "chunk_index": 9,
+          "distance": 0.6391818523406982
+        },
+        {
+          "text": "a] Rental vehicle accident/theft \nIf, during the period of cover for your journey, the rental vehicle \nis: \ninvolved in a motor vehicle accident while you are \ndriving it; or \ndamaged or stolen while in your custody, \nwe will pay you the lesser of:",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 29,
+          "chunk_index": 1,
+          "distance": 0.6508026719093323
+        },
+        {
+          "text": "were: \nplaced in a concealed storage compartment of \na locked vehicle or, where this is not possible; \nsecurely locked to the luggage/ski racks fitted \nto the roof of a locked vehicle. \nIn the event of theft, forced entry must have been made",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 33,
+          "chunk_index": 13,
+          "distance": 0.6741728782653809
+        }
+      ],
+      "latency_s": 1.78,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          27
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.5,
+        "answer_correctness": 0.4761541604390501,
+        "context_precision": 0.99999999995
+      }
+    },
+    {
+      "id": "ALLIANZ-R-03",
+      "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Allianz cover the medical claim?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, Allianz would not cover the medical claim.\n\n[Source 1: ALLIANZ_20251219.pdf, page 13] does not contain any information related to intoxication or blood alcohol content (BAC).\n\nThe excerpts do not contain any exclusion or condition that would directly or indirectly exclude claims arising from intoxication or excessive drinking. Therefore, the conclusion is based on the absence of relevant information.\n\nAs the policy does not explicitly exclude claims related to intoxication, the claim would not be covered.",
+      "sources": [
+        {
+          "text": "Please read the following information carefully \nWe will only provide cover for claims which arise directly or \nindirectly from your pre-existing medical condition if you have \ndisclosed the condition to Allianz Global Assistance and they",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 13,
+          "chunk_index": 17,
+          "distance": 0.5802550315856934
+        },
+        {
+          "text": "medical condition(s), Allianz Global Assistance may either: \na] agree in writing to include cover under your policy for your \npre-existing medical condition(s) (an additional premium \nmay be payable, and a medical excess may apply); or",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 14,
+          "chunk_index": 10,
+          "distance": 0.5983456969261169
+        },
+        {
+          "text": "section for details. \nOther excesses \na] If you apply for cover for your pre-existing medical \nconditions (and Allianz Global Assistance agrees to \nprovide you with cover), a medical excess may apply to",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 7,
+          "chunk_index": 3,
+          "distance": 0.6205443739891052
+        }
+      ],
+      "latency_s": 2.54,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 0.0,
+        "retrieval_precision_at_k": 0.0,
+        "cited_pages": [
+          13
+        ],
+        "attribution_precision": 0.0,
+        "faithfulness": 0.5,
+        "answer_correctness": 0.7005164348722914,
+        "context_precision": 0.0
+      }
+    },
+    {
+      "id": "ALLIANZ-O-01",
+      "question": "What will the weather be in Tokyo next Tuesday?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "I'm only allowed to answer based on the provided policy document excerpts. Since the question is about the weather in Tokyo next Tuesday, and none of the excerpts mention Tokyo or any specific weather forecast, I must answer:\n\nThe excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "articles sent through the mail;\nd)  a Natural Disaster;\ne)  a collision of a motor vehicle, watercraft, aircraft or train in which You are travelling;\nf)  Your scheduled transport being delayed for at least 12 hours due to severe weather",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 32,
+          "chunk_index": 18,
+          "distance": 0.9252336025238037
+        },
+        {
+          "text": "delay was related to either bad weather or an avalanche, and \nhow long the delay was for. This may be the easiest way to \nprovide evidence of your delay. \n34",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 23,
+          "distance": 0.9326695799827576
+        },
+        {
+          "text": "31st March in Northern Hemisphere resorts and 15th June \nto 30th September in Southern Hemisphere resorts. This \nexclusion will not apply to those resorts which are open \noutside these time periods and have sufficient snow for",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 18,
+          "distance": 0.9451671838760376
+        }
+      ],
+      "latency_s": 1.4,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "ALLIANZ-O-02",
+      "question": "Do Australian passport holders currently need a visa for a two-week holiday in Japan?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "are a permanent resident of Australia; or \nhold a current Australian visa - but not a tourist or \nworking holiday visa - that will remain valid after your \njourney ends and allows you unrestricted right of \nentry into Australia; or",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 4,
+          "chunk_index": 25,
+          "distance": 0.4879245162010193
+        },
+        {
+          "text": "admission \nIf you need to return to Australia earlier than planned because, \nduring the period of cover for your journey: \n24",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 24,
+          "chunk_index": 27,
+          "distance": 0.5556800365447998
+        },
+        {
+          "text": "Please note that if requested, you will need to prove your \neligibility (where reasonable) by providing any of the following: \na] a copy of your passport; \nb] Australian residency documents; \nc] a copy of your current visa;",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 5,
+          "chunk_index": 0,
+          "distance": 0.5724352598190308
+        }
+      ],
+      "latency_s": 0.64,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "ALLIANZ-O-03",
+      "question": "Which airline has the cheapest return flights from Sydney to Bali next month?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "flights and $500 on accommodation. Your airline gives you \na full refund for the original flights and you are only able to \nget a $250 refund on your accommodation. \nAllowable claim: \nFlights $500 - new flights $2,500 less refund of $2,000",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 25,
+          "chunk_index": 17,
+          "distance": 0.7293698787689209
+        },
+        {
+          "text": "Australia from the place you planned to return to Australia \nfrom. The fare will be at the same fare class as the one you left \nAustralia on. \nWhenever claims are made by you under Benefits 3.1",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 25,
+          "chunk_index": 12,
+          "distance": 0.7342569828033447
+        },
+        {
+          "text": "overseas to the date that we would have been able to \nreasonably facilitate your return to Australia; plus \nthe reasonable amount it would cost to facilitate your \nreturn to Australia; plus \nthe non-refundable portion of unused travel and",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 21,
+          "chunk_index": 24,
+          "distance": 0.7441917657852173
+        }
+      ],
+      "latency_s": 0.58,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-F-01",
+      "question": "How long is the cooling-off period for a Budget Direct travel insurance policy?",
+      "question_type": "factual",
+      "answer": "According to the policy document excerpts, the cooling-off period for a Budget Direct travel insurance policy is 21 days from the date of purchase. This is stated in [Source 1: BUDGET-DIRECT_20260325.pdf, page 9]:\n\n\"You can cancel or change Your policy at any time before You leave Home. If You cancel this policy for any reason within the cooling-off period which is within 21 days of the date of purchase, We will give You Your money back.\"\n\nTherefore, the cooling-off period for a Budget Direct travel insurance policy is 21 days.",
+      "sources": [
+        {
+          "text": "Cooling-off period\nYou can cancel or change Your policy at any time before You leave Home. If You cancel \nthis policy for any reason within the cooling-off period which is within 21 days of the \ndate of purchase, We will give You Your money back.",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 9,
+          "chunk_index": 5,
+          "distance": 0.5119080543518066
+        },
+        {
+          "text": "Our cooling-off period ensures a refund of the entire premium unless You have already \nmade a claim under the policy or departed on Your Journey.\nIf You wish to cancel Your policy and receive a full refund, please contact us within the",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 9,
+          "chunk_index": 6,
+          "distance": 0.5595217943191528
+        },
+        {
+          "text": "the Journey, subject to the original expiry date.\nIf You have left Home and are already on Your trip \nwhen buying the policy, the Period of Insurance \nwill not commence until 3 days after the travel start",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 27,
+          "chunk_index": 14,
+          "distance": 0.5656362771987915
+        }
+      ],
+      "latency_s": 2.68,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          9
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 1.0,
+        "answer_correctness": 0.5837749159001072,
+        "context_precision": 0.99999999995
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-F-02",
+      "question": "Under the Budget Direct International Comprehensive plan, what is the per-item limit for a laptop computer?",
+      "question_type": "factual",
+      "answer": "According to the policy document excerpts, the per-item limit for a laptop computer under the Budget Direct International Comprehensive plan is $3,000. This information can be found on page 5 of the document.",
+      "sources": [
+        {
+          "text": "Camera or video camera - limit per item $4,000• $2,000• $1,000•\nLaptop computer - limit per item $3,000• $2,000• $1,000•\nTablet computer - limit per item $3,000• $2,000• $1,000•\nDrone (with or without camera) - limit per item $1,000• $1,000• $750•",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 4,
+          "chunk_index": 5,
+          "distance": 0.4928104877471924
+        },
+        {
+          "text": "Camera or video camera - limit per item $3,500•\nLaptop computer - limit per item $3,000•\nTablet computer - limit per item $3,000•\nDrone (with or without camera) - limit per item $1,000•",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 5,
+          "chunk_index": 2,
+          "distance": 0.5007045269012451
+        },
+        {
+          "text": "The maximum benefit limit for this section is:\nPlan Limit\nInternational Comprehensive $30,000*\nInternational Essential $20,000*\nInternational Basic $Nil\nDomestic $25,000*",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 42,
+          "chunk_index": 6,
+          "distance": 0.6272004246711731
+        }
+      ],
+      "latency_s": 1.33,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          5
+        ],
+        "attribution_precision": 0.0,
+        "faithfulness": 0.5,
+        "answer_correctness": 0.9708886255962008,
+        "context_precision": 0.9999999999666667
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-F-03",
+      "question": "What is the Rental Vehicle Insurance Excess benefit limit under the Budget Direct International Comprehensive plan?",
+      "question_type": "factual",
+      "answer": "According to the policy document excerpts, the Rental Vehicle Insurance Excess benefit limit under the Budget Direct International Comprehensive plan is $400. [Source 1: BUDGET-DIRECT_20260325.pdf, page 38]\n\nQuoted sentence: \"This cover applies if You: ...; and The maximum benefit limit for this section is: Plan Limit International Comprehensive $400\"",
+      "sources": [
+        {
+          "text": "Also refer to: General exclusions – pages 47-49. \nPolicy conditions – pages 28-31.\nSECTION 7: Rental Vehicle Insurance Excess\nThis cover applies if You:\na) hire a Rental Vehicle;\nb)  are the nominated driver on the Rental Vehicle agreement; and",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 38,
+          "chunk_index": 6,
+          "distance": 0.39271965622901917
+        },
+        {
+          "text": "during the Period of Insurance.\nThe maximum benefit limit for this section is:\nPlan Limit\nInternational Comprehensive $400\nInternational Essential $250\nInternational Basic $Nil\nDomestic $250\nWe will not pay for:",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 38,
+          "chunk_index": 1,
+          "distance": 0.46887096762657166
+        },
+        {
+          "text": "motorcycle or moped rented from a licensed motor vehicle rental company or agency.\nThe maximum benefit limit for this section is:\nPlan Limit\nInternational Comprehensive $10,000\nInternational Essential $4,000\nInternational Basic $Nil\nDomestic $10,000",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 38,
+          "chunk_index": 10,
+          "distance": 0.4693867564201355
+        }
+      ],
+      "latency_s": 2.06,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          38
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 1.0,
+        "answer_correctness": 0.7194975068435608,
+        "context_precision": 0.8333333332916666
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-R-01",
+      "question": "I paid for Budget Direct motorcycle or moped riding cover, but I was injured while riding without a helmet. Would the claim be covered?",
+      "question_type": "reasoning",
+      "answer": "The excerpts do not contain information about the requirement to wear a helmet while riding a motorcycle or moped.",
+      "sources": [
+        {
+          "text": "loss/repair report to substantiate Your claim.\nIf You paid for one of the motorcycle/moped riding cover options, We will also include \ncover for the insurance excess You become liable to pay for damage to or theft of a",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 38,
+          "chunk_index": 9,
+          "distance": 0.3856618404388428
+        },
+        {
+          "text": "• You are not racing; and\n• You are not participating in motocross.\nNote: No cover will apply under SECTION 17: Personal Liability on page 42. This \nmeans You are responsible to pay costs associated with damage to the motorcycle,",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 11,
+          "chunk_index": 15,
+          "distance": 0.44746720790863037
+        },
+        {
+          "text": "riding for any purpose are specifically excluded by this policy. \nTo obtain motorcycle/moped riding cover (as the driver or passenger) while You are \ntravelling, We have options to vary cover available and You must pay an additional",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 11,
+          "chunk_index": 7,
+          "distance": 0.4840177297592163
+        }
+      ],
+      "latency_s": 0.91,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 0.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": 1.0,
+        "answer_correctness": 0.6210530723015873,
+        "context_precision": 0.5833333333041666
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-R-02",
+      "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Budget Direct cover it?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, Budget Direct would not cover the stolen laptop.\n\n[Source 1, page 11]: \"Don't leave items Unattended in ANY motor vehicle or towed land vehicle overnight, as they're not covered.\"\n\nThe policy explicitly states that leaving items unattended in a motor vehicle overnight is not covered. Since you left your laptop hidden in the locked boot of your rental car overnight, it falls under this exclusion.\n\nThe exact supporting sentence is: \"Don't leave items Unattended in ANY motor vehicle or towed land vehicle overnight, as they're not covered.\"",
+      "sources": [
+        {
+          "text": "and a maximum of $2,000 in total applies.\n• Don’t leave items Unattended in ANY motor vehicle or towed land vehicle \novernight, as they’re not covered.\n• Don’t walk away from or leave Your belongings Unattended in a Public Place.",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 11,
+          "chunk_index": 2,
+          "distance": 0.7162337899208069
+        },
+        {
+          "text": "c)  have comprehensive motor vehicle insurance for the Rental Vehicle for the hire \nperiod.\nIf the Rental Vehicle is damaged or stolen while in Your control during the Journey",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 38,
+          "chunk_index": 7,
+          "distance": 0.7284406423568726
+        },
+        {
+          "text": "•  Your new phone with an original purchase price of $1,800 is stolen from a hotel \nroom.\n•  You are travelling on International Comprehensive.\n•  You have chosen the $100 excess option.",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 24,
+          "chunk_index": 2,
+          "distance": 0.7412593364715576
+        }
+      ],
+      "latency_s": 2.74,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          11
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 1.0,
+        "answer_correctness": 0.3532335253659319,
+        "context_precision": 0.99999999995
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-R-03",
+      "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Budget Direct cover the medical claim?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, Budget Direct would not cover the medical claim.\n\n[Source 1: BUDGET-DIRECT_20260325.pdf, page 49] states that the alcohol concentration level is 0.19% or above. Since your BAC level is 0.20%, which is above the threshold, the claim would be excluded.\n\nThe relevant excerpt is:\n\n\"alcohol concentration level is 0.19% or above.\"\n\nThis exclusion is stated in [Source 1: BUDGET-DIRECT_20260325.pdf, page 49].",
+      "sources": [
+        {
+          "text": "alcohol concentration level is 0.19% or above. (The level of alcohol in Your \nblood is called blood alcohol concentration (BAC). As a point of reference, a \nBAC of 0.19% is almost four times the legal driving BAC limit range in Australia",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 49,
+          "chunk_index": 1,
+          "distance": 0.6938261389732361
+        },
+        {
+          "text": "PART 6: POLICY WORDING\nPage 49 of 55\n20. claims involving, arising from or related to Your impairment due to You drinking too \nmuch alcohol:\n a)  which is evidenced by the results of a blood test which show that Your blood",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 49,
+          "chunk_index": 0,
+          "distance": 0.7020733952522278
+        },
+        {
+          "text": "treatment or tests at a hospital or clinic;\n e) did not have a drug or alcohol addiction; and\n f) did not have a Terminal Illness.\n If any point a)-f) cannot be met e.g. if Your non-travelling Relative was in a nursing",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 34,
+          "chunk_index": 9,
+          "distance": 0.7021173238754272
+        }
+      ],
+      "latency_s": 2.82,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          49
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.8571428571428571,
+        "answer_correctness": 0.6609771317441244,
+        "context_precision": 0.99999999995
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-O-01",
+      "question": "What will the weather be in Tokyo next Tuesday?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "articles sent through the mail;\nd)  a Natural Disaster;\ne)  a collision of a motor vehicle, watercraft, aircraft or train in which You are travelling;\nf)  Your scheduled transport being delayed for at least 12 hours due to severe weather",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 32,
+          "chunk_index": 18,
+          "distance": 0.9252336025238037
+        },
+        {
+          "text": "delay was related to either bad weather or an avalanche, and \nhow long the delay was for. This may be the easiest way to \nprovide evidence of your delay. \n34",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 23,
+          "distance": 0.9326695799827576
+        },
+        {
+          "text": "31st March in Northern Hemisphere resorts and 15th June \nto 30th September in Southern Hemisphere resorts. This \nexclusion will not apply to those resorts which are open \noutside these time periods and have sufficient snow for",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 18,
+          "distance": 0.9451671838760376
+        }
+      ],
+      "latency_s": 0.62,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-O-02",
+      "question": "Do Australian passport holders currently need a visa for a two-week holiday in Japan?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "are a permanent resident of Australia; or \nhold a current Australian visa - but not a tourist or \nworking holiday visa - that will remain valid after your \njourney ends and allows you unrestricted right of \nentry into Australia; or",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 4,
+          "chunk_index": 25,
+          "distance": 0.4879245162010193
+        },
+        {
+          "text": "admission \nIf you need to return to Australia earlier than planned because, \nduring the period of cover for your journey: \n24",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 24,
+          "chunk_index": 27,
+          "distance": 0.5556800365447998
+        },
+        {
+          "text": "Please note that if requested, you will need to prove your \neligibility (where reasonable) by providing any of the following: \na] a copy of your passport; \nb] Australian residency documents; \nc] a copy of your current visa;",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 5,
+          "chunk_index": 0,
+          "distance": 0.5724352598190308
+        }
+      ],
+      "latency_s": 0.57,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "BUDGET-DIRECT-O-03",
+      "question": "Which airline has the cheapest return flights from Sydney to Bali next month?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "flights and $500 on accommodation. Your airline gives you \na full refund for the original flights and you are only able to \nget a $250 refund on your accommodation. \nAllowable claim: \nFlights $500 - new flights $2,500 less refund of $2,000",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 25,
+          "chunk_index": 17,
+          "distance": 0.7293698787689209
+        },
+        {
+          "text": "Australia from the place you planned to return to Australia \nfrom. The fare will be at the same fare class as the one you left \nAustralia on. \nWhenever claims are made by you under Benefits 3.1",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 25,
+          "chunk_index": 12,
+          "distance": 0.7342569828033447
+        },
+        {
+          "text": "overseas to the date that we would have been able to \nreasonably facilitate your return to Australia; plus \nthe reasonable amount it would cost to facilitate your \nreturn to Australia; plus \nthe non-refundable portion of unused travel and",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 21,
+          "chunk_index": 24,
+          "distance": 0.7441917657852173
+        }
+      ],
+      "latency_s": 0.56,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "COVER-MORE-F-01",
+      "question": "How long is the cooling-off period for a Cover-More travel insurance policy?",
+      "question_type": "factual",
+      "answer": "The cooling-off period is not explicitly stated in the provided excerpts. The closest mention is in [Source 2: COVER-MORE_20251015.pdf, page 11], which states that \"You can cancel or change Your policy at any time before You...\" However, it does not specify the duration of this period.\n\nTherefore, the answer is:\n\nThe excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "once You resume the Journey, subject to the original expiry \ndate. \nIf You have left Home and are already on Your trip when \nbuying the policy, the Period of Insurance will not commence \nuntil 3 days after the travel start date/policy issue date",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 25,
+          "chunk_index": 22,
+          "distance": 0.5364112854003906
+        },
+        {
+          "text": "policy will automatically extend - See policy condition 9. \nFree extension of insurance on page 27 for details.\nCooling-off period\nYou can cancel or change Your policy at any time before You",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 11,
+          "chunk_index": 4,
+          "distance": 0.5431593656539917
+        },
+        {
+          "text": "advice about travel insurance. \nHow are we paid?\nCover-More\nCover-More is paid a commission by the insurer when You \nbuy this travel insurance policy. This commission is included \nin the premium that You pay and is received after You have",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 53,
+          "chunk_index": 8,
+          "distance": 0.5748110413551331
+        }
+      ],
+      "latency_s": 1.93,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          11
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.75,
+        "answer_correctness": 0.399906501793099,
+        "context_precision": 0.0
+      }
+    },
+    {
+      "id": "COVER-MORE-F-02",
+      "question": "Under the Cover-More International Comprehensive plan, what is the per-item limit for a laptop computer?",
+      "question_type": "factual",
+      "answer": "According to the policy document excerpts, the per-item limit for a laptop computer is $5,000.\n\n[Source 1: COVER-MORE_20251015.pdf, page 6]\nLaptop Computer - limit per item• $4,000 $5,000",
+      "sources": [
+        {
+          "text": "Laptop Computer - limit per item• $4,000 $5,000\nTablet Computer - limit per item• $3,000 $3,000\nDrone (with or without camera) - limit per item• $1,200 $2,000\nArtificial Limb, Removable Dental Appliance, Dentures",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 6,
+          "chunk_index": 4,
+          "distance": 0.45371803641319275
+        },
+        {
+          "text": "^Cover chosen applies per policy. See page 10.\n* Sub-limits apply. Refer to the Policy Wording pages 24-50.\n• Item limit applies for any one item, set or pair of items including attached and unattached accessories. You may increase these",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 3,
+          "chunk_index": 9,
+          "distance": 0.4954735040664673
+        },
+        {
+          "text": "Tablet Computer - limit per item• $3,000 $3,000 $3,000\nDrone (with or without camera) - limit per item• $1,000 $1,200 $2,000\nArtificial Limb, Removable Dental Appliance, Dentures \nor Medical Device E.g. Hearing Aids, CPAP Machine - \nlimit per item•",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 3,
+          "chunk_index": 5,
+          "distance": 0.5183390378952026
+        }
+      ],
+      "latency_s": 1.62,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          6
+        ],
+        "attribution_precision": 0.0,
+        "faithfulness": 1.0,
+        "answer_correctness": 0.4803178294283181,
+        "context_precision": 0.9999999999
+      }
+    },
+    {
+      "id": "COVER-MORE-F-03",
+      "question": "What is the Rental Vehicle Insurance Excess benefit limit under the Cover-More International Comprehensive plan?",
+      "question_type": "factual",
+      "answer": "According to the policy document excerpts, the Rental Vehicle Insurance Excess benefit limit under the Cover-More International Comprehensive plan is $10,000.\n\n[Source 1: COVER-MORE_20251015.pdf, page 36]\n\"The maximum benefit limits for this section are:\nRental Vehicle \nInsurance Excess $10,000 $10,000\"\n\nThis information is stated directly on page 36 of the policy document.",
+      "sources": [
+        {
+          "text": "The maximum benefit limits for this section are:\nBenefits\nMaximum benefit limits\nUSA & Canada World excl  \nUSA/ Canada\nRental Vehicle \nInsurance Excess $10,000 $10,000\nCollision/Loss \nDamage Waiver $200,000 $Nil\nMisfuelling $1,500 $1,500",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 36,
+          "chunk_index": 3,
+          "distance": 0.3647605776786804
+        },
+        {
+          "text": "Rental Vehicle Insurance Excess No\nNo Cover\n$5,000 $10,000\nRental Vehicle Comprehensive Cover -  \nSee pages 36-37 No No Cover\nCover as per \npolicy wording. \nSee pages \n36-37.\n9* Travel Delay No $2,000 $3,000",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 3,
+          "chunk_index": 7,
+          "distance": 0.39189666509628296
+        },
+        {
+          "text": "maximum limit listed above, the Amendment or cancellation \ncosts amount shown on Your Certificate of Insurance will be \nthe maximum cover available for this benefit.\n#A special excess will apply to SECTION 2: Additional",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 5,
+          "chunk_index": 8,
+          "distance": 0.4595864415168762
+        }
+      ],
+      "latency_s": 2.14,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          36
+        ],
+        "attribution_precision": 0.0,
+        "faithfulness": 0.3333333333333333,
+        "answer_correctness": 0.5243799118328203,
+        "context_precision": 0.49999999995
+      }
+    },
+    {
+      "id": "COVER-MORE-R-01",
+      "question": "I paid for Cover-More motorcycle or moped riding cover, but I was injured while riding without a helmet. Would the claim be covered?",
+      "question_type": "reasoning",
+      "answer": "The excerpts do not contain information about the requirement to wear a helmet while riding a motorcycle or moped.",
+      "sources": [
+        {
+          "text": "to substantiate Your claim.\nIf You paid for one of the motorcycle/moped riding cover \noptions, We will also include cover for the insurance excess \nYou become liable to pay for damage to or theft of a",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 35,
+          "chunk_index": 13,
+          "distance": 0.30755186080932617
+        },
+        {
+          "text": "are responsible to pay costs associated with damage to the \nmotorcycle, moped or property or injury to another person.\n• If You paid for one of the motorcycle/moped riding \ncover options, We will also include cover for the",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 16,
+          "chunk_index": 10,
+          "distance": 0.3889518082141876
+        },
+        {
+          "text": "PART 2\n16\n PART 2: THE COVER\nMotorcycle/moped riding cover\nClaims involving participation by You (during the Journey) \nin motorcycling or moped riding for any purpose are \nspecifically excluded by this policy.",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 16,
+          "chunk_index": 0,
+          "distance": 0.4119037985801697
+        }
+      ],
+      "latency_s": 0.84,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 0.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": 1.0,
+        "answer_correctness": 0.6924214866882864,
+        "context_precision": 0.3333333333
+      }
+    },
+    {
+      "id": "COVER-MORE-R-02",
+      "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Cover-More cover it?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, the answer is:\n\nNo, Cover-More would not cover the stolen laptop.\n\n[Source 1: COVER-MORE_20251015.pdf, page 41]\n\n\"items left Unattended in any motor vehicle (for example, a car, campervan or motorhome) or towed land vehicle overnight even if they were in a Concealed Storage Compartment.\"\n\nThis excerpt explicitly states that leaving valuables unattended in a motor vehicle overnight, including a Concealed Storage Compartment, is not covered.",
+      "sources": [
+        {
+          "text": "prevented You from keeping the Valuables with You. \n3. items left Unattended in any motor vehicle (for example, \na car, campervan or motorhome) or towed land vehicle \novernight even if they were in a Concealed Storage \nCompartment.",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 41,
+          "chunk_index": 18,
+          "distance": 0.6383453607559204
+        },
+        {
+          "text": "claim settlement:\n• Your new video camera with an original purchase price \nof $4,000 is stolen from a hotel room.\n• You are travelling on International Comprehensive+ plan.\n• The excess shown on Your Certificate of Insurance is \n$100.",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 23,
+          "chunk_index": 10,
+          "distance": 0.689827561378479
+        },
+        {
+          "text": "type of fuel is put into the Rental Vehicle by any person \nnamed on the Rental Vehicle agreement.\nLock Out\nIf You are unintentionally locked out of Your Rental Vehicle \nduring the Period of Insurance, We will pay costs incurred up",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 36,
+          "chunk_index": 15,
+          "distance": 0.7074074745178223
+        }
+      ],
+      "latency_s": 2.66,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          41
+        ],
+        "attribution_precision": 0.0,
+        "faithfulness": 0.3333333333333333,
+        "answer_correctness": 0.5729198211639985,
+        "context_precision": 0.9999999999
+      }
+    },
+    {
+      "id": "COVER-MORE-R-03",
+      "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Cover-More cover the medical claim?",
+      "question_type": "reasoning",
+      "answer": "Based on the provided policy document excerpts, Cover-More would not cover the medical claim. The relevant excerpt is:\n\n• conditions involving drug or alcohol dependency;\n\n(Source 1, page 17)\n\nThis excerpt explicitly excludes claims arising from or exacerbated by conditions involving drug or alcohol dependency. Since the blood test recorded a BAC of 0.20%, which is above the legal driving BAC limit range in Australia, the condition is considered exacerbated by drug or alcohol dependency.",
+      "sources": [
+        {
+          "text": "category applies.\nExisting Medical Conditions which cannot be covered\nThis policy does not provide cover for claims arising from, or \nexacerbated by:\n• conditions involving drug or alcohol dependency;",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 17,
+          "chunk_index": 16,
+          "distance": 0.5591139793395996
+        },
+        {
+          "text": "Medical Conditions. There will be no cover for claims which \nin any way relate to, or are exacerbated by, any Existing \nMedical Condition or any condition where the points listed \nabove apply.\nIf You receive a diagnosis before You depart on Your",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 17,
+          "chunk_index": 22,
+          "distance": 0.5767617225646973
+        },
+        {
+          "text": "blood is called blood alcohol concentration (BAC). \nAs a point of reference, a BAC of 0.19% is almost \nfour times the legal driving BAC limit range in \nAustralia which is currently 0.05%); or\n b) taking into account the following, where available:",
+          "source": "COVER-MORE_20251015.pdf",
+          "insurer": "COVER-MORE",
+          "doc_date": "20251015",
+          "page": 50,
+          "chunk_index": 3,
+          "distance": 0.5840423107147217
+        }
+      ],
+      "latency_s": 2.32,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          17
+        ],
+        "attribution_precision": 0.0,
+        "faithfulness": 0.8333333333333334,
+        "answer_correctness": 0.6356072228991906,
+        "context_precision": 0.8333333332916666
+      }
+    },
+    {
+      "id": "COVER-MORE-O-01",
+      "question": "What will the weather be in Tokyo next Tuesday?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "articles sent through the mail;\nd)  a Natural Disaster;\ne)  a collision of a motor vehicle, watercraft, aircraft or train in which You are travelling;\nf)  Your scheduled transport being delayed for at least 12 hours due to severe weather",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 32,
+          "chunk_index": 18,
+          "distance": 0.9252336025238037
+        },
+        {
+          "text": "delay was related to either bad weather or an avalanche, and \nhow long the delay was for. This may be the easiest way to \nprovide evidence of your delay. \n34",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 23,
+          "distance": 0.9326695799827576
+        },
+        {
+          "text": "31st March in Northern Hemisphere resorts and 15th June \nto 30th September in Southern Hemisphere resorts. This \nexclusion will not apply to those resorts which are open \noutside these time periods and have sufficient snow for",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 18,
+          "distance": 0.9451671838760376
+        }
+      ],
+      "latency_s": 0.7,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "COVER-MORE-O-02",
+      "question": "Do Australian passport holders currently need a visa for a two-week holiday in Japan?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "are a permanent resident of Australia; or \nhold a current Australian visa - but not a tourist or \nworking holiday visa - that will remain valid after your \njourney ends and allows you unrestricted right of \nentry into Australia; or",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 4,
+          "chunk_index": 25,
+          "distance": 0.4879245162010193
+        },
+        {
+          "text": "admission \nIf you need to return to Australia earlier than planned because, \nduring the period of cover for your journey: \n24",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 24,
+          "chunk_index": 27,
+          "distance": 0.5556800365447998
+        },
+        {
+          "text": "Please note that if requested, you will need to prove your \neligibility (where reasonable) by providing any of the following: \na] a copy of your passport; \nb] Australian residency documents; \nc] a copy of your current visa;",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 5,
+          "chunk_index": 0,
+          "distance": 0.5724352598190308
+        }
+      ],
+      "latency_s": 0.61,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "COVER-MORE-O-03",
+      "question": "Which airline has the cheapest return flights from Sydney to Bali next month?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "flights and $500 on accommodation. Your airline gives you \na full refund for the original flights and you are only able to \nget a $250 refund on your accommodation. \nAllowable claim: \nFlights $500 - new flights $2,500 less refund of $2,000",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 25,
+          "chunk_index": 17,
+          "distance": 0.7293698787689209
+        },
+        {
+          "text": "Australia from the place you planned to return to Australia \nfrom. The fare will be at the same fare class as the one you left \nAustralia on. \nWhenever claims are made by you under Benefits 3.1",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 25,
+          "chunk_index": 12,
+          "distance": 0.7342569828033447
+        },
+        {
+          "text": "overseas to the date that we would have been able to \nreasonably facilitate your return to Australia; plus \nthe reasonable amount it would cost to facilitate your \nreturn to Australia; plus \nthe non-refundable portion of unused travel and",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 21,
+          "chunk_index": 24,
+          "distance": 0.7441917657852173
+        }
+      ],
+      "latency_s": 0.57,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "MEDIBANK-F-01",
+      "question": "How long is the cooling-off period for a Medibank travel insurance policy?",
+      "question_type": "factual",
+      "answer": "According to the policy document, the cooling-off period is within 21 days of the date of purchase. [Source 1: MEDIBANK_20260422.pdf, page 8]\n\nThe exact sentence is:\n\n\"If You cancel this policy for any reason within the cooling-off period which is within 21 days of the date of purchase,\"",
+      "sources": [
+        {
+          "text": "details.\nCooling-off period\nYou can cancel or change Your policy at any time before You \nleave Home. If You cancel this policy for any reason within the \ncooling-off period which is within 21 days of the date of purchase,",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 8,
+          "chunk_index": 3,
+          "distance": 0.49135714769363403
+        },
+        {
+          "text": "Journey (this maximum duration is shown on Your \nCertificate of Insurance); or\n iii.  12 months from the travel start date shown on Your \nCertificate of Insurance.\nCover under Section 2 begins from the time the policy is issued.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 22,
+          "chunk_index": 9,
+          "distance": 0.592030942440033
+        },
+        {
+          "text": "Committee and Your rights under it is available at \ninsurancecouncil.com.au/cop/ or by contacting us.\nCancelling Your policy and refunds\nIf You cancel Your policy within a cooling-off period of 21 days",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 44,
+          "chunk_index": 10,
+          "distance": 0.6023865342140198
+        }
+      ],
+      "latency_s": 1.76,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          8
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.5,
+        "answer_correctness": 0.8116433808388862,
+        "context_precision": 0.9999999999666667
+      }
+    },
+    {
+      "id": "MEDIBANK-F-02",
+      "question": "Under the Medibank International Comprehensive plan, what is the per-item limit for a laptop computer?",
+      "question_type": "factual",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "Tablet computer - limit per item• $3,000\nDrone (with or without camera) - limit per item• $1,000\nArtificial limb, removable dental appliance, dentures or \nmedical device e.g. hearing aids, CPAP machine - limit per \nitem•\n$5,000",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 5,
+          "chunk_index": 4,
+          "distance": 0.4996562600135803
+        },
+        {
+          "text": "Tablet computer - limit per item• $3,000 $Nil\nDrone (with or without camera) - limit per item• $1,200 $Nil\nArtificial limb, removable dental appliance, dentures or \nmedical device e.g. hearing aids, CPAP machine - limit per \nitem•\n$5,000 $Nil",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 4,
+          "chunk_index": 9,
+          "distance": 0.5154911279678345
+        },
+        {
+          "text": "Medical Only plan.\nInternational Comprehensive plan: Automatically includes \n$10,000 limit per policy. You can choose a higher amount, noting \nthat an additional premium applies. Select an amount from the",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 7,
+          "chunk_index": 17,
+          "distance": 0.5908629894256592
+        }
+      ],
+      "latency_s": 0.67,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 0.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": 0.0,
+        "answer_correctness": 0.08953987299069681,
+        "context_precision": 0.0
+      }
+    },
+    {
+      "id": "MEDIBANK-F-03",
+      "question": "What is the Rental Car Insurance Excess benefit limit under the Medibank International Comprehensive plan?",
+      "question_type": "factual",
+      "answer": "According to the policy document excerpts, the Rental Car Insurance Excess benefit limit under the Medibank International Comprehensive plan is $10,000. This is stated in [Source 2: MEDIBANK_20260422.pdf, page 35].\n\n\"SECTION 9: Rental Car Insurance Excess\nThe maximum benefit limit for this section is:\n• International Comprehensive Plan: $10,000\"",
+      "sources": [
+        {
+          "text": "Policy Conditions – pages 44-49.\nSECTION 9: Rental Car Insurance Excess\nThis cover applies if You:\na. hire a Rental Car;\nb.  are the nominated driver on the Rental Car agreement; \nand\nc.  have comprehensive motor vehicle insurance for the",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 34,
+          "chunk_index": 16,
+          "distance": 0.4110059440135956
+        },
+        {
+          "text": "from a licensed motor vehicle rental company. The word “Rental \nCar” should be interpreted to include motorcycle or moped.\nThe maximum benefit limit for this section is:\n• International Comprehensive Plan: $10,000",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 35,
+          "chunk_index": 1,
+          "distance": 0.4628426432609558
+        },
+        {
+          "text": "of Insurance.\nThe maximum benefit limit for this section is:\n• International Comprehensive Plan: $500 \n• International Medical Only Plan: No Cover \n• Domestic Plan: No Cover\nWe Will Not Pay For:\n1. loss or theft that is not reported to the:",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 34,
+          "chunk_index": 11,
+          "distance": 0.504797637462616
+        }
+      ],
+      "latency_s": 2.05,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          35
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 1.0,
+        "answer_correctness": 0.9790677533590189,
+        "context_precision": 0.99999999995
+      }
+    },
+    {
+      "id": "MEDIBANK-R-01",
+      "question": "I paid for Medibank motorcycle or moped riding cover, but I was injured while riding without a helmet. Would the claim be covered?",
+      "question_type": "reasoning",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "68 69\nIf You paid for the motorcycle/moped riding cover option, We will \nalso include cover for the insurance excess You become liable \nto pay for damage to or theft of a motorcycle or moped rented",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 35,
+          "chunk_index": 0,
+          "distance": 0.4209609627723694
+        },
+        {
+          "text": "84 85\n24.  claims involving participation by You (during the Journey) in \nmotorcycling for any purpose.\n  S e e  Motorcycle/Moped riding on page 17 for details of \noptional cover available to purchase and the terms that \napply.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 43,
+          "chunk_index": 0,
+          "distance": 0.5263857841491699
+        },
+        {
+          "text": "• You are not racing; and\n• You are not participating in motocross.\nNote: No cover will apply under Section 17 Personal Liability for \nmotorcycle or moped riding. This means You are responsible to",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 9,
+          "chunk_index": 13,
+          "distance": 0.5383663177490234
+        }
+      ],
+      "latency_s": 0.61,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 0.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": 0.0,
+        "answer_correctness": 0.48256509096382205,
+        "context_precision": 0.49999999995
+      }
+    },
+    {
+      "id": "MEDIBANK-R-02",
+      "question": "My laptop was stolen after I left it hidden in the locked boot of my rental car overnight. Would Medibank cover it?",
+      "question_type": "reasoning",
+      "answer": "According to the policy document excerpts, Medibank would not cover the stolen laptop.\n\nThe relevant excerpt is:\n\n[Source 2: MEDIBANK_20260422.pdf, page 33]\n2.  items left Unattended in any motor vehicle (for example, a car, \ncampervan or motorhome) or towed land vehicle overnight \neven if they were in a Concealed Storage Compartment.\n\nThis excerpt explicitly excludes coverage for items left unattended in a motor vehicle overnight, including those stored in a concealed storage compartment, such as the locked boot of a rental car.",
+      "sources": [
+        {
+          "text": "$4,500 is stolen from a hotel room.\n• You are travelling on the International Comprehensive Plan.\n• The excess shown on Your Certificate of Insurance is $100.\n• You have not paid an additional amount to increase the \nstandard item limit.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 19,
+          "chunk_index": 8,
+          "distance": 0.7093285322189331
+        },
+        {
+          "text": "Rental Car for the hire period.\nIf the Rental Car is damaged or stolen while in Your control during \nthe Period of Insurance We will pay the lower of the Rental Car \ninsurance excess or the repair costs to the Rental Car that You",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 34,
+          "chunk_index": 17,
+          "distance": 0.7396755218505859
+        },
+        {
+          "text": "including their contact details.\n2.  items left Unattended in any motor vehicle (for example, a car, \ncampervan or motorhome) or towed land vehicle overnight \neven if they were in a Concealed Storage Compartment.",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 33,
+          "chunk_index": 17,
+          "distance": 0.7458816170692444
+        }
+      ],
+      "latency_s": 2.73,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          33
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.6666666666666666,
+        "answer_correctness": 0.8063617648101805,
+        "context_precision": 0.3333333333
+      }
+    },
+    {
+      "id": "MEDIBANK-R-03",
+      "question": "I fell and needed medical treatment after drinking heavily, and a blood test recorded a BAC of 0.20%. Would Medibank cover the medical claim?",
+      "question_type": "reasoning",
+      "answer": "According to the policy document excerpts, Medibank would not cover the medical claim.\n\n[Source 1: MEDIBANK_20260422.pdf, page 42] states that if Your blood alcohol concentration level is 0.19% or above, it would be considered a claim involving, arising from or related to Your impairment due to You drinking too much alcohol.\n\nAs your BAC level is 0.20%, which is even higher than the threshold mentioned, it would fall under this exclusion. The relevant excerpt is:\n\n\"20. claims involving, arising from or related to Your impairment due to You drinking too much alcohol: ... which is evidenced by the results of a blood test which shows that Your blood alcohol concentration level is 0.19% or above.\"\n\nThis exclusion is explicitly stated in the policy document, and therefore, Medibank would not cover the medical claim.",
+      "sources": [
+        {
+          "text": "show that Your blood alcohol concentration level is 0.19% \nor above. (The level of alcohol in Your blood is called blood \nalcohol concentration (BAC). As a point of reference, a \nBAC of 0.19% is almost four times the legal driving BAC",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 42,
+          "chunk_index": 13,
+          "distance": 0.5677103996276855
+        },
+        {
+          "text": "marijuana, ecstasy, heroin).\n20.  claims involving, arising from or related to Your impairment \ndue to You drinking too much alcohol:\na.  which is evidenced by the results of a blood test which",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 42,
+          "chunk_index": 12,
+          "distance": 0.5801193714141846
+        },
+        {
+          "text": "process and can often speed up the outcome.\nCheck that the amount You want to claim is higher than \nany excess that applies to Your claim.\nWho is Medibank Private?\nMedibank Private Limited (Medibank), its employees and call",
+          "source": "MEDIBANK_20260422.pdf",
+          "insurer": "MEDIBANK",
+          "doc_date": "20260422",
+          "page": 17,
+          "chunk_index": 8,
+          "distance": 0.6493207812309265
+        }
+      ],
+      "latency_s": 3.9,
+      "scores": {
+        "refused": 0.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": 1.0,
+        "retrieval_precision_at_k": 0.3333333333333333,
+        "cited_pages": [
+          42
+        ],
+        "attribution_precision": 1.0,
+        "faithfulness": 0.5714285714285714,
+        "answer_correctness": 0.7189851620138904,
+        "context_precision": 0.9999999999
+      }
+    },
+    {
+      "id": "MEDIBANK-O-01",
+      "question": "What will the weather be in Tokyo next Tuesday?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "articles sent through the mail;\nd)  a Natural Disaster;\ne)  a collision of a motor vehicle, watercraft, aircraft or train in which You are travelling;\nf)  Your scheduled transport being delayed for at least 12 hours due to severe weather",
+          "source": "BUDGET-DIRECT_20260325.pdf",
+          "insurer": "BUDGET-DIRECT",
+          "doc_date": "20260325",
+          "page": 32,
+          "chunk_index": 18,
+          "distance": 0.9252336025238037
+        },
+        {
+          "text": "delay was related to either bad weather or an avalanche, and \nhow long the delay was for. This may be the easiest way to \nprovide evidence of your delay. \n34",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 23,
+          "distance": 0.9326695799827576
+        },
+        {
+          "text": "31st March in Northern Hemisphere resorts and 15th June \nto 30th September in Southern Hemisphere resorts. This \nexclusion will not apply to those resorts which are open \noutside these time periods and have sufficient snow for",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 34,
+          "chunk_index": 18,
+          "distance": 0.9451671838760376
+        }
+      ],
+      "latency_s": 0.63,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "MEDIBANK-O-02",
+      "question": "Do Australian passport holders currently need a visa for a two-week holiday in Japan?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "are a permanent resident of Australia; or \nhold a current Australian visa - but not a tourist or \nworking holiday visa - that will remain valid after your \njourney ends and allows you unrestricted right of \nentry into Australia; or",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 4,
+          "chunk_index": 25,
+          "distance": 0.4879245162010193
+        },
+        {
+          "text": "admission \nIf you need to return to Australia earlier than planned because, \nduring the period of cover for your journey: \n24",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 24,
+          "chunk_index": 27,
+          "distance": 0.5556800365447998
+        },
+        {
+          "text": "Please note that if requested, you will need to prove your \neligibility (where reasonable) by providing any of the following: \na] a copy of your passport; \nb] Australian residency documents; \nc] a copy of your current visa;",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 5,
+          "chunk_index": 0,
+          "distance": 0.5724352598190308
+        }
+      ],
+      "latency_s": 0.57,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    },
+    {
+      "id": "MEDIBANK-O-03",
+      "question": "Which airline has the cheapest return flights from Sydney to Bali next month?",
+      "question_type": "out_of_knowledge_base",
+      "answer": "The excerpts do not contain this information.",
+      "sources": [
+        {
+          "text": "flights and $500 on accommodation. Your airline gives you \na full refund for the original flights and you are only able to \nget a $250 refund on your accommodation. \nAllowable claim: \nFlights $500 - new flights $2,500 less refund of $2,000",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 25,
+          "chunk_index": 17,
+          "distance": 0.7293698787689209
+        },
+        {
+          "text": "Australia from the place you planned to return to Australia \nfrom. The fare will be at the same fare class as the one you left \nAustralia on. \nWhenever claims are made by you under Benefits 3.1",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 25,
+          "chunk_index": 12,
+          "distance": 0.7342569828033447
+        },
+        {
+          "text": "overseas to the date that we would have been able to \nreasonably facilitate your return to Australia; plus \nthe reasonable amount it would cost to facilitate your \nreturn to Australia; plus \nthe non-refundable portion of unused travel and",
+          "source": "ALLIANZ_20251219.pdf",
+          "insurer": "ALLIANZ",
+          "doc_date": "20251219",
+          "page": 21,
+          "chunk_index": 24,
+          "distance": 0.7441917657852173
+        }
+      ],
+      "latency_s": 0.57,
+      "scores": {
+        "refused": 1.0,
+        "ookb_correct": 1.0,
+        "retrieval_hit_at_k": null,
+        "retrieval_precision_at_k": null,
+        "cited_pages": [],
+        "attribution_precision": null,
+        "faithfulness": null,
+        "answer_correctness": null,
+        "context_precision": null
+      }
+    }
+  ]
+}
