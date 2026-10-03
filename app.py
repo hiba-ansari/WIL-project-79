@@ -3,9 +3,9 @@ from src.query import ask
 from src.ingest import ingest
 
 # --- PAGE CONFIGURATION ---
-st.set_page_config(page_title="Travel Insurance AI", page_icon="🛡️", layout="wide")
+st.set_page_config(page_title="Insurer Pal", layout="centered")
 
-st.title("🛡️ Travel Insurance Policy Assistant")
+st.title("Insurer Pal")
 st.markdown("Ask questions about insurance policies and get answers based on actual PDF documents.")
 
 # --- SIDEBAR SETTINGS ---
@@ -17,7 +17,7 @@ with st.sidebar:
     selected_insurer = st.selectbox("Select Insurer", options=insurer_list)
     
     # 2. Parameter Tuning
-    top_k = st.slider("Number of documents to retrieve (Top-K)", min_value=1, max_value=10, value=5)
+    top_k = st.slider("Number of documents to retrieve (Top-K)", min_value=1, max_value=5, value=1)
     
     st.divider()
 
@@ -30,6 +30,30 @@ if "messages" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
+
+st.markdown(
+    """
+    <style>
+    .stApp {
+        margin-bottom: 40px;
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        color: #888;
+        padding: 10px 0;
+        z-index: 100;
+        pointer-events: none;
+    }
+    </style>
+    <div class="footer">Travel Rag is not human. It can make mistake so double check it.</div>
+    """,
+    unsafe_allow_html=True
+)
 
 # User Input
 if prompt := st.chat_input("e.g. What is the coverage for medical expenses?"):
