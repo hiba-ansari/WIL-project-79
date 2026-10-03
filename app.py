@@ -1,5 +1,5 @@
 import streamlit as st
-from src.query import ask
+from src.query import ask, DEFAULT_LLM_MODEL, EMBEDDING_MODEL
 from src.ingest import ingest
 
 # --- PAGE CONFIGURATION ---
@@ -57,16 +57,21 @@ if prompt := st.chat_input("e.g. What is the coverage for medical expenses?"):
                 # Display the AI Answer
                 st.markdown(result.answer)
 
-                # Display the Sources in an expandable section
-                with st.expander("📄 View Source Documents"):
-                    for i, src in enumerate(result.sources, 1):
-                        st.markdown(f"**Source {i}:** {src['source']} (Page {src['page']})")
-                        st.info(src['text'])
-                        st.markdown("---")
+                # Display the Sources in an expandable section -  But do not show the sources for ookb questions because ookb won't have any valid source attribution.
+                if result.refused:
+                    st.caption(
+                        "🔒 Source documents hidden — the assistant did not answer from the retrieved policy excerpts."
+                    )
+                else:
+                    with st.expander("📄 View Source Documents"):
+                        for i, src in enumerate(result.sources, 1):
+                            st.markdown(f"**Source {i}:** {src['source']} (Page {src['page']})")
+                            st.info(src['text'])
+                            st.markdown("---")
 
             except Exception as e:
                 st.error(f"An error occurred: {e}")
-                st.info("Make sure Ollama is running and the models (llama3, nomic-embed-text) are installed.")
+                st.info(f"Make sure Ollama is running and the models ({DEFAULT_LLM_MODEL}, {EMBEDDING_MODEL}) are downloaded locally.")
 
     # Add assistant response to chat history
     # We check if 'result' exists to avoid errors if the query failed
